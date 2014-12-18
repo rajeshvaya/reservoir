@@ -1,0 +1,5 @@
+#utils
+logutils==0.3.3
+
+#shell
+ipython
