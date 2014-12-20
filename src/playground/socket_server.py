@@ -22,14 +22,24 @@ class server:
 		self.socket.listen(2) # allow max of 2 clients
 
 	def open(self):
-		print 'All set to accept clients now ... '
 		# let there be connectivity 
 		while True:
+			print 'Waiting for connections from client...'
 			connection, address = self.socket.accept()
 			print '%s:%s connected to the server' % (address)
-			connection.send('You are not connected to server.')
-			#lets close the connection for now
-			connection.close()
+
+			while True:
+				data = connection.recv(1024)
+				if not data:
+					break;
+				self.process_client_request(data)
+				connection.send('200 OK')
+		# lets close the connection for now
+		connection.close()
+
+	def process_client_request(self, data):
+		print 'received data from client: ' + data
+		pass
 
 
 if __name__ == '__main__':
