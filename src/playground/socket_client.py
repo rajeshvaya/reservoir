@@ -10,24 +10,28 @@ class client:
 
 		# now connect
 		self.connect()
+		self.prompt()
 		
 	def connect(self):
 		print 'connecting to the server %s' % (self.host)
 		self.socket.connect((self.host, self.port))
 
-		while True:
-			# get data from command line
-			data = raw_input('=> ')
-			if not data:
-				continue;
-			# send the data to the server
-			self.socket.send(data)
+	def prompt(self):
+		try:
 			while True:
+				# get data from command line
+				data = raw_input('=> ')
+				if not data:
+					continue
+				# send the data to the server
+				self.socket.send(data)
 				response = self.socket.recv(1024)
-				if not response:
-					break;
 				print response
-		
+		except Exception as e:
+			self.socket.close()
+			print e
+
+
 
 if __name__ == '__main__':
 	c = client()
