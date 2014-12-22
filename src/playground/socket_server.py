@@ -1,12 +1,16 @@
 ''' This is the playground server for testing out different aspects of the caching system. The realy code will be in ./src '''
 
 import socket
+import os
+import argparse
+from ConfigParser import SafeConfigParser
 
-class server:
-	def __init__(self):
+class Server:
+	def __init__(self, **configs):
 		print 'going to initialize'
-		self.host = 'localhost'
-		self.port = 3142 # respect PI 
+		self.configs = configs
+		self.host = configs.get('host', 'localhost')
+		self.port = configs.get('port', 3142) # respect PI 
 		self.reservoir = {}
 
 		print 'opening the socket on port %s ' % (self.port)
@@ -20,7 +24,7 @@ class server:
 		self.socket.bind((self.host, self.port))
 
 	def listen(self):
-		self.socket.listen(2) # allow max of 2 clients
+		self.socket.listen(self.configs.get('max_clients', 2)) # allow max of 2 clients by default
 
 	# TODO: check to implement UDP protocol - fire and forget
 	def open(self):
@@ -32,7 +36,7 @@ class server:
 				print '%s:%s connected to the server' % (self.address)
 
 				while True:
-					data = self.connection.recv(1024)
+					data = self.connection.recv(self.configs.get('read_buffer', 1024))
 					if not data:
 						break;
 					self.process_client_request(data)
@@ -106,4 +110,15 @@ class server:
 
 
 if __name__ == '__main__':
-	s = server()
+	config = SafeConfigParser()
+	config.read([
+		os.path.join(os.path.dirname(__file__), 'conf/default.conf'),
+		# any other files to overwrite defaults here
+	])
+
+	s = Server(
+		host=config.get('server', 'host'),
+		port=config.getint('server', 'port'),
+		max_clients=config.getint('server', 'max_clients'),
+		read_buffer=config.getint('server', 'read_buffer'),
+	)
