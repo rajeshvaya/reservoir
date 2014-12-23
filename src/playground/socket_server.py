@@ -5,6 +5,8 @@ import os
 import argparse
 from ConfigParser import SafeConfigParser
 
+from drop import Drop
+
 class Server:
 	def __init__(self, **configs):
 		print 'going to initialize'
@@ -78,13 +80,18 @@ class Server:
 	# TODO: need to add expiry
 	# TODO: batch sets
 	def set(self, key, value):
-		self.reservoir[key] = value
+		d = Drop()
+		d.set(value)
+		self.reservoir[key] = d
 		return True
 
 	# TODO: batch gets
 	# TODO: need to check on expiry later
 	def get(self, key):
-		return self.reservoir.get(key, None)
+		drop = self.reservoir.get(key, None)
+		if drop:
+			return drop.get()
+		return None
 
 	# TODO: batch deletes
 	def delete(self, key):
@@ -95,7 +102,7 @@ class Server:
 	# TODO: wrapper code to set cache if get fails with optional value
 	def get_or_set(self, key, value):
 		if self.reservoir.has_key(key):
-			return self.reservoir[key]
+			return self.get(key)
 		else:
 			self.set(key, value)
 			return value
