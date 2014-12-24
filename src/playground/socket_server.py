@@ -2,6 +2,7 @@
 
 import socket
 import os
+import time
 import argparse
 from ConfigParser import SafeConfigParser
 
@@ -55,14 +56,18 @@ class Server:
 		if len(data) < 3:
 			self.response("INVALID_DATA")
 			return
-
+		# FORMAT = <PROTOCOL> <KEY>
 		if data[:3] == 'GET':
 			data_parts = data.split(' ')
 			self.response(self.get(data_parts[1]))
 
+		# FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
 		if data[:3] == 'SET':
-			data_parts = data.split(' ', 2)
-			if self.set(data_parts[1], data_parts[2]):
+			data_parts = data.split(' ', 3)
+			expiry = data_parts[1]
+			key = data_parts[2]
+			value = data_parts[3]
+			if self.set(key, value, expiry):
 				self.response("200 OK")
 			else:
 				self.response("500 ERROR")
@@ -74,14 +79,17 @@ class Server:
 
 		 # Get Or Set
 		if data[:3] == 'GOS':
-			data_parts = data.split(' ', 2)
-			self.response(self.get_or_set(data_parts[1], data_parts[2]))
+			data_parts = data.split(' ', 3)
+			expiry = data_parts[1]
+			key = data_parts[2]
+			value = data_parts[3]
+			self.response(self.get_or_set(key, value, expiry))
 
 	# TODO: need to add expiry
 	# TODO: batch sets
-	def set(self, key, value):
+	def set(self, key, value, expiry=0):
 		d = Drop()
-		d.set(value)
+		d.set(value, expiry)
 		self.reservoir[key] = d
 		return True
 
@@ -91,6 +99,8 @@ class Server:
 		drop = self.reservoir.get(key, None)
 		if drop:
 			return drop.get()
+		if self.reservoir.has_key(key):
+			del self.reservoir[key]
 		return None
 
 	# TODO: batch deletes
@@ -100,11 +110,11 @@ class Server:
 		return 
 
 	# TODO: wrapper code to set cache if get fails with optional value
-	def get_or_set(self, key, value):
+	def get_or_set(self, key, value, expiry=0):
 		if self.reservoir.has_key(key):
 			return self.get(key)
 		else:
-			self.set(key, value)
+			self.set(key, value, expiry)
 			return value
 
 	def response(self, data):
@@ -113,8 +123,6 @@ class Server:
 		else:
 			self.connection.send("None") # No data
 		
-
-
 
 if __name__ == '__main__':
 	config = SafeConfigParser()
