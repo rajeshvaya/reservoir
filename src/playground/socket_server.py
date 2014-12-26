@@ -3,12 +3,14 @@
 import sys
 import socket
 import os
+import resource
 import time
 import argparse
 from ConfigParser import SafeConfigParser
 
 from drop import Drop
 from utilities import *
+
 
 class Server:
     def __init__(self, **configs):
@@ -26,10 +28,23 @@ class Server:
 
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
+        # set the memory limit
+        self.set_resource_utilization_limits()
         # connect to the server
         self.bind()
         self.listen()
         self.open()
+
+    def set_resource_utilization_limits(self):
+    	if not self.memory_limit or self.memory_limit == 0:
+    		return
+
+    	# get the soft and hard limits for the heap limit - this is default
+    	soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_AS)
+    	resource.setrlimit(resource.RLIMIT_AS, (self.memory_limit, hard_limit))
+
+    	soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_DATA)
+    	resource.setrlimit(resource.RLIMIT_DATA, (self.memory_limit, hard_limit))
 
     def bind(self):
         self.socket.bind((self.host, self.port))
@@ -54,6 +69,9 @@ class Server:
             # lets close the connection for now
             self.connection.close()
         # for testing need to close the connection on keyboard interrupt
+        except MemoryError as e:
+        	print e
+        	# TODO: handle the client data for out of memory issue
         except Exception as e:
             print e
             self.connection.close()
@@ -99,15 +117,9 @@ class Server:
         print 'inside of set function'
         d = Drop()
         d.set(value, expiry)
-        if self.check_memory_limit(d):
-            self.reservoir[key] = d
-            print sys.getsizeof(self.reservoir)
-            print self.reservoir
-            return True
-        else:
-            return False
+        self.reservoir[key] = d
+        return True
         
-
     # TODO: batch gets
     # TODO: need to check on expiry later
     def get(self, key):
@@ -141,18 +153,6 @@ class Server:
         else:
             self.connection.send("None") # No data
 
-    def check_memory_limit(self, drop):
-        if self.memory_limit == None:
-            return True
-            
-        memory_in_use = sys.getsizeof(self.reservoir)
-        memory_of_drop = sys.getsizeof(drop)
-
-        if (memory_of_drop + memory_in_use) >= self.memory_limit:
-            return False
-        else:
-            return True
-        
 
 if __name__ == '__main__':
     config = SafeConfigParser()
