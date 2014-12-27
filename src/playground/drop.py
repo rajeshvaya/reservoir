@@ -8,6 +8,7 @@ class Drop(object):
         # TODO: except the value of the cache item using the kwargs
         self.value = None
         self.expiry = 0
+        self.dependants = []
 
     def __str__(self):
         return self.value
@@ -27,6 +28,10 @@ class Drop(object):
         if expiry.isdigit() and int(expiry) > 0:
             expiry_time = int(time.time()) + int(expiry)
             self.expiry = expiry_time
+
+    def add_dependant(self, key):
+        self.dependants.append(key)
+
 
 
 

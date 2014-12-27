@@ -88,12 +88,21 @@ class Server:
             self.response(self.get(data_parts[1]))
 
         # FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
-        if data[:3] == 'SET':
+        if data[:3] in ['SET', 'DEP']:
             data_parts = data.split(' ', 3)
+            protocol = data_parts[0]
             expiry = data_parts[1]
             key = data_parts[2]
             value = data_parts[3]
+            if protocol == 'DEP':
+            	parent_key, key = key.split('::', 1)
+
             if self.set(key, value, expiry):
+            	if protocol == 'DEP':
+            		drop = self.reservoir.get(parent_key, None)
+            		if drop:
+            			drop.add_dependant(key)
+
                 self.response("200 OK")
             else:
                 self.response("500 ERROR")
@@ -133,12 +142,25 @@ class Server:
     # TODO: batch deletes
     def delete(self, key):
         if self.reservoir.has_key(key):
-            # unset the drop for garbage collection
-            del self.reservoir[key]
-            # delete the reference
-            self.reservoir.pop(key, None)
-        return 
+        	# dependants also include the key in question
+        	dependants = set(self.get_dependants_tree(key))
+        	for dependant in dependants:
+        		if self.reservoir.has_key(dependant):
+		            # unset the drop for garbage collection
+		            del self.reservoir[dependant]
+		            # delete the reference
+		            self.reservoir.pop(dependant, None)
+    	return
 
+    # recursive
+    def get_dependants_tree(self, key):
+    	dependants = [key]
+    	if self.reservoir.has_key(key):
+    		drop = self.reservoir[key]
+    		for dependant in drop.dependants:
+    			dependants += self.get_dependants_tree(dependant)
+    		return dependants
+    		
     # TODO: wrapper code to set cache if get fails with optional value
     def get_or_set(self, key, value, expiry=0):
         if self.reservoir.has_key(key):
