@@ -6,6 +6,8 @@ import os
 import resource
 import time
 import argparse
+import pickle
+import threading
 from ConfigParser import SafeConfigParser
 
 from drop import Drop
@@ -18,11 +20,17 @@ class Server:
         self.configs = configs
         self.host = configs.get('host', 'localhost')
         self.port = configs.get('port', 3142) # respect PI 
+
         #set the memory limit
         if configs.get('max_memory_allocation') != 0:
             self.memory_limit = size_in_bytes(configs.get('max_memory_allocation', '32M')) # defaults to 32 MB
         else:
             self.memory_limit = None
+
+        #persistance
+        self.persistance = True if configs.get('persistance', None) == 'yes' else False
+        if self.persistance:
+            self.persistance_interval = configs.get('persistance_interval', 300) # persist every 5 minutes by defaut
 
         self.reservoir = {}
 
@@ -30,6 +38,9 @@ class Server:
         self.socket = socket.socket()
         # set the memory limit
         self.set_resource_utilization_limits()
+        # load persist data if enabled and start timer
+        self.fetch_persistant_data()
+        self.persistance_cycle()
         # connect to the server
         self.bind()
         self.listen()
@@ -45,6 +56,36 @@ class Server:
 
     	soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_DATA)
     	resource.setrlimit(resource.RLIMIT_DATA, (self.memory_limit, hard_limit))
+
+    def persistance_cycle(self):
+        if not self.persistance:
+            return False
+
+        print 'Enabling persistance cycle at %d seconds' % (self.persistance_interval)
+        self.persistance_thread = threading.Timer(self.persistance_interval, self.save_persist_data).start()
+        
+    def fetch_persistant_data(self):
+        if not self.persistance:
+            return False
+        print 'Loading data from last persistance cycle'
+        try:
+            with open('data/data.pickle', 'rb') as file_handle:
+                data = pickle.load(file_handle)
+                if isinstance(data, dict):
+                    self.reservoir = data
+        except (IOError, EOFError) as error:
+            pass
+
+    def save_persist_data(self):
+        print "inside save persistance function"
+        if not self.persistance:
+            return False
+
+        print 'Save cache to persist'
+        with open('data/data.pickle', 'wb') as file_handle:
+            pickle.dump(self.reservoir, file_handle, 0)
+
+        self.persistance_cycle()
 
     def bind(self):
         self.socket.bind((self.host, self.port))
@@ -189,4 +230,6 @@ if __name__ == '__main__':
         max_clients=config.getint('server', 'max_clients'),
         read_buffer=config.getint('server', 'read_buffer'),
         max_memory_allocation=config.get('server', 'max_memory_allocation'),
+        persistance=config.get('server', 'persistance'),
+        persistance_interval=config.getint('server', 'persistance_interval'),
     )
