@@ -8,6 +8,7 @@ class Drop(object):
         # TODO: except the value of the cache item using the kwargs
         self.value = None
         self.expiry = 0
+        self.hits = 0
         self.dependants = []
 
     def __str__(self):
@@ -16,9 +17,12 @@ class Drop(object):
     def set(self,value, expiry=0):
         self.value = value
         self.set_expiry(expiry)
+        self.update_last_accessed()
 
     def get(self):
         if self.expiry == 0 or int(time.time()) < self.expiry:
+            self.update_last_accessed()
+            self.hits_plus_plus()
             return self.value
         else:
             # expired data
@@ -32,8 +36,17 @@ class Drop(object):
     def add_dependant(self, key):
         self.dependants.append(key)
 
+    def is_expired(self):
+        if self.expiry > 0 and int(time.time()) > self.expiry:
+            return True
+        else:
+            return False
 
+    def update_last_accessed(self):
+        self.last_accessed = int(time.time())
 
+    def hits_plus_plus(self):
+        self.hits += 1
 
 
 

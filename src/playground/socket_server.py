@@ -32,6 +32,9 @@ class Server:
         if self.persistance:
             self.persistance_interval = configs.get('persistance_interval', 300) # persist every 5 minutes by defaut
 
+        #garbage collection
+        self.garbage_collection_interval = configs.get('garbage_collection_interval', 0) # by default disable the gc
+
         self.reservoir = {}
 
         print 'opening the socket on port %s ' % (self.port)
@@ -41,6 +44,7 @@ class Server:
         # load persist data if enabled and start timer
         self.fetch_persistant_data()
         self.persistance_cycle()
+        self.garbage_collection_cycle()
         # connect to the server
         self.bind()
         self.listen()
@@ -57,6 +61,18 @@ class Server:
     	soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_DATA)
     	resource.setrlimit(resource.RLIMIT_DATA, (self.memory_limit, hard_limit))
 
+    def garbage_collection_cycle(self):
+        if self.garbage_collection_interval > 0:
+            print 'going for garbage collection'
+            self.garbage_collection_thread = threading.Timer(self.garbage_collection_interval, self.garbage_collection).start()
+
+    def garbage_collection(self):
+        for key, drop in self.reservoir.items():
+            if drop.is_expired():
+                self.delete(key)
+
+        self.garbage_collection_cycle()
+    
     def persistance_cycle(self):
         if not self.persistance:
             return False
@@ -232,4 +248,5 @@ if __name__ == '__main__':
         max_memory_allocation=config.get('server', 'max_memory_allocation'),
         persistance=config.get('server', 'persistance'),
         persistance_interval=config.getint('server', 'persistance_interval'),
+        garbage_collection_interval=config.getint('server', 'garbage_collection_interval'),
     )
