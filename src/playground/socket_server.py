@@ -139,6 +139,11 @@ class Server:
         if len(data) < 3:
             self.response("INVALID_DATA")
             return
+
+        # confirm connectivity
+        if data == 'PING':
+            self.response(1)
+
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
             data_parts = data.split(' ')
