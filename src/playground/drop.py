@@ -9,6 +9,7 @@ class Drop(object):
         self.value = None
         self.expiry = 0
         self.hits = 0
+        self.key = kwargs.get('key', None)
         self.dependants = []
 
     def __str__(self):
@@ -47,6 +48,10 @@ class Drop(object):
 
     def hits_plus_plus(self):
         self.hits += 1
+
+    def get_replay_log(self):
+        # format <expiry>, <dependants>, <key>, <value>
+        return "%d %s %s %s" % (self.expiry, ','.join(str(d) for d in self.dependants), self.key, self.value)
 
 
 

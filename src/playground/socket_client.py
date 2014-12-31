@@ -38,7 +38,7 @@ class Client:
 
     def ping_server(self):
         data = "PING"
-        return True if self.send(self) == 1 else False # this should return boolean only
+        return True if self.send(data) == 1 else False # this should return boolean only
 
     
     # get the entire tree <key> as starting parent

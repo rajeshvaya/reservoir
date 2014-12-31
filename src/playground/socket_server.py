@@ -184,11 +184,13 @@ class Server:
 
     # TODO: batch sets
     # TODO: need to delete the oldest entry when memory is full, currently return false
+    # TODO: make the key argument in Drop class required for replication replay logs to work
     def set(self, key, value, expiry=0):
         print 'inside of set function'
-        d = Drop()
+        d = Drop(key=key)
         d.set(value, expiry)
         self.reservoir[key] = d
+        self.add_to_replication_bin_logs('SET', d)
         return True
         
     # TODO: batch gets
@@ -237,6 +239,14 @@ class Server:
         else:
             self.connection.send("None") # No data
 
+    def add_to_replication_replay_logs(self, type, drop):
+        with open('replication/replay_logs/server.replay', 'a') as file_handle:
+            log = '%s %s' % (type, drop.get_replay_log)
+            file_handle.write(log)
+
+    # TODO: find the best way to sync with file splits
+    def sync_replication_replay_logs(self):
+        pass
 
 if __name__ == '__main__':
     config = SafeConfigParser()
@@ -254,4 +264,6 @@ if __name__ == '__main__':
         persistance=config.get('server', 'persistance'),
         persistance_interval=config.getint('server', 'persistance_interval'),
         garbage_collection_interval=config.getint('server', 'garbage_collection_interval'),
+        replication=config.getint('server', 'replication'),
+        replication_slave_servers=config.getint('server', 'replication_slave_servers'),
     )
