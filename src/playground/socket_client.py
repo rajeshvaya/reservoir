@@ -3,6 +3,7 @@
 import socket
 import os
 import argparse
+import pickle
 from ConfigParser import SafeConfigParser
 
 class Client:

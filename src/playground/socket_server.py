@@ -21,19 +21,21 @@ class Server:
         self.host = configs.get('host', 'localhost')
         self.port = configs.get('port', 3142) # respect PI 
 
-        #set the memory limit
+        # set the memory limit
         if configs.get('max_memory_allocation') != 0:
             self.memory_limit = size_in_bytes(configs.get('max_memory_allocation', '32M')) # defaults to 32 MB
         else:
             self.memory_limit = None
 
-        #persistance
+        # persistance
         self.persistance = True if configs.get('persistance', None) == 'yes' else False
         if self.persistance:
             self.persistance_interval = configs.get('persistance_interval', 300) # persist every 5 minutes by defaut
 
-        #garbage collection
+        # garbage collection
         self.garbage_collection_interval = configs.get('garbage_collection_interval', 0) # by default disable the gc
+        # max dependants depth
+        self.max_depandants_depth = configs.get('max_depandants_depth', 10) # detaults to 10
 
         self.reservoir = {}
 
@@ -164,7 +166,7 @@ class Server:
             		drop = self.reservoir.get(parent_key, None)
             		if drop:
             			drop.add_dependant(key)
-
+                
                 self.response("200 OK")
             else:
                 self.response("500 ERROR")
@@ -190,7 +192,7 @@ class Server:
         d = Drop(key=key)
         d.set(value, expiry)
         self.reservoir[key] = d
-        self.add_to_replication_bin_logs('SET', d)
+        self.add_to_replication_replay_logs('SET', d)
         return True
         
     # TODO: batch gets
@@ -207,7 +209,7 @@ class Server:
     def delete(self, key):
         if self.reservoir.has_key(key):
         	# dependants also include the key in question
-        	dependants = set(self.get_dependants_tree(key))
+        	dependants = set(self.get_dependants_tree(key, self.max_depandants_depth))
         	for dependant in dependants:
         		if self.reservoir.has_key(dependant):
 		            # unset the drop for garbage collection
@@ -217,12 +219,16 @@ class Server:
     	return
 
     # recursive
-    def get_dependants_tree(self, key):
+    def get_dependants_tree(self, key, depth=10):
     	dependants = [key]
+        if depth <=0:
+            return dependants
+
+        next_depth = depth - 1
     	if self.reservoir.has_key(key):
     		drop = self.reservoir[key]
     		for dependant in drop.dependants:
-    			dependants += self.get_dependants_tree(dependant)
+    			dependants += self.get_dependants_tree(dependant, next_depth)
     		return dependants
     		
     # TODO: wrapper code to set cache if get fails with optional value
@@ -243,6 +249,7 @@ class Server:
         with open('replication/replay_logs/server.replay', 'a') as file_handle:
             log = '%s %s' % (type, drop.get_replay_log)
             file_handle.write(log)
+        return 
 
     # TODO: find the best way to sync with file splits
     def sync_replication_replay_logs(self):
@@ -264,6 +271,7 @@ if __name__ == '__main__':
         persistance=config.get('server', 'persistance'),
         persistance_interval=config.getint('server', 'persistance_interval'),
         garbage_collection_interval=config.getint('server', 'garbage_collection_interval'),
-        replication=config.getint('server', 'replication'),
-        replication_slave_servers=config.getint('server', 'replication_slave_servers'),
+        max_depandants_depth=config.getint('server', 'max_depandants_depth'),
+        replication=config.get('server', 'replication'),
+        replication_slave_servers=config.get('server', 'replication_slave_servers'),
     )
