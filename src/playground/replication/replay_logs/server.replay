@@ -1,1 +1,8 @@
-SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10fb83c90>>SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10fe2b950>>SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10d6b4c90>>SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10d95c790>>SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10d95c950>>SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10f4dcc90>>SET <bound method Drop.get_replay_log of <drop.Drop object at 0x10f784790>>
+SET 1420203684  pk_movie awesome
+SET 1420203699  pk_movie awesome
+SET 1420203712  pk_actor aamir khan
+SET 1420203718  pk_director raj kumar hirani
+SET 1420294041  pk_movie awesome
+SET 1420195140  pl_actor aamir khan
+SET 1420204296  wrong_key aamir khan
+DEL 1420204296  wrong_key aamir khan

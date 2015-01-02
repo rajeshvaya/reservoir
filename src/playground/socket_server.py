@@ -53,15 +53,15 @@ class Server:
         self.open()
 
     def set_resource_utilization_limits(self):
-    	if not self.memory_limit or self.memory_limit == 0:
-    		return
+        if not self.memory_limit or self.memory_limit == 0:
+            return
 
-    	# get the soft and hard limits for the heap limit - this is default
-    	soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_AS)
-    	resource.setrlimit(resource.RLIMIT_AS, (self.memory_limit, hard_limit))
+        # get the soft and hard limits for the heap limit - this is default
+        soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_AS)
+        resource.setrlimit(resource.RLIMIT_AS, (self.memory_limit, hard_limit))
 
-    	soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_DATA)
-    	resource.setrlimit(resource.RLIMIT_DATA, (self.memory_limit, hard_limit))
+        soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_DATA)
+        resource.setrlimit(resource.RLIMIT_DATA, (self.memory_limit, hard_limit))
 
     def garbage_collection_cycle(self):
         if self.garbage_collection_interval > 0:
@@ -129,8 +129,8 @@ class Server:
             self.connection.close()
         # for testing need to close the connection on keyboard interrupt
         except MemoryError as e:
-        	print e
-        	# TODO: handle the client data for out of memory issue
+            print e
+            # TODO: handle the client data for out of memory issue
         except Exception as e:
             print e
             self.connection.close()
@@ -159,14 +159,14 @@ class Server:
             key = data_parts[2]
             value = data_parts[3]
             if protocol == 'DEP':
-            	parent_key, key = key.split('::', 1)
+                parent_key, key = key.split('::', 1)
 
             if self.set(key, value, expiry):
-            	if protocol == 'DEP':
-            		drop = self.reservoir.get(parent_key, None)
-            		if drop:
-            			drop.add_dependant(key)
-                
+                if protocol == 'DEP':
+                    drop = self.reservoir.get(parent_key, None)
+                    if drop:
+                        drop.add_dependant(key)
+
                 self.response("200 OK")
             else:
                 self.response("500 ERROR")
@@ -208,29 +208,31 @@ class Server:
     # TODO: batch deletes
     def delete(self, key):
         if self.reservoir.has_key(key):
-        	# dependants also include the key in question
-        	dependants = set(self.get_dependants_tree(key, self.max_depandants_depth))
-        	for dependant in dependants:
-        		if self.reservoir.has_key(dependant):
-		            # unset the drop for garbage collection
-		            del self.reservoir[dependant]
-		            # delete the reference
-		            self.reservoir.pop(dependant, None)
-    	return
+            # dependants also include the key in question
+            dependants = set(self.get_dependants_tree(key, self.max_depandants_depth))
+            for dependant in dependants:
+                if self.reservoir.has_key(dependant):
+                    d = self.reservoir[dependant]
+                    # unset the drop for garbage collection
+                    del self.reservoir[dependant]
+                    # delete the reference
+                    self.reservoir.pop(dependant, None)
+                    self.add_to_replication_replay_logs('DEL', d)
+        return
 
     # recursive
     def get_dependants_tree(self, key, depth=10):
-    	dependants = [key]
+        dependants = [key]
         if depth <=0:
             return dependants
 
         next_depth = depth - 1
-    	if self.reservoir.has_key(key):
-    		drop = self.reservoir[key]
-    		for dependant in drop.dependants:
-    			dependants += self.get_dependants_tree(dependant, next_depth)
-    		return dependants
-    		
+        if self.reservoir.has_key(key):
+            drop = self.reservoir[key]
+            for dependant in drop.dependants:
+                dependants += self.get_dependants_tree(dependant, next_depth)
+            return dependants
+            
     # TODO: wrapper code to set cache if get fails with optional value
     def get_or_set(self, key, value, expiry=0):
         if self.reservoir.has_key(key):
@@ -245,9 +247,9 @@ class Server:
         else:
             self.connection.send("None") # No data
 
-    def add_to_replication_replay_logs(self, type, drop):
+    def add_to_replication_replay_logs(self, command_type, drop):
         with open('replication/replay_logs/server.replay', 'a') as file_handle:
-            log = '%s %s' % (type, drop.get_replay_log)
+            log = '%s %s\n' % (command_type, drop.get_replay_log())
             file_handle.write(log)
         return 
 
