@@ -7,6 +7,7 @@ class Drop(object):
     def __init__(self, **kwargs):
         # TODO: except the value of the cache item using the kwargs
         self.value = None
+        self.parent_key = None
         self.expiry = 0
         self.hits = 0
         self.key = kwargs.get('key', None)
@@ -51,7 +52,9 @@ class Drop(object):
 
     def get_replay_log(self):
         # format <expiry>, <dependants>, <key>, <value>
-        return "%d %s %s %s" % (self.expiry, ','.join(str(d) for d in self.dependants), self.key, self.value)
+        
+        return "%d %s %s" % (self.expiry, self.key if self.parent_key == None else '%s:%s' % (self.parent_key, self.key), self.value)
+        # return "%d %s %s %s" % (self.expiry, ','.join(str(d) for d in self.dependants), self.key, self.value)
 
 
 

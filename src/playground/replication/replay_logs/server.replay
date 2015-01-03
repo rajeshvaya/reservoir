@@ -1,8 +1,7 @@
-SET 1420203684  pk_movie awesome
-SET 1420203699  pk_movie awesome
-SET 1420203712  pk_actor aamir khan
-SET 1420203718  pk_director raj kumar hirani
-SET 1420294041  pk_movie awesome
-SET 1420195140  pl_actor aamir khan
-SET 1420204296  wrong_key aamir khan
-DEL 1420204296  wrong_key aamir khan
+SET 1420289714 pk_movie awesome
+SET 1420379735 pk_movie:pk_director rajukumar hirani
+SET 1420280743 pk_movie:pk_actor aamir khan
+SET 1420289753 pk_movie:pk_rating 8.8
+SET 1420289881 something_else it is going to be deleted next
+DEL 1420289881 something_else it is going to be deleted next
+SET 1420289906 pk_movie:pk_actress anuskha sharma

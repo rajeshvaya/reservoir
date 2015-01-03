@@ -158,10 +158,11 @@ class Server:
             expiry = data_parts[1]
             key = data_parts[2]
             value = data_parts[3]
+            parent_key = None
             if protocol == 'DEP':
                 parent_key, key = key.split('::', 1)
 
-            if self.set(key, value, expiry):
+            if self.set(key, value, expiry, parent_key=parent_key):
                 if protocol == 'DEP':
                     drop = self.reservoir.get(parent_key, None)
                     if drop:
@@ -187,10 +188,12 @@ class Server:
     # TODO: batch sets
     # TODO: need to delete the oldest entry when memory is full, currently return false
     # TODO: make the key argument in Drop class required for replication replay logs to work
-    def set(self, key, value, expiry=0):
+    def set(self, key, value, expiry=0, parent_key=None):
         print 'inside of set function'
         d = Drop(key=key)
         d.set(value, expiry)
+        if parent_key:
+            d.parent_key = parent_key
         self.reservoir[key] = d
         self.add_to_replication_replay_logs('SET', d)
         return True
