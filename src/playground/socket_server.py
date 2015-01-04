@@ -192,8 +192,9 @@ class Server:
             if not self.reservoir.has_key(data_parts[2]):
                 self.response("500 ERROR")
             else:
-                self.reservoir[data_parts[2]].decrement():
-
+                self.reservoir[data_parts[2]].decrement()
+                self.response("200 OK")
+                
          # Get Or Set
         if data[:3] == 'GOS':
             data_parts = data.split(' ', 3)
