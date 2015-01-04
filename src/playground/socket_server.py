@@ -177,6 +177,23 @@ class Server:
             self.delete(data_parts[1])
             self.response("200 OK") # fire and forget
 
+        # incrementer and decrementer
+        if data[:3] == 'ICR':
+            data_parts = data.split(' ')
+            if not self.reservoir.has_key(data_parts[2]):
+                self.set(data_parts[2], 1, data_parts[1])
+            else:
+                if not self.reservoir[data_parts[2]].increment():
+                    self.response("500 ERROR")
+            self.response("200 OK")
+
+        if data[:3] == 'DCR':
+            data_parts = data.split(' ')
+            if not self.reservoir.has_key(data_parts[2]):
+                self.response("500 ERROR")
+            else:
+                self.reservoir[data_parts[2]].decrement():
+
          # Get Or Set
         if data[:3] == 'GOS':
             data_parts = data.split(' ', 3)

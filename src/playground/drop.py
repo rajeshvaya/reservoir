@@ -50,6 +50,18 @@ class Drop(object):
     def hits_plus_plus(self):
         self.hits += 1
 
+    def increment(self):
+        if self.value.isdigit():
+            self.value += 1
+            return True
+        return False
+
+    def decrement(self):
+        if self.value.isdigit():
+            self.value -= 1
+            return True
+        return False
+    
     def get_replay_log(self):
         # format <expiry>, <dependants>, <key>, <value>
         
