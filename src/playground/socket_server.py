@@ -183,7 +183,7 @@ class Server:
             if not self.reservoir.has_key(data_parts[2]):
                 self.set(data_parts[2], 1, data_parts[1])
             else:
-                if not self.reservoir[data_parts[2]].increment():
+                if not self.icr(data_parts[2]):
                     self.response("500 ERROR")
             self.response("200 OK")
 
@@ -192,9 +192,10 @@ class Server:
             if not self.reservoir.has_key(data_parts[2]):
                 self.response("500 ERROR")
             else:
-                self.reservoir[data_parts[2]].decrement()
+                if not self.dcr(data_parts[2]):
+                    self.response("500 ERROR")
                 self.response("200 OK")
-                
+
          # Get Or Set
         if data[:3] == 'GOS':
             data_parts = data.split(' ', 3)
@@ -240,6 +241,28 @@ class Server:
                     self.reservoir.pop(dependant, None)
                     self.add_to_replication_replay_logs('DEL', d)
         return
+
+    def icr(self, key):
+        drop = self.reservoir.get(key, None)
+        if drop:
+            if not drop.increment():
+                return result
+            else:
+                self.add_to_replication_replay_logs('ICR', d)
+                return True
+        else:
+            return False
+
+    def dcr(self, key):
+        drop = self.reservoir.get(key, None)
+        if drop:
+            if not drop.decrement():
+                return result
+            else:
+                self.add_to_replication_replay_logs('DCR', d)
+                return True
+        else:
+            return False
 
     # recursive
     def get_dependants_tree(self, key, depth=10):
