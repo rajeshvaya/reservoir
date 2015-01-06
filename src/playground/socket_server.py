@@ -196,6 +196,14 @@ class Server:
                     self.response("500 ERROR")
                 self.response("200 OK")
 
+        # timer as a data type; format <TMR> <key>
+        if data[:3] == 'TMR':
+            data_parts = data.split(' ')
+            if self.reservoir.has_key(data_parts[1]):
+                return self.reservoir[data_parts[1]].get_active_time() # in seconds
+            else:
+                self.response("500 ERROR")
+
          # Get Or Set
         if data[:3] == 'GOS':
             data_parts = data.split(' ', 3)

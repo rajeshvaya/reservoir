@@ -12,6 +12,7 @@ class Drop(object):
         self.hits = 0
         self.key = kwargs.get('key', None)
         self.dependants = []
+        self.created = time.time()
 
     def __str__(self):
         return self.value
@@ -61,6 +62,9 @@ class Drop(object):
             self.value -= 1
             return True
         return False
+
+    def get_active_time(self):
+        return time.time() - self.created
 
     def get_replay_log(self):
         # format <expiry>, <dependants>, <key>, <value>
