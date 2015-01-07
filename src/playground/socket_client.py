@@ -33,6 +33,21 @@ class Client:
         data = "DEL %s" % (key)
         return self.send(data)
 
+    def icr(self, key, expiry=0):
+        # send expiry=0 for already existing key for ICR
+        # need to imporve the evaluation for ICR on the server side
+        data = "ICR %d %s" % (expiry, key)
+        return self.send(data)
+
+    def icr(self, key, expiry=0):
+        # send expiry=0 for already existing key for DCR
+        data = "DCR %d %s" % (expiry, key)
+        return self.send(data)
+
+    def tmr(self, key):
+        data = "TMR %s" % (key)
+        return self.send(data)
+
     def get_or_set(self, key, value, expiry):
         data = "GOS %d %s %s" % (expiry, key, value)
         return self.send(data)
@@ -41,7 +56,6 @@ class Client:
         data = "PING"
         return True if self.send(data) == 1 else False # this should return boolean only
 
-    
     # get the entire tree <key> as starting parent
     def get_with_dependants(self, key):
         pass
@@ -68,8 +82,6 @@ class Client:
         except Exception as e:
             self.socket.close()
             print e
-
-
 
 if __name__ == '__main__':
     config = SafeConfigParser()

@@ -230,7 +230,7 @@ class Server:
     def get(self, key):
         drop = self.reservoir.get(key, None)
         if drop:
-            return drop.get()
+            return str(drop.get())
         if self.reservoir.has_key(key):
             self.delete(key)
         return None

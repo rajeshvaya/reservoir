@@ -5,3 +5,4 @@ SET 1420289753 pk_movie:pk_rating 8.8
 SET 1420289881 something_else it is going to be deleted next
 DEL 1420289881 something_else it is going to be deleted next
 SET 1420289906 pk_movie:pk_actress anuskha sharma
+SET 1420625863 pk_votes 1
