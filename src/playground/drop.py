@@ -69,7 +69,7 @@ class Drop(object):
     def get_replay_log(self):
         # format <expiry>, <dependants>, <key>, <value>
 
-        return "%d %s %s" % (self.expiry, self.key if self.parent_key == None else '%s:%s' % (self.parent_key, self.key), self.value)
+        return "%d %s %s" % (self.expiry, self.key if self.parent_key == None else '%s::%s' % (self.parent_key, self.key), self.value)
         # return "%d %s %s %s" % (self.expiry, ','.join(str(d) for d in self.dependants), self.key, self.value)
 
 

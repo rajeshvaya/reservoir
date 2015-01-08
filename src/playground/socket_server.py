@@ -8,6 +8,7 @@ import time
 import argparse
 import pickle
 import threading
+import linecache
 from ConfigParser import SafeConfigParser
 
 from drop import Drop
@@ -38,6 +39,9 @@ class Server:
         self.max_depandants_depth = configs.get('max_depandants_depth', 10) # detaults to 10
 
         self.reservoir = {}
+
+        # replication
+        self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
 
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
@@ -145,6 +149,11 @@ class Server:
         # confirm connectivity
         if data == 'PING':
             self.response(1)
+
+        # replication replay logs
+        if data[:11] == 'REPLICATION':
+            data_parts = data.split(' ')
+            current_position = data_parts[1]
 
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
@@ -309,6 +318,21 @@ class Server:
     def sync_replication_replay_logs(self):
         pass
 
+    def get_replication_replay_logs(self, position):
+        data = []
+        fetch_position = position + 1
+        result = True
+
+        while log_line and fetch_position < position + self.replication_max_replay_logs:
+            log_line = linecache.getline('replication/replay_logs/server.replay', fetch_position)
+            if log_line:
+                data.append(log_line)
+                fetch_position += 1
+            else:
+                result = False
+
+        return data
+
 if __name__ == '__main__':
     config = SafeConfigParser()
     config.read([
@@ -328,4 +352,5 @@ if __name__ == '__main__':
         max_depandants_depth=config.getint('server', 'max_depandants_depth'),
         replication=config.get('server', 'replication'),
         replication_slave_servers=config.get('server', 'replication_slave_servers'),
+        replication_max_replay_logs=config.getint('server', 'replication_max_replay_logs'),
     )
