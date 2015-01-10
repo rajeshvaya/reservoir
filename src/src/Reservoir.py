@@ -10,6 +10,11 @@ from ConfigParser import SafeConfigParser
 
 # fetch all the arguments through argparser
 def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("server_or_client", help="start a server/client with default configurations")
+    parser.add_argument("--verbose", help="increase the output verbosity", action="store_true")
+    parser.add_argument("--skip-persistant-data", help="set this flag to false if you want skip the load of persistant data and start fresh persistance process ", action="store_true")
+    args = parser.parse_args()
     pass
     
 if __name__ == '__main__':
