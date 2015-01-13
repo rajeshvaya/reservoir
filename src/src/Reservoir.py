@@ -30,6 +30,8 @@ if __name__ == '__main__':
         start_server()
     if args.parent == 'client':
         start_client()
+    if args.parent == 'shell':
+        start_shell()
 
 
 
@@ -57,3 +59,11 @@ def start_client():
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
     )
+
+# if shell access was requested
+def start_shell():
+    c = Client(
+        server_host=config.get('client', 'server_host'),
+        server_port=config.getint('client', 'server_port'),
+    )
+
