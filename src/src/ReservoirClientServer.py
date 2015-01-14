@@ -13,7 +13,6 @@ class Client:
     
         # now connect
         self.connect()
-        self.prompt()
         
     def connect(self):
         print 'connecting to the server %s' % (self.host)
@@ -66,17 +65,3 @@ class Client:
         else:
             return True
         
-    def prompt(self):
-        try:
-            while True:
-                # get data from command line
-                data = raw_input('=> ')
-                if not data:
-                    continue
-                # send the data to the server
-                self.socket.send(data)
-                response = self.socket.recv(self.configs.get('read_buffer', 1024))
-                print response
-        except Exception as e:
-            self.socket.close()
-            print e

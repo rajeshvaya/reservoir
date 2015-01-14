@@ -42,6 +42,7 @@ class Server:
 
         # replication
         self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
+        self.replication_slave_servers = [x.strip() for x in configs.get('replication_max_replay_logs', '').split(',')]
 
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
@@ -316,6 +317,8 @@ class Server:
 
     # TODO: find the best way to sync with file splits
     def sync_replication_replay_logs(self):
+        if self.address not in self.replication_slave_servers:
+            return
         pass
 
     def get_replication_replay_logs(self, position):
