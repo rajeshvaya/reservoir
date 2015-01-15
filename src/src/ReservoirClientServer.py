@@ -9,6 +9,14 @@ class Client:
         self.configs = configs
         self.host = configs.get('server_host', 'localhost') # defaults to localhost
         self.port = configs.get('server_port', 3142)
+        self.replication = True if configs.get('replication', None) == 'yes' else False
+        self.replication_master_server = configs.get('replication_master_server', None)
+        # TODO : need to handle this via file or calculate the value from the log file
+        self.replication_replay_position = 1 
+        if not self.replication_master_server:
+            # nothing to do if ip is not there
+            self.replication = None
+
         self.socket = socket.socket()
     
         # now connect
@@ -57,6 +65,18 @@ class Client:
     def get_with_dependants(self, key):
         pass
 
+    # TODO : initialize a child thread like we did for garbage collection and persistance
+    def sync_replication_replay_logs_cycle(self):
+        pass 
+
+    def sync_replication_replay_logs(self):
+        if not self.replication:
+            return
+        logs = self.send("REPLICATION %d" % self.replication_replay_position)
+        with open('replication/slave/server.replay', 'a') as file_handle:
+            file_handle.write(logs)
+        return 
+
     def send(self, data, expect_return=True):
         self.socket.send(data)
         if expect_return:
@@ -64,4 +84,3 @@ class Client:
             return response
         else:
             return True
-        

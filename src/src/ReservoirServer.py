@@ -41,6 +41,7 @@ class Server:
         self.reservoir = {}
 
         # replication
+        self.replication = True if configs.get('replication', None) == 'yes' else False
         self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
         self.replication_slave_servers = [x.strip() for x in configs.get('replication_max_replay_logs', '').split(',')]
 
@@ -310,7 +311,7 @@ class Server:
             self.connection.send("None") # No data
 
     def add_to_replication_replay_logs(self, command_type, drop):
-        with open('replication/replay_logs/server.replay', 'a') as file_handle:
+        with open('replication/master/server.replay', 'a') as file_handle:
             log = '%s %s\n' % (command_type, drop.get_replay_log())
             file_handle.write(log)
         return 
@@ -322,6 +323,10 @@ class Server:
         pass
 
     def get_replication_replay_logs(self, position):
+        # this check is very necessary
+        if not self.replication or self.address not in self.replication_slave_servers:
+            return False
+
         data = []
         fetch_position = position + 1
         result = True
