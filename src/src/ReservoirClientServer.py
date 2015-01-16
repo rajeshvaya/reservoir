@@ -65,18 +65,6 @@ class Client:
     def get_with_dependants(self, key):
         pass
 
-    # TODO : initialize a child thread like we did for garbage collection and persistance
-    def sync_replication_replay_logs_cycle(self):
-        pass 
-
-    def sync_replication_replay_logs(self):
-        if not self.replication:
-            return
-        logs = self.send("REPLICATION %d" % self.replication_replay_position)
-        with open('replication/slave/server.replay', 'a') as file_handle:
-            file_handle.write(logs)
-        return 
-
     def send(self, data, expect_return=True):
         self.socket.send(data)
         if expect_return:

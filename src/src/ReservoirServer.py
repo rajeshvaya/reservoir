@@ -42,8 +42,10 @@ class Server:
 
         # replication
         self.replication = True if configs.get('replication', None) == 'yes' else False
-        self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
+        self.replication_type=configs.get('replication', 'master') # defaults to standard master
+        self.replication_master_server = configs.get('replication_master_server', None)
         self.replication_slave_servers = [x.strip() for x in configs.get('replication_max_replay_logs', '').split(',')]
+        self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
 
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
@@ -156,6 +158,7 @@ class Server:
         if data[:11] == 'REPLICATION':
             data_parts = data.split(' ')
             current_position = data_parts[1]
+            self.response(self.get_replication_replay_logs(current_position))
 
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
@@ -316,11 +319,11 @@ class Server:
             file_handle.write(log)
         return 
 
-    # TODO: find the best way to sync with file splits
-    def sync_replication_replay_logs(self):
-        if self.address not in self.replication_slave_servers:
-            return
-        pass
+    def check_data_changes_permissions(self):
+        # replication check, slave cannot have data editing
+        if self.replication and self.replication_type == 'slave':
+            return False
+        return True
 
     def get_replication_replay_logs(self, position):
         # this check is very necessary
@@ -340,3 +343,23 @@ class Server:
                 result = False
 
         return data
+
+
+    # START OF REPLICATION TASKS FOR SLAVE SERVER
+    # TODO : need to have best way through threading like we did for persistance and garbage_collection
+    def sync_replication_replay_logs_cycle(self):
+        if not self.replication or self.replication_type != 'slave':
+            return
+        if self.address not in self.replication_slave_servers:
+            return
+        pass
+    
+    # TODO: find the best way to sync with file splits like MySQL does
+    def sync_replication_replay_logs(self):
+        if not self.replication:
+            return
+        logs = self.send("REPLICATION %d" % self.replication_replay_position)
+        with open('replication/slave/server.replay', 'a') as file_handle:
+            file_handle.write(logs)
+        return 
+    # END OF REPLICATION TASKS FOR SLAVE SERVER

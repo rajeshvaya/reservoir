@@ -48,6 +48,8 @@ def start_server():
         garbage_collection_interval=config.getint('server', 'garbage_collection_interval'),
         max_depandants_depth=config.getint('server', 'max_depandants_depth'),
         replication=config.get('server', 'replication'),
+        replication_type=config.get('server', 'replication_type'),
+        replication_master_server=config.get('server', 'replication_master_server'),
         replication_slave_servers=config.get('server', 'replication_slave_servers'),
         replication_max_replay_logs=config.getint('server', 'replication_max_replay_logs'),
     )
@@ -58,15 +60,13 @@ def start_client():
     c = Client(
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
-        replication=config.get('client','replication'),
     )
+
 
 # if shell access was requested
 def start_shell():
     c = Client(
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
-        # TODO : need to sort our the shell script to use the ReservoirClientServer
-        replication=config.get('client','replication'), # this may not be required.. the shell script is currently messed up 
     )
 
