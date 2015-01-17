@@ -46,6 +46,7 @@ class Server:
         self.replication_master_server = configs.get('replication_master_server', None)
         self.replication_slave_servers = [x.strip() for x in configs.get('replication_max_replay_logs', '').split(',')]
         self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
+        self.replication_sync_interval = configs.get('replication_sync_interval', 10) # defaults to 10
 
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
@@ -55,6 +56,7 @@ class Server:
         self.fetch_persistant_data()
         self.persistance_cycle()
         self.garbage_collection_cycle()
+        self.sync_replication_replay_logs_cycle()
         # connect to the server
         self.bind()
         self.listen()
@@ -341,7 +343,6 @@ class Server:
                 fetch_position += 1
             else:
                 result = False
-
         return data
 
 
@@ -352,8 +353,11 @@ class Server:
             return
         if self.address not in self.replication_slave_servers:
             return
+
+        print "going for replication sync"
+        self.replication_thread = threading.Timer(self.replication_sync_interval, self.sync_replication_replay_logs)
         pass
-    
+
     # TODO: find the best way to sync with file splits like MySQL does
     def sync_replication_replay_logs(self):
         if not self.replication:
@@ -361,5 +365,7 @@ class Server:
         logs = self.send("REPLICATION %d" % self.replication_replay_position)
         with open('replication/slave/server.replay', 'a') as file_handle:
             file_handle.write(logs)
+        self.sync_replication_replay_logs_cycle()
         return 
     # END OF REPLICATION TASKS FOR SLAVE SERVER
+

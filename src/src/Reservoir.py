@@ -52,6 +52,7 @@ def start_server():
         replication_master_server=config.get('server', 'replication_master_server'),
         replication_slave_servers=config.get('server', 'replication_slave_servers'),
         replication_max_replay_logs=config.getint('server', 'replication_max_replay_logs'),
+        replication_sync_interval=config.getint('server', 'replication_sync_interval'),
     )
     
 
