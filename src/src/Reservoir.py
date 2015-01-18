@@ -3,6 +3,8 @@ This is the CLI file which will be command line based
 '''
 
 from ReservoirServer import Server
+from ReservoirClientServer import Client
+from ReservoirClientShell import Client as ClientShell
 import sys
 import os
 import argparse
@@ -17,24 +19,6 @@ def parse_args():
     args = parser.parse_args()
     return args
     
-if __name__ == '__main__':
-    config = SafeConfigParser()
-    config.read([
-        os.path.join(os.path.dirname(__file__), 'conf/default.conf'),
-        # any other files to overwrite defaults here
-    ])
-
-    # any custom flags from CLI should be processed here
-    args = parse_args()
-    if args.parent == 'server':
-        start_server()
-    if args.parent == 'client':
-        start_client()
-    if args.parent == 'shell':
-        start_shell()
-
-
-
 # if server was asked to start
 def start_server():
     s = Server(
@@ -55,7 +39,6 @@ def start_server():
         replication_sync_interval=config.getint('server', 'replication_sync_interval'),
     )
     
-
 # if client was asked to start
 def start_client():
     c = Client(
@@ -66,8 +49,25 @@ def start_client():
 
 # if shell access was requested
 def start_shell():
-    c = Client(
+    c = ClientShell(
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
     )
+
+if __name__ == '__main__':
+    config = SafeConfigParser()
+    config.read([
+        os.path.join(os.path.dirname(__file__), 'conf/default.conf'),
+        # any other files to overwrite defaults here
+    ])
+
+    # any custom flags from CLI should be processed here
+    args = parse_args()
+    if args.parent == 'server':
+        start_server()
+    if args.parent == 'client':
+        start_client()
+    if args.parent == 'shell':
+        start_shell()
+
 

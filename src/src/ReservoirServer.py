@@ -44,7 +44,7 @@ class Server:
         self.replication = True if configs.get('replication', None) == 'yes' else False
         self.replication_type=configs.get('replication', 'master') # defaults to standard master
         self.replication_master_server = configs.get('replication_master_server', None)
-        self.replication_slave_servers = [x.strip() for x in configs.get('replication_max_replay_logs', '').split(',')]
+        self.replication_slave_servers = [x.strip() for x in configs.get('replication_slave_servers', '').split(',')]
         self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
         self.replication_sync_interval = configs.get('replication_sync_interval', 10) # defaults to 10
 
