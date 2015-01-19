@@ -10,6 +10,7 @@ import time
 
 import pickle
 import threading
+from thread import start_new_thread
 import linecache
 
 from ReservoirDrop import Drop
@@ -20,7 +21,8 @@ class Server:
         print 'going to initialize'
         self.configs = configs
         self.host = configs.get('host', 'localhost')
-        self.port = configs.get('port', 3142) # respect PI 
+        self.port = configs.get('port', 3142) # respect PI
+        self.connections = []
 
         # set the memory limit
         if configs.get('max_memory_allocation') != 0:
@@ -123,49 +125,51 @@ class Server:
 
     # TODO: check to implement UDP protocol - fire and forget
     def open(self):
-        try:
-            # let there be connectivity 
-            while True:
-                print 'Waiting for connections from client...'
-                self.connection, self.address = self.socket.accept()
-                print '%s:%s connected to the server' % (self.address)
+        # let there be connectivity 
+        while True:
+            print 'Waiting for connections from client...'
+            connection, address = self.socket.accept()
+            self.connections.append(connection)
+            print '%s:%s connected to the server' % (address)
+            start_new_thread(self.start_client_thread, (connection,))
 
-                while True:
-                    data = self.connection.recv(self.configs.get('read_buffer', 1024))
-                    if not data:
-                        break;
-                    self.process_client_request(data)
-            # lets close the connection for now
-            self.connection.close()
+    # Create new thread for each client. don't let the thread die
+    def start_client_thread(self, connection):
+        try:
+            while True:
+                data = connection.recv(self.configs.get('read_buffer', 1024))
+                if not data:
+                    break;
+                self.process_client_request(connection, data)
+            connection.close()
         # for testing need to close the connection on keyboard interrupt
         except MemoryError as e:
             print e
             # TODO: handle the client data for out of memory issue
         except Exception as e:
             print e
-            self.connection.close()
+            connection.close()
 
-
-    def process_client_request(self, data):
+    def process_client_request(self, connection, data):
         print 'received data from client: ' + data
         if len(data) < 3:
-            self.response("INVALID_DATA")
+            self.response(connection, "INVALID_DATA")
             return
 
         # confirm connectivity
         if data == 'PING':
-            self.response(1)
+            self.response(connection, 1)
 
         # replication replay logs
         if data[:11] == 'REPLICATION':
             data_parts = data.split(' ')
             current_position = data_parts[1]
-            self.response(self.get_replication_replay_logs(current_position))
+            self.response(connection, self.get_replication_replay_logs(current_position))
 
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
             data_parts = data.split(' ')
-            self.response(self.get(data_parts[1]))
+            self.response(connection, self.get(data_parts[1]))
 
         # FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
         if data[:3] in ['SET', 'DEP']:
@@ -184,14 +188,14 @@ class Server:
                     if drop:
                         drop.add_dependant(key)
 
-                self.response("200 OK")
+                self.response(connection, "200 OK")
             else:
-                self.response("500 ERROR")
+                self.response(connection, "500 ERROR")
 
         if data[:3] == 'DEL':
             data_parts = data.split(' ')
             self.delete(data_parts[1])
-            self.response("200 OK") # fire and forget
+            self.response(connection, "200 OK") # fire and forget
 
         # incrementer and decrementer
         if data[:3] == 'ICR':
@@ -200,17 +204,17 @@ class Server:
                 self.set(data_parts[2], 1, data_parts[1])
             else:
                 if not self.icr(data_parts[2]):
-                    self.response("500 ERROR")
-            self.response("200 OK")
+                    self.response(connection, "500 ERROR")
+            self.response(connection, "200 OK")
 
         if data[:3] == 'DCR':
             data_parts = data.split(' ')
             if not self.reservoir.has_key(data_parts[2]):
-                self.response("500 ERROR")
+                self.response(connection, "500 ERROR")
             else:
                 if not self.dcr(data_parts[2]):
-                    self.response("500 ERROR")
-                self.response("200 OK")
+                    self.response(connection, "500 ERROR")
+                self.response(connection, "200 OK")
 
         # timer as a data type; format <TMR> <key>
         if data[:3] == 'TMR':
@@ -218,7 +222,7 @@ class Server:
             if self.reservoir.has_key(data_parts[1]):
                 return self.reservoir[data_parts[1]].get_active_time() # in seconds
             else:
-                self.response("500 ERROR")
+                self.response(connection, "500 ERROR")
 
          # Get Or Set
         if data[:3] == 'GOS':
@@ -226,7 +230,7 @@ class Server:
             expiry = data_parts[1]
             key = data_parts[2]
             value = data_parts[3]
-            self.response(self.get_or_set(key, value, expiry))
+            self.response(connection, self.get_or_set(key, value, expiry))
 
     # TODO: batch sets
     # TODO: need to delete the oldest entry when memory is full, currently return false
@@ -309,11 +313,11 @@ class Server:
             self.set(key, value, expiry)
             return value
 
-    def response(self, data):
+    def response(self, connection, data):
         if data:
-            self.connection.send(data)
+            connection.send(data)
         else:
-            self.connection.send("None") # No data
+            connection.send("None") # No data
 
     def add_to_replication_replay_logs(self, command_type, drop):
         with open('replication/master/server.replay', 'a') as file_handle:
