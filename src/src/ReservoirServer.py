@@ -15,6 +15,7 @@ import linecache
 
 from ReservoirDrop import Drop
 from ReservoirUtilities import *
+from ReservoirClientServer import Client as ReplicationClient
 
 class Server:
     def __init__(self, **configs):
@@ -44,11 +45,15 @@ class Server:
 
         # replication
         self.replication = True if configs.get('replication', None) == 'yes' else False
-        self.replication_type=configs.get('replication', 'master') # defaults to standard master
+        self.replication_type=configs.get('replication_type', 'master') # defaults to standard master
         self.replication_master_server = configs.get('replication_master_server', None)
         self.replication_slave_servers = [x.strip() for x in configs.get('replication_slave_servers', '').split(',')]
         self.replication_max_replay_logs = configs.get('replication_max_replay_logs', 100) # defaults to 100
         self.replication_sync_interval = configs.get('replication_sync_interval', 10) # defaults to 10
+        if self.replication and self.replication_type == 'slave':
+            self.replication_replay_position = self.fetch_replication_replay_position()
+        else:
+            self.replication_replay_position = 0
 
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
@@ -164,6 +169,7 @@ class Server:
         if data[:11] == 'REPLICATION':
             data_parts = data.split(' ')
             current_position = data_parts[1]
+            print self.get_replication_replay_logs(current_position)
             self.response(connection, self.get_replication_replay_logs(current_position))
 
         # FORMAT = <PROTOCOL> <KEY>
@@ -333,14 +339,15 @@ class Server:
 
     def get_replication_replay_logs(self, position):
         # this check is very necessary
-        if not self.replication or self.address not in self.replication_slave_servers:
+        if not self.replication:
             return False
 
         data = []
-        fetch_position = position + 1
+        fetch_position = int(position) + 1
         result = True
+        log_line = True
 
-        while log_line and fetch_position < position + self.replication_max_replay_logs:
+        while log_line and fetch_position < int(position) + self.replication_max_replay_logs:
             log_line = linecache.getline('replication/replay_logs/server.replay', fetch_position)
             if log_line:
                 data.append(log_line)
@@ -351,25 +358,46 @@ class Server:
 
 
     # START OF REPLICATION TASKS FOR SLAVE SERVER
+    def fetch_replication_replay_position(self):
+        def blocks(file_object, chunk_size=65535):
+            while True:
+                b = file_object.read(chunk_size)
+                if not b:
+                    break
+                yield b
+
+        with open('replication/slave/server.replay', 'r') as file_handle:
+            total_lines = sum(block.count("\n") for block in blocks(file_handle))
+
+        return total_lines
+
     # TODO : need to have best way through threading like we did for persistance and garbage_collection
     def sync_replication_replay_logs_cycle(self):
+        print "going to start the replication replay logs cycle"
+        print self.replication_type, self.replication
         if not self.replication or self.replication_type != 'slave':
             return
-        if self.address not in self.replication_slave_servers:
-            return
-
+    
         print "going for replication sync"
-        self.replication_thread = threading.Timer(self.replication_sync_interval, self.sync_replication_replay_logs)
+        self.sync_replication_replay_logs()
+        # self.replication_thread = threading.Timer(self.replication_sync_interval, self.sync_replication_replay_logs)
         pass
 
     # TODO: find the best way to sync with file splits like MySQL does
     def sync_replication_replay_logs(self):
+        print "inside the threaded replication child"
         if not self.replication:
             return
-        logs = self.send("REPLICATION %d" % self.replication_replay_position)
+        print "creating replication client socket connection"
+        replication_client = ReplicationClient(
+            server_host=self.replication_master_server,
+            server_port=self.port,
+        )
+
+        logs = replication_client.send("REPLICATION %d" % int(self.replication_replay_position))
         with open('replication/slave/server.replay', 'a') as file_handle:
             file_handle.write(logs)
-        self.sync_replication_replay_logs_cycle()
+        # self.sync_replication_replay_logs_cycle()
         return 
     # END OF REPLICATION TASKS FOR SLAVE SERVER
 
