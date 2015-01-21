@@ -55,6 +55,7 @@ class Server:
         else:
             self.replication_replay_position = 0
 
+        print 'current replucation replay position is %d' % (self.replication_replay_position)
         print 'opening the socket on port %s ' % (self.port)
         self.socket = socket.socket()
         # set the memory limit
@@ -170,7 +171,7 @@ class Server:
             data_parts = data.split(' ')
             current_position = data_parts[1]
             print self.get_replication_replay_logs(current_position)
-            self.response(connection, self.get_replication_replay_logs(current_position))
+            self.response(connection, ''.join(self.get_replication_replay_logs(current_position)))
 
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
@@ -338,6 +339,7 @@ class Server:
         return True
 
     def get_replication_replay_logs(self, position):
+        print "inside the get_replication_replay_logs..."
         # this check is very necessary
         if not self.replication:
             return False
@@ -347,15 +349,17 @@ class Server:
         result = True
         log_line = True
 
-        while log_line and fetch_position < int(position) + self.replication_max_replay_logs:
-            log_line = linecache.getline('replication/replay_logs/server.replay', fetch_position)
+        print "initializing the fetch linecache loop... "
+        while log_line and fetch_position < (int(position) + self.replication_max_replay_logs):
+            print "getting replication replay log through linecache..."
+            log_line = linecache.getline('replication/master/server.replay', fetch_position)
+            print log_line
             if log_line:
                 data.append(log_line)
                 fetch_position += 1
             else:
                 result = False
         return data
-
 
     # START OF REPLICATION TASKS FOR SLAVE SERVER
     def fetch_replication_replay_position(self):
