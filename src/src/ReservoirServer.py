@@ -383,8 +383,8 @@ class Server:
             return
     
         print "going for replication sync"
-        self.sync_replication_replay_logs()
-        # self.replication_thread = threading.Timer(self.replication_sync_interval, self.sync_replication_replay_logs)
+        # self.sync_replication_replay_logs()
+        self.replication_thread = threading.Timer(self.replication_sync_interval, self.sync_replication_replay_logs).start()
         pass
 
     # TODO: find the best way to sync with file splits like MySQL does
@@ -398,10 +398,12 @@ class Server:
             server_port=self.port,
         )
 
+        self.replication_replay_position = self.fetch_replication_replay_position()
+
         logs = replication_client.send("REPLICATION %d" % int(self.replication_replay_position))
         with open('replication/slave/server.replay', 'a') as file_handle:
             file_handle.write(logs)
-        # self.sync_replication_replay_logs_cycle()
+        self.sync_replication_replay_logs_cycle()
         return 
     # END OF REPLICATION TASKS FOR SLAVE SERVER
 
