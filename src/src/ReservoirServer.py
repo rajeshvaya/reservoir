@@ -204,6 +204,18 @@ class Server:
             self.delete(data_parts[1])
             self.response(connection, "200 OK") # fire and forget
 
+        if data[:3] == 'OTA':
+            data_parts = data.split(' ', 3)
+            protocol = data_parts[0]
+            expiry = data_parts[1]
+            key = data_parts[2]
+            value = data_parts[3]
+            
+            if self.ota(key, value, expiry):
+                self.response(connection, "200 OK")
+            else:
+                self.response(connection, "500 ERROR")
+
         # incrementer and decrementer
         if data[:3] == 'ICR':
             data_parts = data.split(' ')
@@ -257,7 +269,12 @@ class Server:
     def get(self, key):
         drop = self.reservoir.get(key, None)
         if drop:
-            return str(drop.get())
+            value = drop.get()
+            if drop.get_type() == 'ota':
+                self.delete(key)
+            return str(value)
+
+        # if orphans are roaming around with no data, delete it
         if self.reservoir.has_key(key):
             self.delete(key)
         return None
@@ -298,6 +315,17 @@ class Server:
                 return True
         else:
             return False
+
+    # TODO : add parent child relations like we did for self.set()
+    # This can be used specifically for one time passwords, forgot/reset password links, read notifications etc
+    def ota(self, key, value, expiry=0):
+        print 'inside of ota function'
+        d = Drop(key=key)
+        d.set(value, expiry)
+        d.set_type('ota') 
+        self.reservoir[key] = d
+        self.add_to_replication_replay_logs('OTA', d)
+        return True
 
     # recursive
     def get_dependants_tree(self, key, depth=10):

@@ -9,3 +9,11 @@ SET 1420625863 pk_votes 1
 SET 1421577933 pk_movie awesome
 SET 1421587047 pk_movie::pk_actor aamir khan
 SET 1421681906 pk_movie awesome
+SET 1431904461 pk_movie awesome
+SET 1422904472 pk_movie::pk_director rajukumar hirani
+SET 1422004481 pk_movie::pk_actor aamir khan
+SET 1422004489 pk_movie::pk_rating 8.8
+SET 1422004502 something_else it is going to be deleted next
+DEL 1422004502 something_else it is going to be deleted next
+OTA 1422004747 pk_key desaj22d3
+DEL 1422004747 pk_key desaj22d3
