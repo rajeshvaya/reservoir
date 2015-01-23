@@ -53,6 +53,14 @@ class Client:
         data = "TMR %s" % (key)
         return self.send(data)
 
+    def ota(self, key, value, expiry):
+        data = "OTA %d %s %s" % (expiry, key, value)
+        return self.send(data)
+
+    def tpl(self, key, value, expiry):
+        data = "TPL %d %s %s" % (expiry, key, value)
+        return self.send(data)
+
     def get_or_set(self, key, value, expiry):
         data = "GOS %d %s %s" % (expiry, key, value)
         return self.send(data)

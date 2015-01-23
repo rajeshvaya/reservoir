@@ -199,6 +199,18 @@ class Server:
             else:
                 self.response(connection, "500 ERROR")
 
+        if data[:3] == 'TPL':
+            data_parts = data.split(' ', 3)
+            protocol = data_parts[0]
+            expiry = data_parts[1]
+            key = data_parts[2]
+            value = data_parts[3]
+
+            if self.tpl(key, value, expiry):
+                self.response(connection, "200 OK")
+            else:
+                self.response(connection, "500 ERROR")
+
         if data[:3] == 'DEL':
             data_parts = data.split(' ')
             self.delete(data_parts[1])
@@ -257,11 +269,25 @@ class Server:
     def set(self, key, value, expiry=0, parent_key=None):
         print 'inside of set function'
         d = Drop(key=key)
-        d.set(value, expiry)
+        if not d.set(value, expiry):
+            return False
         if parent_key:
             d.parent_key = parent_key
         self.reservoir[key] = d
         self.add_to_replication_replay_logs('SET', d)
+        return True
+
+    def tpl(self, key, value, expiry=0):
+        print 'inside of tpl function'
+        if self.resource.has_key(key):
+            if self.reservoir[key].get_type() == 'tpl':
+                return False
+
+        d = Drop(key=key)
+        d.set(value, expiry)
+        d.set_type('tpl')
+        self.reservoir[key] = d
+        self.add_to_replication_replay_logs('TPL', d)
         return True
         
     # TODO: batch gets

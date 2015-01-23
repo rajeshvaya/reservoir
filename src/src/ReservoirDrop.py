@@ -19,9 +19,12 @@ class Drop(object):
         return self.value
 
     def set(self,value, expiry=0):
+        if self.type in ['tpl']:
+            return False
         self.value = value
         self.set_expiry(expiry)
         self.update_last_accessed()
+        return True
 
     def get(self):
         if self.expiry == 0 or int(time.time()) < self.expiry:
