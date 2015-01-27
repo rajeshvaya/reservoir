@@ -44,7 +44,7 @@ class Client:
         data = "ICR %d %s" % (expiry, key)
         return self.send(data)
 
-    def icr(self, key, expiry=0):
+    def dcr(self, key, expiry=0):
         # send expiry=0 for already existing key for DCR
         data = "DCR %d %s" % (expiry, key)
         return self.send(data)
