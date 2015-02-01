@@ -26,6 +26,7 @@ def start_server():
         port=config.getint('server', 'port'),
         max_clients=config.getint('server', 'max_clients'),
         read_buffer=config.getint('server', 'read_buffer'),
+        protocol=config.get('server', 'protocol'),
         max_memory_allocation=config.get('server', 'max_memory_allocation'),
         persistance=config.get('server', 'persistance'),
         persistance_interval=config.getint('server', 'persistance_interval'),

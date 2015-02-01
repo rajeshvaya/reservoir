@@ -25,6 +25,11 @@ class Server:
         self.port = configs.get('port', 3142) # respect PI
         self.connections = []
 
+        # set the protocol to follow
+        self.protocol = configs.get('protocol', 'TCP') # defaults to reliable one - TCP
+        if self.protocol not in ['TCP', 'UDP']:
+            self.protocol = 'TCP' 
+
         # set the memory limit
         if configs.get('max_memory_allocation') != 0:
             self.memory_limit = size_in_bytes(configs.get('max_memory_allocation', '32M')) # defaults to 32 MB
@@ -66,9 +71,15 @@ class Server:
         self.garbage_collection_cycle()
         self.sync_replication_replay_logs_cycle()
         # connect to the server
-        self.bind()
-        self.listen()
-        self.open()
+        if self.protocol == 'TCP':
+            self.tcp_bind()
+            self.tcp_listen()
+            self.tcp_open()
+
+        if self.protocol == 'UDP':
+            self.udp_bind()
+            self.udp_listen()
+            self.udp_open()
 
     def set_resource_utilization_limits(self):
         if not self.memory_limit or self.memory_limit == 0:
@@ -123,24 +134,41 @@ class Server:
 
         self.persistance_cycle()
 
-    def bind(self):
+    # TCP functions here
+    def tcp_bind(self):
         self.socket.bind((self.host, self.port))
 
-    def listen(self):
+    def tcp_listen(self):
         self.socket.listen(self.configs.get('max_clients', 2)) # allow max of 2 clients by default
 
-    # TODO: check to implement UDP protocol - fire and forget
-    def open(self):
+    def tcp_open(self):
         # let there be connectivity 
         while True:
             print 'Waiting for connections from client...'
             connection, address = self.socket.accept()
             self.connections.append(connection)
             print '%s:%s connected to the server' % (address)
-            start_new_thread(self.start_client_thread, (connection,))
+            start_new_thread(self.start_tcp_client_thread, (connection,))
+
+    # UDP functions here
+    def udp_bind(self):
+        self.socket.bind((self.host, self.port))
+
+    def udp_listen(self):
+        # there is no listening in UDP, only fire and forget
+        pass
+
+    def udp_open(self):
+        while True:
+            print 'Waiting for UDP packets'
+            packet = self.socket.recvfrom(self.configs.get('read_buffer', 1024))
+            data = packet[0]
+            address = packet[1]
+            start_new_thread(self.start_udp_client_thread, (address, data))
+
 
     # Create new thread for each client. don't let the thread die
-    def start_client_thread(self, connection):
+    def start_tcp_client_thread(self, connection):
         try:
             while True:
                 data = connection.recv(self.configs.get('read_buffer', 1024))
@@ -155,6 +183,15 @@ class Server:
         except Exception as e:
             print e
             connection.close()
+
+    def start_udp_client_thread(self, address, data):
+        try:
+            self.process_client_request(address, data)
+        except MemoryError as e:
+            print e
+            # TODO: handle the client data for out of memory issue
+        except Exception as e:
+            print e
 
     def process_client_request(self, connection, data):
         print 'received data from client: ' + data
