@@ -45,6 +45,7 @@ def start_client():
     c = Client(
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
+        protocol=config.get('client', 'protocol'),
     )
 
 
@@ -53,6 +54,7 @@ def start_shell():
     c = ClientShell(
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
+        protocol=config.get('client', 'protocol'),
     )
 
 if __name__ == '__main__':

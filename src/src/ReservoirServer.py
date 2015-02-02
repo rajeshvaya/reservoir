@@ -62,7 +62,9 @@ class Server:
 
         print 'current replucation replay position is %d' % (self.replication_replay_position)
         print 'opening the socket on port %s ' % (self.port)
-        self.socket = socket.socket()
+        # self.socket = socket.socket()
+        self.create_socket()
+
         # set the memory limit
         self.set_resource_utilization_limits()
         # load persist data if enabled and start timer
@@ -80,6 +82,14 @@ class Server:
             self.udp_bind()
             self.udp_listen()
             self.udp_open()
+
+    def create_socket(self):
+        if self.protocol == 'TCP':
+            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        elif self.protocol == 'UDP':
+            self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        else:
+            self.socket = socket.socket()
 
     def set_resource_utilization_limits(self):
         if not self.memory_limit or self.memory_limit == 0:
@@ -412,10 +422,10 @@ class Server:
             return value
 
     def response(self, connection, data):
-        if data:
-            connection.send(data)
-        else:
-            connection.send("None") # No data
+        if self.protocol == 'TCP':
+            connection.send(data if data else "None")
+        if self.protocol == 'UDP':
+            self.socket.sendto(data if data else "None", connection) # over here connection is the host address
 
     def add_to_replication_replay_logs(self, command_type, drop):
         with open('replication/master/server.replay', 'a') as file_handle:
