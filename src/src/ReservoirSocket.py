@@ -13,10 +13,12 @@ class ReservoirSocket:
         self.reservoir = reservoir
 
         self.connections = []
-        
+
+        # set the protocol to follow
         protocol = self.configs.get('protocol', 'TCP')
         self.protocol = protocol if protocol in ['TCP', 'UDP'] else 'TCP'
 
+        # lets go
         self.socket = self.create_socket()
         pass
 
@@ -26,11 +28,34 @@ class ReservoirSocket:
         elif self.protocol == 'UDP':
             return socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         else:
-            return socket.socket()
+            return socket.socket
+    
+    def bind(self):
+        if self.protocol == 'TCP':
+            return self.tcp_bind();
+        elif self.protocol == 'UDP':
+            return self.udp_bind();
+        return False
 
+    def listen(self):
+        if self.protocol == 'TCP':
+            return self.tcp_listen();
+        elif self.protocol == 'UDP':
+            return self.udp_listen();
+
+    def open(self):
+        if self.protocol == 'TCP':
+            self.open();
+        elif self.protocol == 'UDP':
+            self.open();
+    
     # TCP functions here
     def tcp_bind(self):
-        self.socket.bind((self.host, self.port))
+        try:
+            self.socket.bind((self.host, self.port))
+            return True
+        except Exception as e:
+            return False
 
     def tcp_listen(self):
         self.socket.listen(self.configs.get('max_clients', 2)) # allow max of 2 clients by default
@@ -63,7 +88,11 @@ class ReservoirSocket:
 
     # UDP functions here
     def udp_bind(self):
-        self.socket.bind((self.host, self.port))
+        try:
+            self.socket.bind((self.host, self.port))
+            return True
+        except Exception as e:
+            return False
 
     def udp_listen(self):
         # there is no listening in UDP, only fire and forget
