@@ -38,6 +38,7 @@ def start_server():
         replication_slave_servers=config.get('server', 'replication_slave_servers'),
         replication_max_replay_logs=config.getint('server', 'replication_max_replay_logs'),
         replication_sync_interval=config.getint('server', 'replication_sync_interval'),
+        default_data_format=config.get('server', 'default_data_format'),
     )
     
 # if client was asked to start
