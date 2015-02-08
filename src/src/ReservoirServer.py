@@ -15,7 +15,9 @@ import linecache
 from ReservoirSocket import ReservoirSocket
 from ReservoirDrop import Drop
 from ReservoirUtilities import *
+from ReservoirResponse import ReservoirResponse
 from ReservoirClientServer import Client as ReplicationClient
+
 
 class Server:
     def __init__(self, **configs):
@@ -25,6 +27,8 @@ class Server:
         self.port = configs.get('port', 3142) # respect PI
         self.reservoir = {}
         self.connections = []
+
+        self.default_data_format = configs.get('default_data_format', 'raw') # defaults to raw
 
         # create a new reservoir socket
         self.socket = ReservoirSocket(self, configs)
@@ -133,25 +137,30 @@ class Server:
 
     def process_client_request(self, connection, data):
         print 'received data from client: ' + data
+        response = ReservoirResponse()
         if len(data) < 3:
-            self.response(connection, "INVALID_DATA")
+            response.set("INVALI_DATA")
+            self.response(connection, response)
             return
 
         # confirm connectivity
         if data == 'PING':
-            self.response(connection, 1)
+            response.set(1)
+            self.response(connection, response)
 
         # replication replay logs
         if data[:11] == 'REPLICATION':
             data_parts = data.split(' ')
             current_position = data_parts[1]
             print self.get_replication_replay_logs(current_position)
-            self.response(connection, ''.join(self.get_replication_replay_logs(current_position)))
+            response.set(''.join(self.get_replication_replay_logs(current_position)))
+            self.response(connection, response)
 
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
             data_parts = data.split(' ')
-            self.response(connection, self.get(data_parts[1]))
+            response.set(self.get(data_parts[1]))
+            self.response(connection, response)
 
         # FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
         if data[:3] in ['SET', 'DEP']:

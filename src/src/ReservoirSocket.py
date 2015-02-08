@@ -5,6 +5,7 @@ It should als maintain the threads for each client connections
  
 import socket
 import threading
+import json
 from thread import start_new_thread
 
 class ReservoirSocket:
