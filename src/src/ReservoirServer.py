@@ -139,7 +139,7 @@ class Server:
         print 'received data from client: ' + data
         response = ReservoirResponse()
         if len(data) < 3:
-            response.set("INVALI_DATA")
+            response.set("INVALID_DATA")
             self.response(connection, response)
             return
 
@@ -178,10 +178,11 @@ class Server:
                     drop = self.reservoir.get(parent_key, None)
                     if drop:
                         drop.add_dependant(key)
-
-                self.response(connection, "200 OK")
+                response.set("200 OK")
             else:
-                self.response(connection, "500 ERROR")
+                response.set("500 ERROR")
+
+            self.response(connection, response)
 
         if data[:3] == 'TPL':
             data_parts = data.split(' ', 3)
@@ -191,14 +192,17 @@ class Server:
             value = data_parts[3]
 
             if self.tpl(key, value, expiry):
-                self.response(connection, "200 OK")
+                response.set("200 OK")
             else:
-                self.response(connection, "500 ERROR")
+                response.set("500 ERROR")
 
+            self.response(connection, response)
+                
         if data[:3] == 'DEL':
             data_parts = data.split(' ')
             self.delete(data_parts[1])
-            self.response(connection, "200 OK") # fire and forget
+            response.set("200 OK")
+            self.response(connection, response)
 
         if data[:3] == 'OTA':
             data_parts = data.split(' ', 3)
@@ -208,9 +212,11 @@ class Server:
             value = data_parts[3]
             
             if self.ota(key, value, expiry):
-                self.response(connection, "200 OK")
+                response.set("200 OK")
             else:
-                self.response(connection, "500 ERROR")
+                response.set("500 ERROR")
+
+            self.response(connection, response)
 
         # incrementer and decrementer
         if data[:3] == 'ICR':
@@ -220,24 +226,32 @@ class Server:
             else:
                 if not self.icr(data_parts[2]):
                     self.response(connection, "500 ERROR")
-            self.response(connection, "200 OK")
+                else:
+                    self.response(connection, "200 OK")
+
+            self.response(connection, response)
 
         if data[:3] == 'DCR':
             data_parts = data.split(' ')
             if not self.reservoir.has_key(data_parts[2]):
-                self.response(connection, "500 ERROR")
+                response.set("500 ERROR")
             else:
                 if not self.dcr(data_parts[2]):
-                    self.response(connection, "500 ERROR")
-                self.response(connection, "200 OK")
+                    response.set("500 ERROR")
+                else:
+                    response.set("200 OK")
+            self.response(connection, response)
+
 
         # timer as a data type; format <TMR> <key>
         if data[:3] == 'TMR':
             data_parts = data.split(' ')
             if self.reservoir.has_key(data_parts[1]):
-                return self.reservoir[data_parts[1]].get_active_time() # in seconds
+                response.set(self.reservoir[data_parts[1]].get_active_time()) # in seconds
             else:
-                self.response(connection, "500 ERROR")
+                response.set("500 ERROR")
+
+            self.response(connection, response)
 
          # Get Or Set
         if data[:3] == 'GOS':
@@ -245,7 +259,8 @@ class Server:
             expiry = data_parts[1]
             key = data_parts[2]
             value = data_parts[3]
-            self.response(connection, self.get_or_set(key, value, expiry))
+            response.set(self.get_or_set(key, value, expiry))
+            self.response(connection, response)
 
     # TODO: batch sets
     # TODO: need to delete the oldest entry when memory is full, currently return false
@@ -410,7 +425,7 @@ class Server:
 
         return total_lines
 
-    # TODO : need to have best way through threading like we did for persistance and garbage_collection
+    # TODO : need to have best way through threading like we did for persistance and garbage_collection - DONE
     def sync_replication_replay_logs_cycle(self):
         print "going to start the replication replay logs cycle"
         print self.replication_type, self.replication

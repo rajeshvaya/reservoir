@@ -116,8 +116,13 @@ class ReservoirSocket:
         except Exception as e:
             print e
 
-    def response(self, connection, data):
+    def response(self, connection, response):
+        if type(response) is not 'ReservoirResponse':
+            return False
+
         if self.protocol == 'TCP':
-            connection.send(data if data else "None")
+            connection.send(response.data if response.data else "None")
         if self.protocol == 'UDP':
-            self.socket.sendto(data if data else "None", connection) # over here connection is the host address
+            self.socket.sendto(response.data if response.data else "None", connection) # over here connection is the host address
+
+
