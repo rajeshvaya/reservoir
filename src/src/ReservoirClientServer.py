@@ -92,7 +92,7 @@ class Client:
                 return response
             else:
                 return True
-                
+
         if self.protocol == 'UDP':
             self.socket.sendto(data, (self.host, self.port))
             if expect_return:

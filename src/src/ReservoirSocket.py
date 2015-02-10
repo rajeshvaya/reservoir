@@ -8,10 +8,17 @@ import threading
 import json
 from thread import start_new_thread
 
+from ReservoirResponse import ReservoirResponse
+
+
 class ReservoirSocket:
-    def __init__(self, reservoir, **configs):
+
+    def __init__(self, reservoir, configs):
         self.configs = configs
         self.reservoir = reservoir
+
+        self.host = self.reservoir.host
+        self.port = self.reservoir.port
 
         self.connections = []
 
@@ -24,6 +31,7 @@ class ReservoirSocket:
         pass
 
     def create_socket(self):
+        print "creating %s socket now" % (self.protocol)
         if self.protocol == 'TCP':
             return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         elif self.protocol == 'UDP':
@@ -46,12 +54,13 @@ class ReservoirSocket:
 
     def open(self):
         if self.protocol == 'TCP':
-            self.open();
+            self.tcp_open();
         elif self.protocol == 'UDP':
-            self.open();
+            self.udp_open();
     
     # TCP functions here
     def tcp_bind(self):
+        print "binding the socket on %s:%d" % (self.host, self.port)
         try:
             self.socket.bind((self.host, self.port))
             return True
@@ -117,8 +126,8 @@ class ReservoirSocket:
             print e
 
     def response(self, connection, response):
-        if type(response) is not 'ReservoirResponse':
-            return False
+        if not isinstance(response, ReservoirResponse):
+            connection.send("NONE")
 
         if self.protocol == 'TCP':
             connection.send(response.data if response.data else "None")

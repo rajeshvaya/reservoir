@@ -31,7 +31,7 @@ class Server:
         self.default_data_format = configs.get('default_data_format', 'raw') # defaults to raw
 
         # create a new reservoir socket
-        self.socket = ReservoirSocket(self, configs)
+        self.socket = ReservoirSocket(reservoir=self, configs=configs)
 
         # set the memory limit
         if configs.get('max_memory_allocation') != 0:
@@ -62,9 +62,9 @@ class Server:
         else:
             self.replication_replay_position = 0
 
-        print 'opening the socket on port %s ' % (self.port)
+        # print 'opening the socket on port %s ' % (self.port)
         # self.socket = socket.socket()
-        self.socket.create_socket()
+        # self.socket.create_socket()
 
         # set the memory limit
         self.set_resource_utilization_limits()
@@ -373,8 +373,8 @@ class Server:
             self.set(key, value, expiry)
             return value
 
-    def response(self, connection, data):
-        self.socket.response(connection, data)
+    def response(self, connection, response):
+        self.socket.response(connection, response)
                 
     def add_to_replication_replay_logs(self, command_type, drop):
         with open('replication/master/server.replay', 'a') as file_handle:

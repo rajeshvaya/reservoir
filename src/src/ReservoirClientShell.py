@@ -9,7 +9,7 @@ class Client:
         self.configs = configs
         self.host = configs.get('server_host', 'localhost') # defaults to localhost
         self.port = configs.get('server_port', 3142)
-        self.socket = socket.socket()
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
         # now connect
         self.connect()
