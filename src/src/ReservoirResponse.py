@@ -5,6 +5,7 @@ This class is the base for every response type reservoir sends out. All the head
 import json
 
 class ReservoirResponse:
+	key = None
 	data = None
 	messages = {
 		200: 'OK',
@@ -14,7 +15,8 @@ class ReservoirResponse:
 	def __init__(self):
 		pass
 
-	def set(self, data):
+	def set(self, data, key=None):
+		self.key = key
 		self.data = data
 
 	def get_message(self, code):
@@ -23,5 +25,11 @@ class ReservoirResponse:
 	def status(self, code):
 		pass
 
+	def get_output(self):
+		return json.dumps({
+			'key': self.key,
+			'data': self.data	
+		})
+
 	def __str__(self):
-		return self.data
+		return self.get_output()

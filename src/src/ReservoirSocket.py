@@ -127,11 +127,11 @@ class ReservoirSocket:
 
     def response(self, connection, response):
         if not isinstance(response, ReservoirResponse):
-            connection.send("NONE")
+            connection.send("None")
 
         if self.protocol == 'TCP':
-            connection.send(response.data if response.data else "None")
+            connection.send(response.get_output())
         if self.protocol == 'UDP':
-            self.socket.sendto(response.data if response.data else "None", connection) # over here connection is the host address
+            self.socket.sendto(response.get_output(), connection) # over here connection is the host address
 
 
