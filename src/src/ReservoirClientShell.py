@@ -9,16 +9,37 @@ class Client:
         self.configs = configs
         self.host = configs.get('server_host', 'localhost') # defaults to localhost
         self.port = configs.get('server_port', 3142)
-        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        # set the protocol to follow
+        self.protocol = configs.get('protocol', 'TCP')
+        if self.protocol not in ['TCP', 'UDP']:
+            self.protocol = 'TCP' 
+
+        self.socket = socket.socket() # default socket
+        self.create_socket() # change the socket to specific one (later remove the above default socket)
+        # self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
         # now connect
         self.connect()
         self.prompt()
-        
-    def connect(self):
-        print 'connecting to the server %s' % (self.host)
-        self.socket.connect((self.host, self.port))
 
+    def create_socket(self):
+        if self.protocol == 'TCP':
+            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        elif self.protocol == 'UDP':
+            self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        else:
+            self.socket = socket.socket()
+
+    def connect(self):
+        if self.protocol == 'TCP':
+            print 'connecting to the server %s' % (self.host)
+            self.socket.connect((self.host, self.port))
+
+        if self.protocol == 'UDP':
+            print 'No connection required for UDP'
+        
+        
     def send(self, data, expect_return=True):
         self.socket.send(data)
         if expect_return:
