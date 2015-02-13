@@ -11,6 +11,7 @@ import pickle
 import threading
 from thread import start_new_thread
 import linecache
+import json
 
 from ReservoirSocket import ReservoirSocket
 from ReservoirDrop import Drop
@@ -158,8 +159,11 @@ class Server:
 
         # FORMAT = <PROTOCOL> <KEY>
         if data[:3] == 'GET':
-            data_parts = data.split(' ')
-            response.set(self.get(data_parts[1]))
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            return_batch = self.get_batch(batch)
+            return_batch_string = json.dumps(return_batch)
+            response.set(return_batch_string)
             self.response(connection, response)
 
         # FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
@@ -288,8 +292,21 @@ class Server:
         self.reservoir[key] = d
         self.add_to_replication_replay_logs('TPL', d)
         return True
+
+    def get_batch(self, batch):
+        batch_data = []
+        for element in batch:
+            if not element.get("key", None):
+                continue
+                
+            print "element key is ", element.get("key")
+            value = self.get(element.get("key"))
+            element_data = {"key":element.get("key"), "data":value}
+            batch_data.append(element_data)
+
+        return batch_data
         
-    # TODO: batch gets
+    # TODO: batch gets - in process :)
     # TODO: need to check on expiry later
     def get(self, key):
         drop = self.reservoir.get(key, None)
