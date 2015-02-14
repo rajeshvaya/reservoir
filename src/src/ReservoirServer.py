@@ -168,24 +168,10 @@ class Server:
 
         # FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
         if data[:3] in ['SET', 'DEP']:
-            data_parts = data.split(' ', 3)
-            protocol = data_parts[0]
-            expiry = data_parts[1]
-            key = data_parts[2]
-            value = data_parts[3]
-            parent_key = None
-            if protocol == 'DEP':
-                parent_key, key = key.split('::', 1)
-
-            if self.set(key, value, expiry, parent_key=parent_key):
-                if protocol == 'DEP':
-                    drop = self.reservoir.get(parent_key, None)
-                    if drop:
-                        drop.add_dependant(key)
-                response.set("200 OK")
-            else:
-                response.set("500 ERROR")
-
+            data_parts = data.split(' ', 1)
+            batch = json.lods(data_parts[1])
+            return_batch = self.set_batch(batch)
+            response.set(json.dumps(return_bath))
             self.response(connection, response)
 
         if data[:3] == 'TPL':
@@ -266,7 +252,25 @@ class Server:
             response.set(self.get_or_set(key, value, expiry))
             self.response(connection, response)
 
-    # TODO: batch sets
+    def set_batch(self, protocol, batch):
+        batch_data = []
+        for element in batch:
+            expiry = element.get('expiry')
+            key = element.get('key')
+            value = element.get('data')
+            parent_key = element.get('data', None)
+            
+            if self.set(key, value, expiry, parent_key=parent_key):
+                if parent_key == 'DEP':
+                    drop = self.reservoir.get(parent_key, None)
+                    if drop:
+                        drop.add_dependant(key)
+                batch_data.append({"key":key,"data": "200 OK"})
+            else:
+                batch_data.append({"key":key,"data": "500 ERROR"})
+        return batch_data
+
+    # TODO: batch sets - almost done
     # TODO: need to delete the oldest entry when memory is full, currently return false
     # TODO: make the key argument in Drop class required for replication replay logs to work
     def set(self, key, value, expiry=0, parent_key=None):
