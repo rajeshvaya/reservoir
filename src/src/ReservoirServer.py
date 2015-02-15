@@ -175,19 +175,12 @@ class Server:
             self.response(connection, response)
 
         if data[:3] == 'TPL':
-            data_parts = data.split(' ', 3)
-            protocol = data_parts[0]
-            expiry = data_parts[1]
-            key = data_parts[2]
-            value = data_parts[3]
-
-            if self.tpl(key, value, expiry):
-                response.set("200 OK")
-            else:
-                response.set("500 ERROR")
-
+            data_parts = data.split(' ', 1)
+            batch = json.lods(data_parts[1])
+            return_batch = self.set_batch(batch)
+            response.set(json.dumps(return_bath))
             self.response(connection, response)
-                
+    
         if data[:3] == 'DEL':
             data_parts = data.split(' ')
             self.delete(data_parts[1])
@@ -283,6 +276,20 @@ class Server:
         self.reservoir[key] = d
         self.add_to_replication_replay_logs('SET', d)
         return True
+
+    def tpl_batch(self, batch):
+        batch_data = []
+        for element in batch:
+            expiry = element.get('expiry')
+            key = element.get('key')
+            value = element.get('data')
+
+            if self.tpl(key, value, expiry):
+                batch_data.append({"key":key,"data": "200 OK"})
+            else:
+                batch_data.append({"key":key,"data": "500 ERROR"})
+                
+        return batch_data        
 
     def tpl(self, key, value, expiry=0):
         print 'inside of tpl function'
