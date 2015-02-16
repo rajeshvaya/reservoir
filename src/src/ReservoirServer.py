@@ -177,14 +177,15 @@ class Server:
         if data[:3] == 'TPL':
             data_parts = data.split(' ', 1)
             batch = json.lods(data_parts[1])
-            return_batch = self.set_batch(batch)
+            return_batch = self.tpl_batch(batch)
             response.set(json.dumps(return_bath))
             self.response(connection, response)
     
         if data[:3] == 'DEL':
-            data_parts = data.split(' ')
-            self.delete(data_parts[1])
-            response.set("200 OK")
+            data_parts = data.split(' ', 1)
+            batch = json.lods(data_parts[1])
+            return_batch = self.delete_batch(batch)
+            response.set(json.dumps(return_bath))
             self.response(connection, response)
 
         if data[:3] == 'OTA':
@@ -332,7 +333,19 @@ class Server:
             self.delete(key)
         return None
 
-    # TODO: batch deletes
+    def delete_batch(self, batch):
+        batch_data = []
+        for element in batch:
+            if not element.get("key", None):
+                continue
+
+            value = self.delete(element.get("key"))
+            element_data = {"key":element.get("key"), "data":"200 OK"}
+            batch_data.append(element_data)
+
+        return batch_data
+
+    # TODO: batch deletes - Done
     def delete(self, key):
         if self.reservoir.has_key(key):
             # dependants also include the key in question
