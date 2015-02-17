@@ -264,7 +264,7 @@ class Server:
                 batch_data.append({"key":key,"data": "500 ERROR"})
         return batch_data
 
-    # TODO: batch sets - almost done
+    # TODO: batch sets - Done
     # TODO: need to delete the oldest entry when memory is full, currently return false
     # TODO: make the key argument in Drop class required for replication replay logs to work
     def set(self, key, value, expiry=0, parent_key=None):
@@ -318,7 +318,7 @@ class Server:
 
         return batch_data
         
-    # TODO: batch gets - in process :)
+    # TODO: batch gets - Done
     # TODO: need to check on expiry later
     def get(self, key):
         drop = self.reservoir.get(key, None)

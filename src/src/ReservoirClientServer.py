@@ -2,6 +2,7 @@ import socket
 import os
 import argparse
 import pickle
+import json
 from ConfigParser import SafeConfigParser
 
 class Client:
@@ -38,15 +39,27 @@ class Client:
             print 'No connection required for UDP'
 
     def set(self, key, value, expiry):
-        data = "SET %d %s %s" % (expiry, key, value)
+        batch = [{
+            'key': key,
+            'data': value,
+            'expiry': expiry
+        }]
+        data_string = json.dumps(batch)
+        data = "SET %s" % (data_string,)
         return self.send(data)
 
     def get(self, key):
-        data = "GET %s" % (key)
+        batch = [{
+            'key': key
+        }]
+        data = "GET %s" % (data_string,)
         return self.send(data)
 
     def delete(self, key):
-        data = "DEL %s" % (key)
+        batch = [{
+            'key': key
+        }]
+        data = "DEL %s" % (data_string,)
         return self.send(data)
 
     def icr(self, key, expiry=0):
