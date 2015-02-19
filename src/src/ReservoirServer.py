@@ -189,16 +189,11 @@ class Server:
             self.response(connection, response)
 
         if data[:3] == 'OTA':
-            data_parts = data.split(' ', 3)
-            protocol = data_parts[0]
-            expiry = data_parts[1]
-            key = data_parts[2]
-            value = data_parts[3]
-            
-            if self.ota(key, value, expiry):
-                response.set("200 OK")
-            else:
-                response.set("500 ERROR")
+            data_parts = data.split(' ', 1)
+            batch = json.lods(data_parts[1])
+            return_batch = self.ota_batch(batch)
+            response.set(json.dumps(return_bath))
+            self.response(connection, response)
 
             self.response(connection, response)
 
@@ -229,12 +224,19 @@ class Server:
 
         # timer as a data type; format <TMR> <key>
         if data[:3] == 'TMR':
-            data_parts = data.split(' ')
-            if self.reservoir.has_key(data_parts[1]):
-                response.set(self.reservoir[data_parts[1]].get_active_time()) # in seconds
-            else:
-                response.set("500 ERROR")
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            batch_data = []
+            for element in batch:
+                if not element.get("key", None):
+                    continue
+                if self.reservoir.has_key(element.get("key")):
+                    t = self.reservoir[element.get("key")].get_active_time() # in seconds
+                    element_data = {"key":element.get("key"), "data":t}
+                    batch_data.append(element_data)
 
+            return_batch_string = json.dumps(batch_data)
+            response.set(return_batch_string)
             self.response(connection, response)
 
          # Get Or Set
@@ -381,6 +383,21 @@ class Server:
                 return True
         else:
             return False
+
+
+    def ota_batch(self, protocol, batch):
+        batch_data = []
+        for element in batch:
+            expiry = element.get('expiry')
+            key = element.get('key')
+            value = element.get('data')
+            parent_key = element.get('data', None)
+            
+            if self.ota(key, value, expiry):
+                batch_data.append({"key":key,"data": "200 OK"})
+            else:
+                batch_data.append({"key":key,"data": "500 ERROR"})
+        return batch_data
 
     # TODO : add parent child relations like we did for self.set()
     # This can be used specifically for one time passwords, forgot/reset password links, read notifications etc

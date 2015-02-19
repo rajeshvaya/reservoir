@@ -65,28 +65,60 @@ class Client:
     def icr(self, key, expiry=0):
         # send expiry=0 for already existing key for ICR
         # need to imporve the evaluation for ICR on the server side
-        data = "ICR %d %s" % (expiry, key)
+        batch = [{
+            'key': key,
+            'expiry': expiry
+        }]
+        data_string = json.dumps(batch)
+        data = "ICR %s" % (data_string,)
         return self.send(data)
 
     def dcr(self, key, expiry=0):
         # send expiry=0 for already existing key for DCR
-        data = "DCR %d %s" % (expiry, key)
+        batch = [{
+            'key': key,
+            'expiry': expiry
+        }]
+        data_string = json.dumps(batch)
+        data = "DCR %s" % (data_string,)
         return self.send(data)
 
     def tmr(self, key):
-        data = "TMR %s" % (key)
+        batch = [{
+            'key': key,
+        }]
+        data_string = json.dumps(batch)
+        data = "TMR %s" % (data_string,)
         return self.send(data)
 
     def ota(self, key, value, expiry):
-        data = "OTA %d %s %s" % (expiry, key, value)
+        batch = [{
+            'key': key,
+            'data': value,
+            'expiry': expiry
+        }]
+        data_string = json.dumps(batch)
+        data = "OTA %s" % (data_string,)
         return self.send(data)
 
     def tpl(self, key, value, expiry):
-        data = "TPL %d %s %s" % (expiry, key, value)
+        batch = [{
+            'key': key,
+            'data': value,
+            'expiry': expiry
+        }]
+        data_string = json.dumps(batch)
+        data = "TPL %s" % (data_string,)
         return self.send(data)
 
     def get_or_set(self, key, value, expiry):
-        data = "GOS %d %s %s" % (expiry, key, value)
+        batch = [{
+            'key': key,
+            'data': value,
+            'expiry': expiry
+        }]
+        data_string = json.dumps(batch)
+        data = "GOS %s" % (data_string,)
         return self.send(data)
 
     def ping_server(self):
