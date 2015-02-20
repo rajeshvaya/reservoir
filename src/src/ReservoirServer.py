@@ -195,30 +195,46 @@ class Server:
             response.set(json.dumps(return_bath))
             self.response(connection, response)
 
-            self.response(connection, response)
-
         # incrementer and decrementer
         if data[:3] == 'ICR':
-            data_parts = data.split(' ')
-            if not self.reservoir.has_key(data_parts[2]):
-                self.set(data_parts[2], 1, data_parts[1])
-            else:
-                if not self.icr(data_parts[2]):
-                    self.response(connection, "500 ERROR")
-                else:
-                    self.response(connection, "200 OK")
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            batch_data = []
+            for element in batch:
+                if not element.get("key", None):
+                    continue
 
+                if not self.reservoir.has_key(element.get("key")):
+                    self.set(element.get("key"), 1, element.get("expiry"))
+                else:
+                    if not self.icr(element.get("key")):
+                        batch_data.append({"key": element.get("key"), "data": "500 ERROR"})
+                    else:
+                        batch_data.append({"key": element.get("key"), "data": "200 OK"})
+
+            return_batch_string = json.dumps(batch_data)
+            response.set(return_batch_string)
             self.response(connection, response)
 
+
         if data[:3] == 'DCR':
-            data_parts = data.split(' ')
-            if not self.reservoir.has_key(data_parts[2]):
-                response.set("500 ERROR")
-            else:
-                if not self.dcr(data_parts[2]):
-                    response.set("500 ERROR")
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            batch_data = []
+            for element in batch:
+                if not element.get("key", None):
+                    continue
+
+                if not self.reservoir.has_key(element.get("key")):
+                    batch_data.append({"key": element.get("key"), "data": "500 ERROR"})
                 else:
-                    response.set("200 OK")
+                    if not self.dcr(element.get("key")):
+                        batch_data.append({"key": element.get("key"), "data": "500 ERROR"})
+                    else:
+                        batch_data.append({"key": element.get("key"), "data": "200 OK"})
+
+            return_batch_string = json.dumps(batch_data)
+            response.set(return_batch_string)
             self.response(connection, response)
 
 
@@ -247,6 +263,35 @@ class Server:
             value = data_parts[3]
             response.set(self.get_or_set(key, value, expiry))
             self.response(connection, response)
+
+    def get_batch(self, batch):
+        batch_data = []
+        for element in batch:
+            if not element.get("key", None):
+                continue
+                
+            print "element key is ", element.get("key")
+            value = self.get(element.get("key"))
+            element_data = {"key":element.get("key"), "data":value}
+            batch_data.append(element_data)
+
+        return batch_data
+        
+    # TODO: batch gets - Done
+    # TODO: need to check on expiry later
+    def get(self, key):
+        drop = self.reservoir.get(key, None)
+        if drop:
+            value = drop.get()
+            if drop.get_type() == 'ota':
+                self.delete(key)
+            return str(value)
+
+        # if orphans are roaming around with no data, delete it
+        if self.reservoir.has_key(key):
+            self.delete(key)
+        return None
+
 
     def set_batch(self, protocol, batch):
         batch_data = []
@@ -306,34 +351,6 @@ class Server:
         self.reservoir[key] = d
         self.add_to_replication_replay_logs('TPL', d)
         return True
-
-    def get_batch(self, batch):
-        batch_data = []
-        for element in batch:
-            if not element.get("key", None):
-                continue
-                
-            print "element key is ", element.get("key")
-            value = self.get(element.get("key"))
-            element_data = {"key":element.get("key"), "data":value}
-            batch_data.append(element_data)
-
-        return batch_data
-        
-    # TODO: batch gets - Done
-    # TODO: need to check on expiry later
-    def get(self, key):
-        drop = self.reservoir.get(key, None)
-        if drop:
-            value = drop.get()
-            if drop.get_type() == 'ota':
-                self.delete(key)
-            return str(value)
-
-        # if orphans are roaming around with no data, delete it
-        if self.reservoir.has_key(key):
-            self.delete(key)
-        return None
 
     def delete_batch(self, batch):
         batch_data = []
