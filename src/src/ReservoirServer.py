@@ -1,6 +1,9 @@
 '''
 This is the main reserver server and there should be another main file to make it a command line app
 as this will be also imported for web based libraries
+
+TODO: change the replication log data to JSON
+TODO: support multiple buckets/tags
 '''
 
 import sys
@@ -27,6 +30,7 @@ class Server:
         self.host = configs.get('host', 'localhost')
         self.port = configs.get('port', 3142) # respect PI
         self.reservoir = {}
+        self.buckets = {} # like tags and buckets for cache
         self.connections = []
 
         self.default_data_format = configs.get('default_data_format', 'raw') # defaults to raw
@@ -299,9 +303,10 @@ class Server:
             expiry = element.get('expiry')
             key = element.get('key')
             value = element.get('data')
-            parent_key = element.get('data', None)
-            
-            if self.set(key, value, expiry, parent_key=parent_key):
+            parent_key = element.get('parent_key', None)
+            buckets = element.get('tags', [])
+
+            if self.set(key, value, expiry, parent_key=parent_key, buckets=buckets):
                 if parent_key == 'DEP':
                     drop = self.reservoir.get(parent_key, None)
                     if drop:
@@ -314,14 +319,22 @@ class Server:
     # TODO: batch sets - Done
     # TODO: need to delete the oldest entry when memory is full, currently return false
     # TODO: make the key argument in Drop class required for replication replay logs to work
-    def set(self, key, value, expiry=0, parent_key=None):
+    # TODO: add bucket info to replication log as well
+    def set(self, key, value, expiry=0, parent_key=None, buckets=[]):
         print 'inside of set function'
         d = Drop(key=key)
         if not d.set(value, expiry):
             return False
         if parent_key:
             d.parent_key = parent_key
+
+        d.buckets = buckets
         self.reservoir[key] = d
+        for bucket in buckets:
+            if not self.buckets.get(bucket, None):
+                self.buckets[bucket] = []
+            self.buckets[bucket].append(key)
+
         self.add_to_replication_replay_logs('SET', d)
         return True
 
