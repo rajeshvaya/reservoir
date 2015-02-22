@@ -14,6 +14,7 @@ class Drop(object):
         self.dependants = []
         self.created = time.time()
         self.type = None
+        self.buckets = []
 
     def __str__(self):
         return self.value
