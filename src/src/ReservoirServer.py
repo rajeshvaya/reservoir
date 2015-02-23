@@ -4,6 +4,7 @@ as this will be also imported for web based libraries
 
 TODO: change the replication log data to JSON
 TODO: support multiple buckets/tags
+TODO: convert the buckets to its own class later
 '''
 
 import sys
@@ -161,7 +162,14 @@ class Server:
             response.set(''.join(self.get_replication_replay_logs(current_position)))
             self.response(connection, response)
 
-        # FORMAT = <PROTOCOL> <KEY>
+        if data[:3] == 'BKT':
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            return_batch = self.get_bucket_batch(batch)
+            return_batch_string = json.dumps(return_batch)
+            response.set(return_batch_string)
+            self.response(connection, response)
+
         if data[:3] == 'GET':
             data_parts = data.split(' ', 1)
             batch = json.loads(data_parts[1])
@@ -304,7 +312,7 @@ class Server:
             key = element.get('key')
             value = element.get('data')
             parent_key = element.get('parent_key', None)
-            buckets = element.get('tags', [])
+            buckets = element.get('buckets', [])
 
             if self.set(key, value, expiry, parent_key=parent_key, buckets=buckets):
                 if parent_key == 'DEP':
@@ -385,10 +393,18 @@ class Server:
             for dependant in dependants:
                 if self.reservoir.has_key(dependant):
                     d = self.reservoir[dependant]
+                    buckets = d.buckets
                     # unset the drop for garbage collection
                     del self.reservoir[dependant]
                     # delete the reference
                     self.reservoir.pop(dependant, None)
+                    # delete the referece of bucket as well, if any
+                    for bucket in buckets:
+                        if not self.buckets.get(bucket, None):
+                            continue
+                        if dependant in self.buckets[bucket]:
+                            self.buckets[bucket].remove(dependant)
+
                     self.add_to_replication_replay_logs('DEL', d)
         return
 
