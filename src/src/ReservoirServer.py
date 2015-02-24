@@ -165,7 +165,8 @@ class Server:
         if data[:3] == 'BKT':
             data_parts = data.split(' ', 1)
             batch = json.loads(data_parts[1])
-            return_batch = self.get_bucket_batch(batch)
+            bucket = batch[0].get('bucket', None)
+            return_batch = self.get_bucket_batch(bucket)
             return_batch_string = json.dumps(return_batch)
             response.set(return_batch_string)
             self.response(connection, response)
@@ -275,6 +276,18 @@ class Server:
             value = data_parts[3]
             response.set(self.get_or_set(key, value, expiry))
             self.response(connection, response)
+
+    def get_bucket_batch(self, bucket):
+        batch_data = []
+        if not self.buckets.get(bucket, None):
+            return batch_data
+
+        for drop in self.buckets.get(bucket, []):
+            value = self.get(drop)
+            element_data = {"key":drop, "data":value}
+            batch_data.append(element_data)
+
+        return batch_data
 
     def get_batch(self, batch):
         batch_data = []
