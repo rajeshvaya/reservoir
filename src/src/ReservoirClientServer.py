@@ -55,6 +55,13 @@ class Client:
         data = "GET %s" % (data_string,)
         return self.send(data)
 
+    def get_bucket(self, bucket):
+        batch = [{
+            'bucket': bucket
+        }]
+        data = "BKT %s" % (data_string,)
+        return self.send(data)
+
     def delete(self, key):
         batch = [{
             'key': key
