@@ -182,30 +182,30 @@ class Server:
         # FORMAT = <PROTOCOL> <EXPIRY> <KEY> <VALUE> 
         if data[:3] in ['SET', 'DEP']:
             data_parts = data.split(' ', 1)
-            batch = json.lods(data_parts[1])
+            batch = json.loads(data_parts[1])
             return_batch = self.set_batch(batch)
-            response.set(json.dumps(return_bath))
+            response.set(json.dumps(return_batch))
             self.response(connection, response)
 
         if data[:3] == 'TPL':
             data_parts = data.split(' ', 1)
-            batch = json.lods(data_parts[1])
+            batch = json.loads(data_parts[1])
             return_batch = self.tpl_batch(batch)
-            response.set(json.dumps(return_bath))
+            response.set(json.dumps(return_batch))
             self.response(connection, response)
     
         if data[:3] == 'DEL':
             data_parts = data.split(' ', 1)
-            batch = json.lods(data_parts[1])
+            batch = json.loads(data_parts[1])
             return_batch = self.delete_batch(batch)
-            response.set(json.dumps(return_bath))
+            response.set(json.dumps(return_batch))
             self.response(connection, response)
 
         if data[:3] == 'OTA':
             data_parts = data.split(' ', 1)
-            batch = json.lods(data_parts[1])
+            batch = json.loads(data_parts[1])
             return_batch = self.ota_batch(batch)
-            response.set(json.dumps(return_bath))
+            response.set(json.dumps(return_batch))
             self.response(connection, response)
 
         # incrementer and decrementer
@@ -318,7 +318,7 @@ class Server:
         return None
 
 
-    def set_batch(self, protocol, batch):
+    def set_batch(self, batch):
         batch_data = []
         for element in batch:
             expiry = element.get('expiry')
@@ -328,7 +328,7 @@ class Server:
             buckets = element.get('buckets', [])
 
             if self.set(key, value, expiry, parent_key=parent_key, buckets=buckets):
-                if parent_key == 'DEP':
+                if parent_key:
                     drop = self.reservoir.get(parent_key, None)
                     if drop:
                         drop.add_dependant(key)
