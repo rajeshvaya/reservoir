@@ -2,6 +2,7 @@
 # TODO need to check the efficieny of this method later during src implementation
 
 import time
+import json
 
 class Drop(object):
     def __init__(self, **kwargs):
@@ -79,9 +80,15 @@ class Drop(object):
 
     def get_replay_log(self):
         # format <expiry>, <dependants>, <key>, <value>
+        log_dict = {
+            "key": self.key,
+            "data": self.value,
+            "expiry": self.expiry,
+            "parent_key": self.parent_key,
+            "type": self.type,
+            "buckets": self.buckets,
+            "dependants": self.dependants
+        }
+        log_string = json.dumps(log_dict)
 
-        return "%d %s %s" % (self.expiry, self.key if self.parent_key == None else '%s::%s' % (self.parent_key, self.key), self.value)
-        # return "%d %s %s %s" % (self.expiry, ','.join(str(d) for d in self.dependants), self.key, self.value)
-
-
-
+        return log_string
