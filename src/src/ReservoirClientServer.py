@@ -48,10 +48,39 @@ class Client:
         data = "SET %s" % (data_string,)
         return self.send(data)
 
+    def set_batch(self, items):
+        batch = []
+        for item in items:
+            if not item.get("key", None):
+                continue
+            element = {
+                "key": item.key,
+                "data": item.get("value", None),
+                "expiry": item.get("expiry", None),
+            }
+            batch.append(element)
+
+        data_string = json.dumps(batch)
+        data = "SET %s" % (data_string,)
+        return self.send(data)
+
     def get(self, key):
         batch = [{
             'key': key
         }]
+        data_string = json.dumps(batch)
+        data = "GET %s" % (data_string,)
+        return self.send(data)
+
+    def get_batch(self, keys):
+        batch = []
+        for key in keys:
+            if not key:
+                continue
+            element = {'key': key}
+            batch.append(element)
+
+        data_string = json.dumps(batch)
         data = "GET %s" % (data_string,)
         return self.send(data)
 
@@ -69,6 +98,18 @@ class Client:
         data = "DEL %s" % (data_string,)
         return self.send(data)
 
+    def delete_batch(self, keys):
+        batch = []
+        for key in keys:
+            if not key:
+                continue
+            element = {'key': key}
+            batch.append(element)
+
+        data_string = json.dumps(batch)
+        data = "DEL %s" % (data_string,)
+        return self.send(data)
+
     def icr(self, key, expiry=0):
         # send expiry=0 for already existing key for ICR
         # need to imporve the evaluation for ICR on the server side
@@ -76,6 +117,18 @@ class Client:
             'key': key,
             'expiry': expiry
         }]
+        data_string = json.dumps(batch)
+        data = "ICR %s" % (data_string,)
+        return self.send(data)
+
+    def icr_batch(self, keys):
+        batch = []
+        for key in keys:
+            if not key:
+                continue
+            element = {'key': key}
+            batch.append(element)
+
         data_string = json.dumps(batch)
         data = "ICR %s" % (data_string,)
         return self.send(data)
@@ -90,6 +143,18 @@ class Client:
         data = "DCR %s" % (data_string,)
         return self.send(data)
 
+    def dcr_batch(self, keys):
+        batch = []
+        for key in keys:
+            if not key:
+                continue
+            element = {'key': key}
+            batch.append(element)
+
+        data_string = json.dumps(batch)
+        data = "DCR %s" % (data_string,)
+        return self.send(data)
+
     def tmr(self, key):
         batch = [{
             'key': key,
@@ -97,6 +162,7 @@ class Client:
         data_string = json.dumps(batch)
         data = "TMR %s" % (data_string,)
         return self.send(data)
+
 
     def ota(self, key, value, expiry):
         batch = [{
@@ -108,12 +174,44 @@ class Client:
         data = "OTA %s" % (data_string,)
         return self.send(data)
 
+    def ota_batch(self, items):
+        batch = []
+        for item in items:
+            if not item.get("key", None):
+                continue
+            element = {
+                "key": item.key,
+                "data": item.get("value", None),
+                "expiry": item.get("expiry", None),
+            }
+            batch.append(element)
+
+        data_string = json.dumps(batch)
+        data = "OTA %s" % (data_string,)
+        return self.send(data)
+
     def tpl(self, key, value, expiry):
         batch = [{
             'key': key,
             'data': value,
             'expiry': expiry
         }]
+        data_string = json.dumps(batch)
+        data = "TPL %s" % (data_string,)
+        return self.send(data)
+
+    def tpl_batch(self, items):
+        batch = []
+        for item in items:
+            if not item.get("key", None):
+                continue
+            element = {
+                "key": item.key,
+                "data": item.get("value", None),
+                "expiry": item.get("expiry", None),
+            }
+            batch.append(element)
+
         data_string = json.dumps(batch)
         data = "TPL %s" % (data_string,)
         return self.send(data)
