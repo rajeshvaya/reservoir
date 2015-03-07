@@ -570,7 +570,35 @@ class Server:
         logs = replication_client.send("REPLICATION %d" % int(self.replication_replay_position))
         with open('replication/slave/server.replay', 'a') as file_handle:
             file_handle.write(logs)
+        self.run_replication_replay_logs()
         self.sync_replication_replay_logs_cycle()
         return 
+
+    # should be called from the sync function only and not directly
+    def run_replication_replay_logs(self):
+        print "inside the run replication replay logs"
+        if not self.replication:
+            return 
+
+        data = []
+        fetch_position = self.replication_replay_position
+        result = True
+        log_line = True
+
+        print "initializing the fetch linecache loop... "
+        while log_line and fetch_position < (int(self.replication_replay_position) + self.replication_max_replay_logs):
+            print "getting replication replay log through linecache..."
+            log_line = linecache.getline('replication/slave/server.replay', fetch_position)
+            print log_line
+            if log_line:
+                data.append(log_line)
+                fetch_position += 1
+            else:
+                result = False
+
+        for data_line in data:
+            # todo processing the expiry data. need to rewrite the process_client_request function a little
+            pass
+
     # END OF REPLICATION TASKS FOR SLAVE SERVER
 
