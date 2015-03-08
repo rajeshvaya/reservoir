@@ -598,7 +598,39 @@ class Server:
 
         for data_line in data:
             # todo processing the expiry data. need to rewrite the process_client_request function a little
+            if data_line[:3] in ['SET', 'TPL', 'OTA']:
+                continue
+            self.process_replicated_client_request(data_line)
             pass
+
+    def process_replicated_client_request(self, data):
+        if data[:3] == 'DEL':
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            return_batch = self.delete_batch(batch)
+
+        if data[:3] == 'ICR':
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            batch_data = []
+            for element in batch:
+                if not element.get("key", None):
+                    continue
+                if not self.reservoir.has_key(element.get("key")):
+                    self.set(element.get("key"), 1, element.get("expiry"))
+                else:
+                    self.icr(element.get("key"))
+
+        if data[:3] == 'DCR':
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            batch_data = []
+            for element in batch:
+                if not element.get("key", None):
+                    continue
+                self.dcr(element.get("key"))
+
+                    
 
     # END OF REPLICATION TASKS FOR SLAVE SERVER
 
