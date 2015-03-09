@@ -597,9 +597,6 @@ class Server:
                 result = False
 
         for data_line in data:
-            # todo processing the expiry data. need to rewrite the process_client_request function a little
-            if data_line[:3] in ['SET', 'TPL', 'OTA']:
-                continue
             self.process_replicated_client_request(data_line)
             pass
 
@@ -613,6 +610,11 @@ class Server:
             data_parts = data.split(' ', 1)
             batch = json.loads(data_parts[1])
             return_batch = self.tpl_batch(batch)
+
+        if data[:3] == 'OTA':
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            return_batch = self.ota_batch(batch)
 
         if data[:3] == 'DEL':
             data_parts = data.split(' ', 1)
