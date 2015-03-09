@@ -39,7 +39,11 @@ class Drop(object):
 
     def set_expiry(self, expiry=0):
         if expiry.isdigit() and int(expiry) > 0:
-            expiry_time = int(time.time()) + int(expiry)
+            # if the time is in epoc and greater than epoc then calculate else use number of seconds
+            if expiry > time.time():
+                expiry_time = time.time() - expiry
+            else:
+                expiry_time = int(time.time()) + int(expiry)
             self.expiry = expiry_time
 
     def add_dependant(self, key):

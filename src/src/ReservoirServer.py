@@ -604,6 +604,16 @@ class Server:
             pass
 
     def process_replicated_client_request(self, data):
+        if data[:3] in ['SET', 'DEP']:
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            return_batch = self.set_batch(batch)
+
+        if data[:3] == 'TPL':
+            data_parts = data.split(' ', 1)
+            batch = json.loads(data_parts[1])
+            return_batch = self.tpl_batch(batch)
+
         if data[:3] == 'DEL':
             data_parts = data.split(' ', 1)
             batch = json.loads(data_parts[1])
