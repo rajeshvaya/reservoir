@@ -8,6 +8,7 @@ from ReservoirClientShell import Client as ClientShell
 import sys
 import os
 import argparse
+import logging
 from ConfigParser import SafeConfigParser
 
 # fetch all the arguments through argparser
@@ -21,9 +22,22 @@ def parse_args():
     
 # if server was asked to start
 def start_server():
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    # set the log file handle
+    handler = logging.FileHandler('logs/server.log')
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    # add the handler to the logger
+    logger.addHandler(handler)
+
+    logger.info("Starting reservoir server...")
+
+    handler.setLevel(logging.INFO)
     s = Server(
         host=config.get('server', 'host'),
         port=config.getint('server', 'port'),
+        logger=logger,
         max_clients=config.getint('server', 'max_clients'),
         read_buffer=config.getint('server', 'read_buffer'),
         protocol=config.get('server', 'protocol'),
@@ -40,6 +54,8 @@ def start_server():
         replication_sync_interval=config.getint('server', 'replication_sync_interval'),
         default_data_format=config.get('server', 'default_data_format'),
     )
+
+    logger.info("Started reservoir server")
     
 # if client was asked to start
 def start_client():

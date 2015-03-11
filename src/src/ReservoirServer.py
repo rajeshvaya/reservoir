@@ -2,7 +2,7 @@
 This is the main reserver server and there should be another main file to make it a command line app
 as this will be also imported for web based libraries
 
-TODO: change the replication log data to JSON
+TODO: change the replication log data to JSON - DONE
 TODO: support multiple buckets/tags
 TODO: convert the buckets to its own class later
 '''
@@ -33,6 +33,7 @@ class Server:
         self.reservoir = {}
         self.buckets = {} # like tags and buckets for cache
         self.connections = []
+        self.logger = configs.get('logger')
 
         self.default_data_format = configs.get('default_data_format', 'raw') # defaults to raw
 
@@ -101,10 +102,11 @@ class Server:
 
     def garbage_collection_cycle(self):
         if self.garbage_collection_interval > 0:
-            print 'going for garbage collection'
+            logger.info("Starting the garbage collection cycle at %d seconds" %(self.garbage_collection_interval))
             self.garbage_collection_thread = threading.Timer(self.garbage_collection_interval, self.garbage_collection).start()
 
     def garbage_collection(self):
+        logger.info("Started the garbage collection thread")
         for key, drop in self.reservoir.items():
             if drop.is_expired():
                 self.delete(key)
@@ -114,35 +116,35 @@ class Server:
     def persistance_cycle(self):
         if not self.persistance:
             return False
-
-        print 'Enabling persistance cycle at %d seconds' % (self.persistance_interval)
+        logger.info('Starting the persistance cycle at %d seconds' % (self.persistance_interval))
         self.persistance_thread = threading.Timer(self.persistance_interval, self.save_persist_data).start()
         
     def fetch_persistant_data(self):
         if not self.persistance:
             return False
-        print 'Loading data from last persistance cycle'
+        logger.info('Loading data from last persistance cycle')
         try:
             with open('data/data.pickle', 'rb') as file_handle:
                 data = pickle.load(file_handle)
                 if isinstance(data, dict):
                     self.reservoir = data
         except (IOError, EOFError) as error:
-            pass
+            logger.error("Failed loading the persistant data from the file. Error: %s" % (e.strerror))
 
     def save_persist_data(self):
-        print "inside save persistance function"
+        logger.info('Trying to save data for persistance')
         if not self.persistance:
+            logger.error('Persistance is not enabled in the conf, skipping the process.')
             return False
 
-        print 'Save cache to persist'
+        logger.info('Going to save data to the data.pickle file')
         with open('data/data.pickle', 'wb') as file_handle:
             pickle.dump(self.reservoir, file_handle, 0)
 
         self.persistance_cycle()
 
     def process_client_request(self, connection, data):
-        print 'received data from client: ' + data
+        logger.info('Received data from client %s' % (data))
         response = ReservoirResponse()
         if len(data) < 3:
             response.set("INVALID_DATA")
