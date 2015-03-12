@@ -26,7 +26,6 @@ from ReservoirClientServer import Client as ReplicationClient
 
 class Server:
     def __init__(self, **configs):
-        print 'going to initialize'
         self.configs = configs
         self.host = configs.get('host', 'localhost')
         self.port = configs.get('port', 3142) # respect PI
@@ -160,7 +159,7 @@ class Server:
         if data[:11] == 'REPLICATION':
             data_parts = data.split(' ')
             current_position = data_parts[1]
-            print self.get_replication_replay_logs(current_position)
+            logger.debug('Replication replay logs : %s' % (''.join(self.get_replication_replay_logs(current_position))))
             response.set(''.join(self.get_replication_replay_logs(current_position)))
             self.response(connection, response)
 
@@ -295,11 +294,10 @@ class Server:
         batch_data = []
         for element in batch:
             if not element.get("key", None):
-                continue
-                
-            print "element key is ", element.get("key")
+                continue    
             value = self.get(element.get("key"))
             element_data = {"key":element.get("key"), "data":value}
+            logger.debug("Fetching the cache item for : %s ; the value is : %s " %(element.get("key"), value))
             batch_data.append(element_data)
 
         return batch_data
@@ -339,12 +337,10 @@ class Server:
                 batch_data.append({"key":key,"data": "500 ERROR"})
         return batch_data
 
-    # TODO: batch sets - Done
+
     # TODO: need to delete the oldest entry when memory is full, currently return false
     # TODO: make the key argument in Drop class required for replication replay logs to work
-    # TODO: add bucket info to replication log as well
     def set(self, key, value, expiry=0, parent_key=None, buckets=[]):
-        print 'inside of set function'
         d = Drop(key=key)
         if not d.set(value, expiry):
             return False
@@ -376,7 +372,6 @@ class Server:
         return batch_data        
 
     def tpl(self, key, value, expiry=0):
-        print 'inside of tpl function'
         if self.resource.has_key(key):
             if self.reservoir[key].get_type() == 'tpl':
                 return False
@@ -463,7 +458,6 @@ class Server:
     # TODO : add parent child relations like we did for self.set()
     # This can be used specifically for one time passwords, forgot/reset password links, read notifications etc
     def ota(self, key, value, expiry=0):
-        print 'inside of ota function'
         d = Drop(key=key)
         d.set(value, expiry)
         d.set_type('ota') 
@@ -508,19 +502,18 @@ class Server:
         return True
 
     def get_replication_replay_logs(self, position):
-        print "inside the get_replication_replay_logs..."
+        logger.info("Starting the fetch process for replication replay logs with position : %d" % (position))
         # this check is very necessary
         if not self.replication:
             return False
+            logger.info("Skipping the fetch process because replication is disabled in the config")
 
         data = []
         fetch_position = int(position) + 1
         result = True
         log_line = True
 
-        print "initializing the fetch linecache loop... "
         while log_line and fetch_position < (int(position) + self.replication_max_replay_logs):
-            print "getting replication replay log through linecache..."
             log_line = linecache.getline('replication/master/server.replay', fetch_position)
             print log_line
             if log_line:
@@ -528,6 +521,7 @@ class Server:
                 fetch_position += 1
             else:
                 result = False
+        logger.debug("Ended replication fetch process with data %s" % ('\n'.join(data)))
         return data
 
     # START OF REPLICATION TASKS FOR SLAVE SERVER
@@ -558,7 +552,6 @@ class Server:
 
     # TODO: find the best way to sync with file splits like MySQL does
     def sync_replication_replay_logs(self):
-        print "inside the threaded replication child"
         if not self.replication:
             return
         print "creating replication client socket connection"
@@ -578,7 +571,7 @@ class Server:
 
     # should be called from the sync function only and not directly
     def run_replication_replay_logs(self):
-        print "inside the run replication replay logs"
+        logger.info("Starting the execution of the replay logs")
         if not self.replication:
             return 
 
@@ -587,9 +580,7 @@ class Server:
         result = True
         log_line = True
 
-        print "initializing the fetch linecache loop... "
         while log_line and fetch_position < (int(self.replication_replay_position) + self.replication_max_replay_logs):
-            print "getting replication replay log through linecache..."
             log_line = linecache.getline('replication/slave/server.replay', fetch_position)
             print log_line
             if log_line:
@@ -603,6 +594,7 @@ class Server:
             pass
 
     def process_replicated_client_request(self, data):
+        logger.debug("Executing the replay log line : %s" % (data))
         if data[:3] in ['SET', 'DEP']:
             data_parts = data.split(' ', 1)
             batch = json.loads(data_parts[1])
