@@ -1,0 +1,78 @@
+2015-03-13 08:37:53,746 - __main__ - INFO - Starting reservoir server...
+2015-03-13 08:37:53,747 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-13 08:37:53,747 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-13 08:37:53,800 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:37:53,800 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:38:23,803 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:38:23,803 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:46:10,307 - __main__ - INFO - Starting reservoir server...
+2015-03-13 08:46:10,315 - __main__ - INFO - creating TCP socket now
+2015-03-13 08:46:10,315 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-13 08:46:10,332 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:46:10,333 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-13 08:46:10,333 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-13 08:46:40,334 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:46:40,335 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:46:40,337 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:47:10,338 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:47:10,339 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:47:10,341 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:47:31,367 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-13 08:47:40,345 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:47:40,345 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:47:40,347 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:48:04,121 - __main__ - INFO - Starting reservoir server...
+2015-03-13 08:48:04,121 - __main__ - INFO - creating TCP socket now
+2015-03-13 08:48:04,121 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-13 08:48:04,123 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:48:04,123 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-13 08:48:04,123 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-13 08:48:15,944 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-13 08:48:15,945 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-13 08:48:34,123 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:48:34,123 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:48:34,124 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:49:04,127 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:49:04,127 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:56:04,227 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:56:22,747 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-13 08:56:22,747 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-13 08:56:34,230 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:56:34,230 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:56:34,232 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:57:04,236 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:57:04,236 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:57:04,238 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:57:49,817 - __main__ - INFO - Starting reservoir server...
+2015-03-13 08:57:49,817 - __main__ - INFO - creating TCP socket now
+2015-03-13 08:57:49,818 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-13 08:57:49,819 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:57:49,820 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-13 08:57:49,820 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-13 08:58:04,544 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-13 08:58:04,544 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-13 08:58:19,820 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:58:19,820 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:58:19,822 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:58:49,826 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:58:49,826 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:58:49,828 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:59:19,833 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:59:19,833 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:59:19,835 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 08:59:49,837 - __main__ - INFO - Trying to save data for persistance
+2015-03-13 08:59:49,837 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-13 08:59:49,839 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 09:00:09,145 - __main__ - INFO - Starting reservoir server...
+2015-03-13 09:00:09,145 - __main__ - INFO - creating TCP socket now
+2015-03-13 09:00:09,146 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-13 09:00:09,147 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-13 09:00:09,147 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-13 09:00:09,148 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-13 09:00:09,149 - __main__ - INFO - Waiting for client connections
+2015-03-13 09:00:13,254 - __main__ - INFO - 127.0.0.1:63319 connected to the server
+2015-03-13 09:00:13,254 - __main__ - INFO - Waiting for client connections
+2015-03-13 09:00:26,109 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-13 09:00:26,109 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-13 09:00:27,389 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-13 09:00:27,389 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
