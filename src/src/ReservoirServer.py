@@ -101,11 +101,11 @@ class Server:
 
     def garbage_collection_cycle(self):
         if self.garbage_collection_interval > 0:
-            logger.info("Starting the garbage collection cycle at %d seconds" %(self.garbage_collection_interval))
+            self.logger.info("Starting the garbage collection cycle at %d seconds" %(self.garbage_collection_interval))
             self.garbage_collection_thread = threading.Timer(self.garbage_collection_interval, self.garbage_collection).start()
 
     def garbage_collection(self):
-        logger.info("Started the garbage collection thread")
+        self.logger.info("Started the garbage collection thread")
         for key, drop in self.reservoir.items():
             if drop.is_expired():
                 self.delete(key)
@@ -115,35 +115,35 @@ class Server:
     def persistance_cycle(self):
         if not self.persistance:
             return False
-        logger.info('Starting the persistance cycle at %d seconds' % (self.persistance_interval))
+        self.logger.info('Starting the persistance cycle at %d seconds' % (self.persistance_interval))
         self.persistance_thread = threading.Timer(self.persistance_interval, self.save_persist_data).start()
         
     def fetch_persistant_data(self):
         if not self.persistance:
             return False
-        logger.info('Loading data from last persistance cycle')
+        self.logger.info('Loading data from last persistance cycle')
         try:
             with open('data/data.pickle', 'rb') as file_handle:
                 data = pickle.load(file_handle)
                 if isinstance(data, dict):
                     self.reservoir = data
         except (IOError, EOFError) as error:
-            logger.error("Failed loading the persistant data from the file. Error: %s" % (e.strerror))
+            self.logger.error("Failed loading the persistant data from the file. Error: %s" % (e.strerror))
 
     def save_persist_data(self):
-        logger.info('Trying to save data for persistance')
+        self.logger.info('Trying to save data for persistance')
         if not self.persistance:
-            logger.error('Persistance is not enabled in the conf, skipping the process.')
+            self.logger.error('Persistance is not enabled in the conf, skipping the process.')
             return False
 
-        logger.info('Going to save data to the data.pickle file')
+        self.logger.info('Going to save data to the data.pickle file')
         with open('data/data.pickle', 'wb') as file_handle:
             pickle.dump(self.reservoir, file_handle, 0)
 
         self.persistance_cycle()
 
     def process_client_request(self, connection, data):
-        logger.info('Received data from client %s' % (data))
+        self.logger.info('Received data from client %s' % (data))
         response = ReservoirResponse()
         if len(data) < 3:
             response.set("INVALID_DATA")
@@ -159,7 +159,7 @@ class Server:
         if data[:11] == 'REPLICATION':
             data_parts = data.split(' ')
             current_position = data_parts[1]
-            logger.debug('Replication replay logs : %s' % (''.join(self.get_replication_replay_logs(current_position))))
+            self.logger.debug('Replication replay logs : %s' % (''.join(self.get_replication_replay_logs(current_position))))
             response.set(''.join(self.get_replication_replay_logs(current_position)))
             self.response(connection, response)
 
@@ -297,7 +297,7 @@ class Server:
                 continue    
             value = self.get(element.get("key"))
             element_data = {"key":element.get("key"), "data":value}
-            logger.debug("Fetching the cache item for : %s ; the value is : %s " %(element.get("key"), value))
+            self.logger.debug("Fetching the cache item for : %s ; the value is : %s " %(element.get("key"), value))
             batch_data.append(element_data)
 
         return batch_data
@@ -502,11 +502,11 @@ class Server:
         return True
 
     def get_replication_replay_logs(self, position):
-        logger.info("Starting the fetch process for replication replay logs with position : %d" % (position))
+        self.logger.info("Starting the fetch process for replication replay logs with position : %d" % (position))
         # this check is very necessary
         if not self.replication:
             return False
-            logger.info("Skipping the fetch process because replication is disabled in the config")
+            self.logger.info("Skipping the fetch process because replication is disabled in the config")
 
         data = []
         fetch_position = int(position) + 1
@@ -521,7 +521,7 @@ class Server:
                 fetch_position += 1
             else:
                 result = False
-        logger.debug("Ended replication fetch process with data %s" % ('\n'.join(data)))
+        self.logger.debug("Ended replication fetch process with data %s" % ('\n'.join(data)))
         return data
 
     # START OF REPLICATION TASKS FOR SLAVE SERVER
@@ -540,7 +540,7 @@ class Server:
 
     # TODO : need to have best way through threading like we did for persistance and garbage_collection - DONE
     def sync_replication_replay_logs_cycle(self):
-        print "going to start the replication replay logs cycle"
+        self.logger.info("Starting the syncing thread of replication replay logs")
         print self.replication_type, self.replication
         if not self.replication or self.replication_type != 'slave':
             return
@@ -554,7 +554,7 @@ class Server:
     def sync_replication_replay_logs(self):
         if not self.replication:
             return
-        print "creating replication client socket connection"
+        self.logger.info('Going to initialize the socket connection')
         replication_client = ReplicationClient(
             server_host=self.replication_master_server,
             server_port=self.port,
@@ -571,7 +571,7 @@ class Server:
 
     # should be called from the sync function only and not directly
     def run_replication_replay_logs(self):
-        logger.info("Starting the execution of the replay logs")
+        self.logger.info("Starting the execution of the replay logs")
         if not self.replication:
             return 
 
@@ -594,7 +594,7 @@ class Server:
             pass
 
     def process_replicated_client_request(self, data):
-        logger.debug("Executing the replay log line : %s" % (data))
+        self.logger.debug("Executing the replay log line : %s" % (data))
         if data[:3] in ['SET', 'DEP']:
             data_parts = data.split(' ', 1)
             batch = json.loads(data_parts[1])

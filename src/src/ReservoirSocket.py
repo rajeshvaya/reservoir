@@ -32,7 +32,7 @@ class ReservoirSocket:
         pass
 
     def create_socket(self):
-        print "creating %s socket now" % (self.protocol)
+        self.reservoir.logger.info("creating %s socket now" % (self.protocol))
         if self.protocol == 'TCP':
             return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         elif self.protocol == 'UDP':
@@ -61,11 +61,12 @@ class ReservoirSocket:
     
     # TCP functions here
     def tcp_bind(self):
-        print "binding the socket on %s:%d" % (self.host, self.port)
+        self.reservoir.logger.info("binding the socket on %s:%d" % (self.host, self.port))
         try:
             self.socket.bind((self.host, self.port))
             return True
         except Exception as e:
+            self.reservoir.logger.error(str(e))
             return False
 
     def tcp_listen(self):
@@ -74,10 +75,10 @@ class ReservoirSocket:
     def tcp_open(self):
         # let there be connectivity 
         while True:
-            print 'Waiting for connections from client...'
+            self.reservoir.logger.info("Waiting for client connections")
             connection, address = self.socket.accept()
             self.connections.append(connection)
-            print '%s:%s connected to the server' % (address)
+            self.reservoir.logger.info('%s:%s connected to the server' % (address))
             start_new_thread(self.start_tcp_client_thread, (connection,))
 
     # Create new thread for each client. don't let the thread die
@@ -94,7 +95,7 @@ class ReservoirSocket:
             print e
             # TODO: handle the client data for out of memory issue
         except Exception as e:
-            print e
+            self.reservoir.logger.error("Error occurred while starting TCP client thread : %s" % (str(e)))
             connection.close()
 
     # UDP functions here
@@ -103,7 +104,7 @@ class ReservoirSocket:
             self.socket.bind((self.host, self.port))
             return True
         except Exception as e:
-            return False
+            self.reservoir.logger.error("Error occurred while starting UDP client thread : %s" % (str(e)))
 
     def udp_listen(self):
         # there is no listening in UDP, only fire and forget
@@ -111,7 +112,6 @@ class ReservoirSocket:
 
     def udp_open(self):
         while True:
-            print 'Waiting for UDP packets'
             packet = self.socket.recvfrom(self.configs.get('read_buffer', 1024))
             data = packet[0]
             address = packet[1]
@@ -121,10 +121,10 @@ class ReservoirSocket:
         try:
             self.reservoir.process_client_request(address, data)
         except MemoryError as e:
-            print e
+            self.reservoir.logger.error("Out of memory while processing client request: %s" % (str(e)))
             # TODO: handle the client data for out of memory issue
         except Exception as e:
-            print e
+            self.reservoir.logger.error("Error occurred while processing client request : %s" % (str(e)))
 
     def response(self, connection, response):
         if not isinstance(response, ReservoirResponse):

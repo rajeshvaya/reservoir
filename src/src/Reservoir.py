@@ -23,17 +23,22 @@ def parse_args():
 # if server was asked to start
 def start_server():
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
+    
+    # set the console handle
+    handler = logging.StreamHandler(sys.stdout)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    
     # set the log file handle
     handler = logging.FileHandler('logs/server.log')
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
-    # add the handler to the logger
     logger.addHandler(handler)
 
     logger.info("Starting reservoir server...")
 
-    handler.setLevel(logging.INFO)
     s = Server(
         host=config.get('server', 'host'),
         port=config.getint('server', 'port'),
