@@ -23,7 +23,15 @@ def parse_args():
 # if server was asked to start
 def start_server():
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG)
+    logger_level = config.get('server', 'logger_level').upper()
+    if logger_level == 'INFO':
+        logger_level = logging.INFO
+    if logger_level == 'DEBUG':
+        logger_level = logging.DEBUG
+    if logger_level == 'ERROR':
+        logger_level = logging.ERROR
+
+    logger.setLevel(logger_level)
     
     # set the console handle
     handler = logging.StreamHandler(sys.stdout)

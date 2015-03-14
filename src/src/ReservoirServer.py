@@ -5,6 +5,7 @@ as this will be also imported for web based libraries
 TODO: change the replication log data to JSON - DONE
 TODO: support multiple buckets/tags
 TODO: convert the buckets to its own class later
+TODO: need to support HTTP (after TCP and UDP is tested) protocol for the cahcing system - need to implement a simple web server in python
 '''
 
 import sys
