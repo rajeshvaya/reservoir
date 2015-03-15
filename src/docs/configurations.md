@@ -35,6 +35,32 @@ This flag will enable the cache data to be written to disk. The data will be aut
 Setting this value will enable the persistance cycle at a particular interval. The value interpreted as seconds and since the persistance process is initiated by a child thread setting a shorter interval will not affect the performance of the caching server. 
 
 
+### garbage_collection_interval
+The interval at which the reservoir will start the clean up process. It will delete the expired entries from the cache. It will also delete the child cache entries for the dependants
+
+
+### replication
+This flag will enable or disable the replication for reservoir. `yes` is enable the replication and `no` will disable it. Changing the any of the replication flags will require a conf reload.
+
+
+### replication_slave_servers
+Add the slave server's host address (IP/Hostname) to the list and only then the slave server will be able to reach out to the master server. In case of the slave reservoir server this flag can be ignored, unless there is a multi-level replication. The slave will not have write permissions and can only relay the logs to its own slaves.
+
+
+### replication_master_server
+In case of the slave reservoir server, this flag should point to the master server's host.
+
+
+### replication_sync_interval
+The number of seconds after which the replication cycle will be initialized. This process will be a separate thread and will not interfere with the parent process. 
+
+
+### replication_max_replay_logs
+Number of replay logs to be processed with every replication cycle. 
+
+
+### logger_level
+The logs for reservoir server will be saved under `logs/server.log`. The logging supports INFO, DEBUG, ERROR levels. DEBUG level will output every request and response to/from the reservoir server. Note: The file can get very large and log rotation should be set as per the traffic
 
 
 
