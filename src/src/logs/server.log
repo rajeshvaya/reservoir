@@ -76,3 +76,204 @@
 2015-03-13 09:00:26,109 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
 2015-03-13 09:00:27,389 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
 2015-03-13 09:00:27,389 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:39:56,771 - __main__ - INFO - Starting reservoir server...
+2015-03-18 09:39:56,772 - __main__ - INFO - creating TCP socket now
+2015-03-18 09:39:56,772 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-18 09:39:56,776 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:39:56,776 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-18 09:39:56,776 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-18 09:39:56,777 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-18 09:39:56,778 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:40:11,164 - __main__ - INFO - Starting reservoir server...
+2015-03-18 09:40:11,164 - __main__ - INFO - creating TCP socket now
+2015-03-18 09:40:11,165 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-18 09:40:11,166 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:40:11,167 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-18 09:40:11,167 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-18 09:40:11,168 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:40:29,406 - __main__ - INFO - 127.0.0.1:62818 connected to the server
+2015-03-18 09:40:29,407 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:40:29,408 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:40:29,410 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:40:41,168 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:40:41,169 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:40:41,173 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:41:11,176 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:41:11,178 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:41:11,181 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:41:41,183 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:41:41,184 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:41:41,187 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:42:11,188 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:42:11,189 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:42:11,190 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:42:41,192 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:42:41,193 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:42:41,195 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:43:10,264 - __main__ - INFO - 127.0.0.1:62860 connected to the server
+2015-03-18 09:43:10,265 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:43:10,266 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:43:10,267 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:43:10,268 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:43:10,268 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:43:11,196 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:43:11,196 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:43:11,197 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:43:24,148 - __main__ - INFO - 127.0.0.1:62861 connected to the server
+2015-03-18 09:43:24,149 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:43:24,149 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:43:24,149 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:43:24,149 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:43:24,149 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:43:41,198 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:43:41,199 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:43:41,200 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:43:58,526 - __main__ - INFO - 127.0.0.1:62865 connected to the server
+2015-03-18 09:43:58,526 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:43:58,526 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:43:58,527 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:43:58,527 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:43:58,527 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:44:11,194 - __main__ - INFO - 127.0.0.1:62866 connected to the server
+2015-03-18 09:44:11,194 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:44:11,194 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:44:11,195 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:44:11,195 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:44:11,195 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:44:11,202 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:44:11,202 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:44:11,203 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:44:38,978 - __main__ - INFO - 127.0.0.1:62872 connected to the server
+2015-03-18 09:44:38,979 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:44:38,980 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:44:38,981 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:44:38,981 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:44:38,982 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:44:41,205 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:44:41,205 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:44:41,208 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:44:41,529 - __main__ - INFO - 127.0.0.1:62873 connected to the server
+2015-03-18 09:44:41,529 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:44:41,529 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:44:41,530 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : very awesome 
+2015-03-18 09:44:41,530 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:44:41,530 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:45:02,364 - __main__ - INFO - 127.0.0.1:62878 connected to the server
+2015-03-18 09:45:02,365 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:45:02,365 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:45:02,365 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:45:11,210 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:45:11,210 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:45:11,213 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:45:34,995 - __main__ - INFO - 127.0.0.1:62880 connected to the server
+2015-03-18 09:45:34,995 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:45:34,995 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": 0}]
+2015-03-18 09:45:34,996 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-18 09:45:41,214 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:45:41,215 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:45:41,217 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:46:14,584 - __main__ - INFO - Starting reservoir server...
+2015-03-18 09:46:14,584 - __main__ - INFO - creating TCP socket now
+2015-03-18 09:46:14,584 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-18 09:46:14,587 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:46:14,588 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-18 09:46:14,588 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-18 09:46:14,588 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:46:44,590 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:46:44,593 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:46:44,597 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:47:14,598 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:47:14,600 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:47:14,603 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:47:31,831 - __main__ - INFO - 127.0.0.1:62884 connected to the server
+2015-03-18 09:47:31,832 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:47:31,832 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:47:44,604 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:47:44,606 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:47:44,609 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:47:52,276 - __main__ - INFO - 127.0.0.1:62888 connected to the server
+2015-03-18 09:47:52,276 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:47:52,277 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:47:58,433 - __main__ - INFO - 127.0.0.1:62889 connected to the server
+2015-03-18 09:47:58,433 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:47:58,434 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:47:58,434 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:47:58,435 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:48:08,426 - __main__ - INFO - 127.0.0.1:62891 connected to the server
+2015-03-18 09:48:08,427 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:48:08,427 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:48:08,427 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:48:08,428 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:48:14,610 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:48:14,611 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:48:14,613 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:48:44,615 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:48:44,617 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:48:44,619 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:49:14,621 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:49:14,621 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:49:14,624 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:49:44,625 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:49:44,625 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:49:44,628 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:49:47,954 - __main__ - INFO - 127.0.0.1:62900 connected to the server
+2015-03-18 09:49:47,954 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:49:47,954 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:49:47,954 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:49:47,955 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:50:14,629 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:50:14,630 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:50:14,633 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:50:19,178 - __main__ - INFO - 127.0.0.1:62904 connected to the server
+2015-03-18 09:50:19,178 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:50:19,179 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:50:19,179 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:50:19,179 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:50:19,180 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-18 09:50:44,634 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:50:44,636 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:50:44,639 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:50:54,095 - __main__ - INFO - 127.0.0.1:62906 connected to the server
+2015-03-18 09:50:54,095 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:50:54,095 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:50:54,095 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:50:54,096 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-18 09:51:14,640 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:51:14,640 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:51:14,643 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:51:33,327 - __main__ - INFO - 127.0.0.1:62910 connected to the server
+2015-03-18 09:51:33,327 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:51:33,327 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:51:33,328 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:51:33,328 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:51:33,329 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-18 09:51:38,015 - __main__ - INFO - 127.0.0.1:62911 connected to the server
+2015-03-18 09:51:38,015 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:51:38,015 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:51:38,016 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:51:38,016 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:51:38,017 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-18 09:51:44,644 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:51:44,645 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:51:44,647 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:52:08,281 - __main__ - INFO - 127.0.0.1:62912 connected to the server
+2015-03-18 09:52:08,281 - __main__ - INFO - Waiting for client connections
+2015-03-18 09:52:08,281 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-18 09:52:08,281 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-18 09:52:08,282 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-18 09:52:08,283 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-18 09:52:14,649 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:52:14,649 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:52:14,651 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:52:44,652 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:52:44,654 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:52:44,656 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:53:14,657 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:53:14,658 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:53:14,661 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:53:44,662 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:53:44,663 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:53:44,666 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-18 09:54:14,668 - __main__ - INFO - Trying to save data for persistance
+2015-03-18 09:54:14,670 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-18 09:54:14,672 - __main__ - INFO - Starting the persistance cycle at 30 seconds

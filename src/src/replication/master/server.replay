@@ -25,3 +25,22 @@ SET 0 pk_movie very awesome
 SET {"dependants": [], "parent_key": null, "data": "very awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
 SET {"dependants": [], "parent_key": null, "data": "aamir khan", "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
 SET {"dependants": [], "parent_key": "pk_movie", "data": "8.9", "buckets": [], "expiry": 0, "key": "pk_ratings", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
