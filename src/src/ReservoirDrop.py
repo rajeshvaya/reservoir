@@ -38,13 +38,15 @@ class Drop(object):
             self.value = None
 
     def set_expiry(self, expiry=0):
-        if expiry.isdigit() and int(expiry) > 0:
-            # if the time is in epoc and greater than epoc then calculate else use number of seconds
-            if expiry > time.time():
-                expiry_time = time.time() - expiry
-            else:
-                expiry_time = int(time.time()) + int(expiry)
-            self.expiry = expiry_time
+        if type(expiry) != int:
+            expiry = int(expiry) if expiry.isdigit() else 0
+
+        # if the time is in epoc and greater than epoc then calculate else use number of seconds
+        if expiry > time.time():
+            expiry_time = time.time() - expiry
+        else:
+            expiry_time = int(time.time()) + int(expiry)
+        self.expiry = expiry_time
 
     def add_dependant(self, key):
         self.dependants.append(key)
@@ -62,16 +64,16 @@ class Drop(object):
         self.hits += 1
 
     def increment(self):
-        if self.value.isdigit():
-            self.value += 1
-            return True
-        return False
-
+        if type(self.value) != int:
+            self.value = int(self.value) if self.value.isdigit() else 0
+        self.value += 1
+        return True
+    
     def decrement(self):
-        if self.value.isdigit():
-            self.value -= 1
-            return True
-        return False
+        if type(self.value) != int:
+            self.value = int(self.value) if self.value.isdigit() else 0
+        self.value -= 1
+        return True
 
     def get_active_time(self):
         return time.time() - self.created

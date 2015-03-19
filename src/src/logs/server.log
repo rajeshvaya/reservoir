@@ -277,3 +277,256 @@
 2015-03-18 09:54:14,668 - __main__ - INFO - Trying to save data for persistance
 2015-03-18 09:54:14,670 - __main__ - INFO - Going to save data to the data.pickle file
 2015-03-18 09:54:14,672 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:15:47,864 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:15:47,865 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:15:47,865 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:15:47,869 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:15:47,870 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:15:47,870 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:15:47,871 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:15:56,760 - __main__ - INFO - 127.0.0.1:58584 connected to the server
+2015-03-19 09:15:56,760 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:15:56,760 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-19 09:15:56,761 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-19 09:15:56,763 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-19 09:15:56,765 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-19 09:15:56,766 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:16:17,871 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:16:17,873 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:16:17,877 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:16:47,878 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:16:47,878 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:16:47,881 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:17:13,708 - __main__ - INFO - 127.0.0.1:58598 connected to the server
+2015-03-19 09:17:13,709 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:17:13,709 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-19 09:17:13,709 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-19 09:17:13,710 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-19 09:17:13,710 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-19 09:17:13,711 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:17:13,712 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:17:17,881 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:17:17,882 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:17:17,885 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:17:34,947 - __main__ - INFO - 127.0.0.1:58599 connected to the server
+2015-03-19 09:17:34,948 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:17:34,948 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-19 09:17:34,948 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-19 09:17:34,948 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-19 09:17:34,949 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-19 09:17:34,949 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:17:34,950 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:17:47,886 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:17:47,886 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:17:47,889 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:18:17,890 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:18:17,890 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:18:17,893 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:18:34,268 - __main__ - INFO - 127.0.0.1:58608 connected to the server
+2015-03-19 09:18:34,269 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:18:34,270 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:18:34,270 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:18:37,216 - __main__ - INFO - 127.0.0.1:58609 connected to the server
+2015-03-19 09:18:37,216 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:18:37,216 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:18:37,217 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:18:47,894 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:18:47,895 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:18:47,898 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:19:15,705 - __main__ - INFO - 127.0.0.1:58617 connected to the server
+2015-03-19 09:19:15,705 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:19:15,705 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:19:15,706 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:19:17,900 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:19:17,900 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:19:17,902 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:19:21,613 - __main__ - INFO - 127.0.0.1:58618 connected to the server
+2015-03-19 09:19:21,613 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:19:21,614 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:19:21,614 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:19:47,904 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:19:47,906 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:19:47,910 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:20:17,912 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:20:17,914 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:20:17,917 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:20:47,918 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:20:47,919 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:20:47,921 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:21:17,923 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:21:17,924 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:21:17,927 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:21:47,928 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:21:47,929 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:21:47,932 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:22:17,933 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:22:17,935 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:22:17,937 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:22:47,938 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:22:47,939 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:22:47,941 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:23:17,942 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:23:17,944 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:23:17,946 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:23:47,947 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:23:47,947 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:23:47,949 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:24:11,237 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:24:11,238 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:24:11,238 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:24:11,241 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:24:11,242 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:24:11,242 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:24:11,243 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:24:14,653 - __main__ - INFO - 127.0.0.1:58654 connected to the server
+2015-03-19 09:24:14,654 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:24:14,654 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:24:14,654 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:24:41,243 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:24:41,243 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:24:41,246 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:25:11,247 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:25:11,247 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:25:11,250 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:25:41,251 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:25:41,252 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:25:41,254 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:26:08,049 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:26:08,050 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:26:08,050 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:26:08,053 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:26:08,053 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:26:08,054 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:26:08,054 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:26:10,162 - __main__ - INFO - 127.0.0.1:58665 connected to the server
+2015-03-19 09:26:10,162 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:26:10,163 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:26:10,163 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:26:38,055 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:26:38,055 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:26:38,057 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:26:42,398 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:26:42,399 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:26:42,399 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:26:42,401 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:26:42,401 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:26:42,401 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:26:42,402 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:26:43,979 - __main__ - INFO - 127.0.0.1:58668 connected to the server
+2015-03-19 09:26:43,979 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:26:43,979 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:26:43,979 - __main__ - ERROR - Error occurred while starting TCP client thread : 'int' object has no attribute 'isdigit'
+2015-03-19 09:28:42,931 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:28:42,931 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:28:42,932 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:28:42,935 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:28:42,935 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:28:42,935 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:28:42,936 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:28:45,026 - __main__ - INFO - 127.0.0.1:58681 connected to the server
+2015-03-19 09:28:45,026 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:28:45,026 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:28:45,027 - __main__ - ERROR - Error occurred while starting TCP client thread : global name 'result' is not defined
+2015-03-19 09:29:12,936 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:29:12,938 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:29:12,941 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:29:42,942 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:29:42,944 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:29:42,948 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:29:48,332 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:29:48,333 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:29:48,333 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:29:48,336 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:29:48,337 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:29:48,337 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:29:48,338 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-19 09:29:48,338 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:29:56,543 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:29:56,545 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:29:56,545 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:29:56,547 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:29:56,548 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:29:56,548 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:29:56,549 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:30:00,760 - __main__ - INFO - 127.0.0.1:58687 connected to the server
+2015-03-19 09:30:00,760 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:30:00,760 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:30:26,548 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:30:26,550 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:30:26,552 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:30:47,123 - __main__ - INFO - 127.0.0.1:58717 connected to the server
+2015-03-19 09:30:47,123 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:30:47,123 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:30:56,554 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:30:56,554 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:30:56,557 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:31:26,558 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:31:26,559 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:31:26,562 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:31:56,564 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:31:56,564 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:31:56,568 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:32:28,127 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:32:28,127 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:32:28,128 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:32:28,131 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:32:28,131 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:32:28,131 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:32:28,132 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:32:30,960 - __main__ - INFO - 127.0.0.1:58729 connected to the server
+2015-03-19 09:32:30,960 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:32:30,960 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:32:30,960 - __main__ - ERROR - Error occurred while starting TCP client thread : global name 'd' is not defined
+2015-03-19 09:32:58,132 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:32:58,133 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:32:58,136 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:33:06,870 - __main__ - INFO - Starting reservoir server...
+2015-03-19 09:33:06,871 - __main__ - INFO - creating TCP socket now
+2015-03-19 09:33:06,871 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-19 09:33:06,873 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:33:06,873 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-19 09:33:06,873 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-19 09:33:06,874 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:08,801 - __main__ - INFO - 127.0.0.1:58732 connected to the server
+2015-03-19 09:33:08,801 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:08,801 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:12,610 - __main__ - INFO - 127.0.0.1:58735 connected to the server
+2015-03-19 09:33:12,611 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:12,611 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:28,668 - __main__ - INFO - 127.0.0.1:58737 connected to the server
+2015-03-19 09:33:28,668 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:28,668 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:28,669 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-19 09:33:28,669 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 5 
+2015-03-19 09:33:30,001 - __main__ - INFO - 127.0.0.1:58738 connected to the server
+2015-03-19 09:33:30,001 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:30,002 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:30,002 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-19 09:33:30,002 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-19 09:33:36,874 - __main__ - INFO - Trying to save data for persistance
+2015-03-19 09:33:36,874 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-19 09:33:36,876 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-19 09:33:54,615 - __main__ - INFO - 127.0.0.1:58741 connected to the server
+2015-03-19 09:33:54,615 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:54,615 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-19 09:33:54,616 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-19 09:33:54,616 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-19 09:33:54,618 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-19 09:33:54,618 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:54,619 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-19 09:33:54,619 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-19 09:33:54,619 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:54,620 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-19 09:33:54,620 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-19 09:33:56,936 - __main__ - INFO - 127.0.0.1:58742 connected to the server
+2015-03-19 09:33:56,936 - __main__ - INFO - Waiting for client connections
+2015-03-19 09:33:56,936 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-19 09:33:56,937 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-19 09:33:56,937 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-19 09:33:56,937 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-19 09:33:56,939 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:56,939 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-19 09:33:56,939 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-19 09:33:56,939 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-19 09:33:56,940 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-19 09:33:56,940 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 

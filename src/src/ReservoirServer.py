@@ -425,9 +425,9 @@ class Server:
         drop = self.reservoir.get(key, None)
         if drop:
             if not drop.increment():
-                return result
+                return False 
             else:
-                self.add_to_replication_replay_logs('ICR', d)
+                self.add_to_replication_replay_logs('ICR', drop)
                 return True
         else:
             return False
@@ -436,9 +436,9 @@ class Server:
         drop = self.reservoir.get(key, None)
         if drop:
             if not drop.decrement():
-                return result
+                return False
             else:
-                self.add_to_replication_replay_logs('DCR', d)
+                self.add_to_replication_replay_logs('DCR', drop)
                 return True
         else:
             return False
