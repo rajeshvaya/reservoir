@@ -41,11 +41,16 @@ class Drop(object):
         if type(expiry) != int:
             expiry = int(expiry) if expiry.isdigit() else 0
 
+        if expiry == 0:
+            self.expiry = 0
+            return
+
         # if the time is in epoc and greater than epoc then calculate else use number of seconds
         if expiry > time.time():
-            expiry_time = time.time() - expiry
+            expiry_time = expiry
         else:
             expiry_time = int(time.time()) + int(expiry)
+            
         self.expiry = expiry_time
 
     def add_dependant(self, key):

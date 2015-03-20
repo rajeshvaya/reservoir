@@ -530,3 +530,1622 @@
 2015-03-19 09:33:56,939 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
 2015-03-19 09:33:56,940 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
 2015-03-19 09:33:56,940 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-20 10:22:16,990 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:22:17,012 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:22:17,012 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:22:17,026 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:22:17,027 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:22:17,027 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:22:17,049 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:22:20,323 - __main__ - INFO - 127.0.0.1:65411 connected to the server
+2015-03-20 10:22:20,323 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:22:20,324 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:22:20,324 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:22:20,343 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:22:20,356 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_votes", "expiry": "0"}]
+2015-03-20 10:22:20,427 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:22:20,428 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:22:20,428 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-20 10:22:20,428 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:22:20,429 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:22:20,429 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-20 10:22:43,768 - __main__ - INFO - 127.0.0.1:65491 connected to the server
+2015-03-20 10:22:43,779 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:22:43,779 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:22:43,780 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:22:43,780 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:22:43,781 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:22:43,849 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:22:43,850 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:22:43,850 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-20 10:22:43,851 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:22:43,851 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:22:43,852 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-20 10:22:47,029 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:22:47,029 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:22:47,047 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:23:17,050 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:23:17,051 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:23:17,054 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:23:22,501 - __main__ - INFO - 127.0.0.1:49234 connected to the server
+2015-03-20 10:23:22,502 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:23:22,502 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:23:22,502 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:23:22,502 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:23:22,503 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:23:22,504 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:23:22,504 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:23:22,504 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-20 10:23:22,505 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:23:22,505 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:23:22,505 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-20 10:23:47,057 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:23:47,057 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:23:47,060 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:23:57,032 - __main__ - INFO - 127.0.0.1:49352 connected to the server
+2015-03-20 10:23:57,033 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:23:57,033 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:23:57,033 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:23:57,033 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:24:03,650 - __main__ - INFO - 127.0.0.1:49376 connected to the server
+2015-03-20 10:24:03,650 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:24:03,650 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:24:03,651 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:24:03,651 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:24:17,064 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:24:17,101 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:24:17,103 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:24:47,105 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:24:47,106 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:24:47,108 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:25:17,111 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:25:17,111 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:25:17,113 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:25:47,114 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:25:47,114 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:25:47,116 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:26:17,118 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:26:17,158 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:26:17,160 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:26:47,162 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:26:47,214 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:26:47,216 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:27:17,218 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:27:17,219 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:27:17,221 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:27:36,661 - __main__ - INFO - 127.0.0.1:50079 connected to the server
+2015-03-20 10:27:36,661 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:27:36,662 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:27:36,662 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:27:36,663 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:27:47,223 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:27:47,223 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:27:47,225 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:27:56,852 - __main__ - INFO - 127.0.0.1:50146 connected to the server
+2015-03-20 10:27:56,853 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:28:17,231 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:28:17,231 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:28:17,234 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:28:36,666 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:28:47,237 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:28:47,237 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:28:47,240 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:29:01,857 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:29:01,857 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:29:17,240 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:29:17,241 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:29:17,243 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:29:47,245 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:29:47,261 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:29:47,263 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:30:17,265 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:30:17,265 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:30:17,267 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:30:47,270 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:30:47,270 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:30:47,272 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:31:17,275 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:31:17,276 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:31:17,279 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:31:47,280 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:31:47,281 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:31:47,282 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:32:10,866 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:32:10,866 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:32:10,867 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:32:10,869 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:32:10,869 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:32:10,869 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:32:10,871 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:32:14,415 - __main__ - INFO - 127.0.0.1:50987 connected to the server
+2015-03-20 10:32:14,416 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:32:36,581 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:32:36,582 - __main__ - ERROR - Error occurred while starting TCP client thread : global name 'd' is not defined
+2015-03-20 10:32:40,870 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:32:40,870 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:32:40,872 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:32:49,503 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:32:49,503 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:32:49,503 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:32:49,505 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:32:49,505 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:32:49,505 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:32:49,507 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-20 10:32:49,507 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:33:07,737 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:33:07,737 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:33:07,737 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:33:07,738 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:33:07,739 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:33:07,739 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:33:07,740 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-20 10:33:07,741 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:33:32,546 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:33:32,546 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:33:32,546 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:33:32,548 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:33:32,548 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:33:32,548 - __main__ - INFO - binding the socket on localhost:31420
+2015-03-20 10:33:32,550 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:33:36,627 - __main__ - INFO - 127.0.0.1:51269 connected to the server
+2015-03-20 10:33:36,628 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:33:41,445 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:33:41,480 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:34:02,552 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:34:02,553 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:34:02,555 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:34:32,557 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:34:32,557 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:34:32,559 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:35:02,561 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:35:02,561 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:35:02,563 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:35:10,243 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:35:10,244 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:35:10,244 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:35:10,245 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:35:10,246 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:35:10,246 - __main__ - INFO - binding the socket on localhost:31420
+2015-03-20 10:35:10,247 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:35:13,358 - __main__ - INFO - 127.0.0.1:51590 connected to the server
+2015-03-20 10:35:13,358 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:35:19,159 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:35:23,950 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:35:23,951 - __main__ - DEBUG - 1426833319
+2015-03-20 10:35:23,951 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : None 
+2015-03-20 10:35:40,247 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:35:40,248 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:35:40,250 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:36:10,251 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:36:10,251 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:36:10,253 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:36:40,256 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:36:40,257 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:36:40,259 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:37:10,264 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:37:10,265 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:37:10,267 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:37:40,269 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:37:40,269 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:37:40,272 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:38:10,275 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:38:10,276 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:38:10,277 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:38:40,281 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:38:40,281 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:38:40,283 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:39:10,284 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:39:10,284 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:39:10,285 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:39:40,286 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:39:40,286 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:39:40,288 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:39:52,681 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:39:52,682 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:39:52,682 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:39:52,683 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:39:52,684 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:39:52,684 - __main__ - INFO - binding the socket on localhost:31420
+2015-03-20 10:39:52,686 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:39:55,986 - __main__ - INFO - 127.0.0.1:52515 connected to the server
+2015-03-20 10:39:55,986 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:40:01,900 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:40:06,300 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:40:06,300 - __main__ - DEBUG - 0
+2015-03-20 10:40:06,300 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:40:22,689 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:40:22,690 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:40:22,692 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:40:35,260 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:40:35,261 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:40:35,261 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:40:35,263 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:40:35,264 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:40:35,264 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:40:35,266 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:40:38,398 - __main__ - INFO - 127.0.0.1:52666 connected to the server
+2015-03-20 10:40:38,398 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:40:38,398 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:40:38,399 - __main__ - DEBUG - 0
+2015-03-20 10:40:38,399 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:40:38,399 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:40:40,373 - __main__ - INFO - 127.0.0.1:52675 connected to the server
+2015-03-20 10:40:40,373 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:40:40,373 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:40:40,373 - __main__ - DEBUG - 0
+2015-03-20 10:40:40,373 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:40:40,374 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:40:41,347 - __main__ - INFO - 127.0.0.1:52679 connected to the server
+2015-03-20 10:40:41,347 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:40:41,347 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:40:41,347 - __main__ - DEBUG - 0
+2015-03-20 10:40:41,347 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:40:41,348 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:41:05,265 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:41:05,265 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:41:05,268 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:41:24,141 - __main__ - INFO - 127.0.0.1:52818 connected to the server
+2015-03-20 10:41:24,141 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:41:24,141 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:41:24,141 - __main__ - DEBUG - 0
+2015-03-20 10:41:24,141 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:41:24,142 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:41:24,142 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:41:24,179 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:24,180 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:24,180 - __main__ - DEBUG - 0
+2015-03-20 10:41:24,181 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-20 10:41:24,181 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:24,182 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:24,182 - __main__ - DEBUG - 0
+2015-03-20 10:41:24,182 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-20 10:41:26,431 - __main__ - INFO - 127.0.0.1:52828 connected to the server
+2015-03-20 10:41:26,431 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:41:26,431 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:41:26,432 - __main__ - DEBUG - 0
+2015-03-20 10:41:26,432 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:41:26,432 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:41:26,433 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:41:26,469 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:26,469 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:26,470 - __main__ - DEBUG - 0
+2015-03-20 10:41:26,470 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-20 10:41:26,470 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:26,471 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:26,471 - __main__ - DEBUG - 0
+2015-03-20 10:41:26,471 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 6 
+2015-03-20 10:41:35,273 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:41:35,273 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:41:35,276 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:41:38,622 - __main__ - INFO - 127.0.0.1:52870 connected to the server
+2015-03-20 10:41:38,622 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:41:38,622 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:41:38,622 - __main__ - DEBUG - 0
+2015-03-20 10:41:38,622 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:41:38,623 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:41:38,623 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:41:38,624 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:38,625 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:38,625 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:38,625 - __main__ - DEBUG - 0
+2015-03-20 10:41:38,634 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 8 
+2015-03-20 10:41:38,635 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:38,635 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:38,635 - __main__ - DEBUG - 0
+2015-03-20 10:41:38,636 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 7 
+2015-03-20 10:41:39,469 - __main__ - INFO - 127.0.0.1:52875 connected to the server
+2015-03-20 10:41:39,469 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:41:39,469 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:41:39,469 - __main__ - DEBUG - 0
+2015-03-20 10:41:39,469 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:41:39,470 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:41:39,470 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:41:39,471 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:39,472 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:39,472 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:39,472 - __main__ - DEBUG - 0
+2015-03-20 10:41:39,484 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 9 
+2015-03-20 10:41:39,484 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:39,485 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:39,485 - __main__ - DEBUG - 0
+2015-03-20 10:41:39,485 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 8 
+2015-03-20 10:41:40,297 - __main__ - INFO - 127.0.0.1:52879 connected to the server
+2015-03-20 10:41:40,297 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:41:40,297 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:41:40,298 - __main__ - DEBUG - 0
+2015-03-20 10:41:40,298 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:41:40,298 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:41:40,299 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}]
+2015-03-20 10:41:40,300 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:40,300 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:40,300 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:40,300 - __main__ - DEBUG - 0
+2015-03-20 10:41:40,315 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 10 
+2015-03-20 10:41:40,316 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:41:40,317 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:41:40,317 - __main__ - DEBUG - 0
+2015-03-20 10:41:40,317 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 9 
+2015-03-20 10:42:05,278 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:42:05,307 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:42:05,309 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:42:35,310 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:42:35,310 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:42:35,312 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:43:05,314 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:43:05,315 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:43:05,317 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:43:29,669 - __main__ - INFO - 127.0.0.1:53247 connected to the server
+2015-03-20 10:43:29,669 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:43:29,669 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:43:29,670 - __main__ - DEBUG - 0
+2015-03-20 10:43:29,670 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:43:29,670 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:43:29,677 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:43:29,746 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:43:29,747 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:43:29,748 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:43:29,748 - __main__ - DEBUG - 0
+2015-03-20 10:43:29,748 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 11 
+2015-03-20 10:43:29,748 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:43:29,749 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:43:29,749 - __main__ - DEBUG - 0
+2015-03-20 10:43:29,749 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 10 
+2015-03-20 10:43:29,750 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:43:29,750 - __main__ - DEBUG - 0
+2015-03-20 10:43:29,750 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:43:35,320 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:43:35,320 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:43:35,328 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:44:05,332 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:44:05,332 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:44:05,335 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:44:14,015 - __main__ - INFO - 127.0.0.1:53396 connected to the server
+2015-03-20 10:44:14,015 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:44:14,015 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:44:14,015 - __main__ - DEBUG - 0
+2015-03-20 10:44:14,015 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:44:14,016 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:44:14,016 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:44:14,017 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:44:14,017 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:44:14,018 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:44:14,034 - __main__ - DEBUG - 0
+2015-03-20 10:44:14,034 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 12 
+2015-03-20 10:44:14,034 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:44:14,035 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:44:14,035 - __main__ - DEBUG - 0
+2015-03-20 10:44:14,035 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 11 
+2015-03-20 10:44:14,036 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:44:14,036 - __main__ - DEBUG - 0
+2015-03-20 10:44:14,036 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:44:14,036 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 10:44:14,037 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:44:14,037 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:44:31,992 - __main__ - INFO - 127.0.0.1:53454 connected to the server
+2015-03-20 10:44:31,992 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:44:31,993 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:44:31,993 - __main__ - DEBUG - 0
+2015-03-20 10:44:31,993 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:44:31,993 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:44:31,994 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:44:31,995 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:44:31,995 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:44:31,995 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:44:32,006 - __main__ - DEBUG - 0
+2015-03-20 10:44:32,007 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 13 
+2015-03-20 10:44:32,007 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:44:32,008 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:44:32,008 - __main__ - DEBUG - 0
+2015-03-20 10:44:32,008 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 12 
+2015-03-20 10:44:32,008 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:44:32,008 - __main__ - DEBUG - 0
+2015-03-20 10:44:32,009 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:44:32,009 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 10:44:32,009 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:44:32,009 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:44:35,341 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:44:35,341 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:44:35,343 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:45:05,347 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:45:05,347 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:45:05,349 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:45:22,825 - __main__ - INFO - 127.0.0.1:53621 connected to the server
+2015-03-20 10:45:22,826 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:45:22,826 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:45:22,826 - __main__ - DEBUG - 0
+2015-03-20 10:45:22,826 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:45:22,826 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:45:22,827 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:45:22,828 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:22,828 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:22,829 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:45:22,829 - __main__ - DEBUG - 0
+2015-03-20 10:45:22,829 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 14 
+2015-03-20 10:45:22,829 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:22,830 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:45:22,830 - __main__ - DEBUG - 0
+2015-03-20 10:45:22,830 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 13 
+2015-03-20 10:45:22,853 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:45:22,853 - __main__ - DEBUG - 0
+2015-03-20 10:45:22,853 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:45:24,931 - __main__ - INFO - 127.0.0.1:53629 connected to the server
+2015-03-20 10:45:24,931 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:45:24,931 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:45:24,932 - __main__ - DEBUG - 0
+2015-03-20 10:45:24,932 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:45:24,932 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:45:24,932 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:45:24,933 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:24,934 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:24,934 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:45:24,946 - __main__ - DEBUG - 0
+2015-03-20 10:45:24,947 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 15 
+2015-03-20 10:45:24,947 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:24,948 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:45:24,948 - __main__ - DEBUG - 0
+2015-03-20 10:45:24,948 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 14 
+2015-03-20 10:45:24,948 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:45:24,948 - __main__ - DEBUG - 0
+2015-03-20 10:45:24,948 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:45:35,351 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:45:35,351 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:45:35,354 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:45:40,002 - __main__ - INFO - 127.0.0.1:53682 connected to the server
+2015-03-20 10:45:40,002 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:45:40,002 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:45:40,002 - __main__ - DEBUG - 0
+2015-03-20 10:45:40,002 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:45:40,003 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:45:40,003 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:45:40,004 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:40,005 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:40,005 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:45:40,028 - __main__ - DEBUG - 0
+2015-03-20 10:45:40,028 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 16 
+2015-03-20 10:45:40,028 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:45:40,029 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:45:40,029 - __main__ - DEBUG - 0
+2015-03-20 10:45:40,029 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 15 
+2015-03-20 10:45:40,029 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:45:40,029 - __main__ - DEBUG - 0
+2015-03-20 10:45:40,030 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:46:05,357 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:46:05,357 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:46:05,360 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:46:14,049 - __main__ - INFO - 127.0.0.1:53793 connected to the server
+2015-03-20 10:46:14,049 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:46:14,049 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:46:14,049 - __main__ - DEBUG - 0
+2015-03-20 10:46:14,049 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:46:14,050 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:46:14,050 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:46:14,050 - __main__ - DEBUG - 0
+2015-03-20 10:46:14,050 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:46:14,051 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:46:14,051 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:46:14,052 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:46:14,052 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:46:14,052 - __main__ - DEBUG - 0
+2015-03-20 10:46:14,052 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 17 
+2015-03-20 10:46:14,053 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:46:14,064 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:46:14,064 - __main__ - DEBUG - 0
+2015-03-20 10:46:14,064 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 16 
+2015-03-20 10:46:14,065 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:46:14,065 - __main__ - DEBUG - 0
+2015-03-20 10:46:14,065 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:46:32,208 - __main__ - INFO - 127.0.0.1:53853 connected to the server
+2015-03-20 10:46:32,208 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:46:32,208 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:46:32,209 - __main__ - DEBUG - 0
+2015-03-20 10:46:32,209 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:46:32,209 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:46:32,210 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:46:32,210 - __main__ - DEBUG - 0
+2015-03-20 10:46:32,210 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:46:32,210 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:46:32,211 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:46:32,211 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:46:32,212 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:46:32,212 - __main__ - DEBUG - 0
+2015-03-20 10:46:32,212 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 18 
+2015-03-20 10:46:32,212 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:46:32,213 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:46:32,213 - __main__ - DEBUG - 0
+2015-03-20 10:46:32,213 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 17 
+2015-03-20 10:46:32,213 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:46:32,213 - __main__ - DEBUG - 0
+2015-03-20 10:46:32,221 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:46:35,365 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:46:35,366 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:46:35,368 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:47:08,340 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:47:08,340 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:47:08,341 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:47:08,343 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:47:08,344 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:47:08,344 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:47:08,346 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:47:10,369 - __main__ - INFO - 127.0.0.1:53979 connected to the server
+2015-03-20 10:47:10,369 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:47:10,369 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:10,370 - __main__ - DEBUG - 0
+2015-03-20 10:47:10,370 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:10,371 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:47:10,371 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:10,371 - __main__ - DEBUG - 0
+2015-03-20 10:47:10,371 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:10,372 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:47:10,372 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:10,381 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:10,382 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:10,382 - __main__ - DEBUG - 0
+2015-03-20 10:47:10,382 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 19 
+2015-03-20 10:47:10,383 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:10,383 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:10,383 - __main__ - DEBUG - 0
+2015-03-20 10:47:10,383 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 18 
+2015-03-20 10:47:10,384 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:47:10,384 - __main__ - DEBUG - 0
+2015-03-20 10:47:10,384 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:47:25,988 - __main__ - INFO - 127.0.0.1:54032 connected to the server
+2015-03-20 10:47:25,988 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:47:25,988 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:25,988 - __main__ - DEBUG - 0
+2015-03-20 10:47:25,988 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:25,989 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:47:25,989 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:25,989 - __main__ - DEBUG - 0
+2015-03-20 10:47:25,989 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:25,990 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:47:25,990 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:26,010 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:26,011 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:26,011 - __main__ - DEBUG - 0
+2015-03-20 10:47:26,011 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 20 
+2015-03-20 10:47:26,012 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:26,012 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:26,012 - __main__ - DEBUG - 0
+2015-03-20 10:47:26,013 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 19 
+2015-03-20 10:47:26,013 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:47:26,013 - __main__ - DEBUG - 0
+2015-03-20 10:47:26,013 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:47:27,274 - __main__ - INFO - 127.0.0.1:54038 connected to the server
+2015-03-20 10:47:27,274 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:47:27,275 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:27,275 - __main__ - DEBUG - 0
+2015-03-20 10:47:27,275 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:27,275 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:47:27,276 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:27,276 - __main__ - DEBUG - 0
+2015-03-20 10:47:27,276 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:27,276 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:47:27,277 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:27,291 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:27,292 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:27,292 - __main__ - DEBUG - 0
+2015-03-20 10:47:27,292 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 21 
+2015-03-20 10:47:27,293 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:27,293 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:27,293 - __main__ - DEBUG - 0
+2015-03-20 10:47:27,293 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 20 
+2015-03-20 10:47:27,294 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:47:27,294 - __main__ - DEBUG - 0
+2015-03-20 10:47:27,294 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:47:38,349 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:47:38,349 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:47:38,351 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:47:45,042 - __main__ - INFO - 127.0.0.1:54099 connected to the server
+2015-03-20 10:47:45,043 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:47:45,043 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:45,043 - __main__ - DEBUG - 0
+2015-03-20 10:47:45,043 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:45,044 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:47:45,044 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:47:45,044 - __main__ - DEBUG - 0
+2015-03-20 10:47:45,044 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:47:45,044 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:47:45,045 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:47:45,065 - __main__ - DEBUG - 0
+2015-03-20 10:47:45,065 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:47:45,066 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:45,067 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:45,067 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:45,067 - __main__ - DEBUG - 0
+2015-03-20 10:47:45,067 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 22 
+2015-03-20 10:47:45,068 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:47:45,068 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:47:45,068 - __main__ - DEBUG - 0
+2015-03-20 10:47:45,069 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 21 
+2015-03-20 10:47:45,069 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:47:45,069 - __main__ - DEBUG - 0
+2015-03-20 10:47:45,069 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:48:08,352 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:48:08,353 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:48:08,355 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:48:14,657 - __main__ - INFO - 127.0.0.1:54197 connected to the server
+2015-03-20 10:48:14,657 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:48:14,657 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:48:14,658 - __main__ - DEBUG - 0
+2015-03-20 10:48:14,658 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:48:14,658 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:48:14,658 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:48:14,659 - __main__ - DEBUG - 0
+2015-03-20 10:48:14,659 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:48:14,659 - __main__ - INFO - Received data from client SET [{"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:48:14,659 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:48:14,659 - __main__ - DEBUG - 0
+2015-03-20 10:48:14,659 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:48:14,678 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:48:14,679 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:48:14,679 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:48:14,680 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:48:14,680 - __main__ - DEBUG - 0
+2015-03-20 10:48:14,680 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 23 
+2015-03-20 10:48:14,681 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:48:14,681 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:48:14,681 - __main__ - DEBUG - 0
+2015-03-20 10:48:14,681 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 22 
+2015-03-20 10:48:14,682 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:48:14,682 - __main__ - DEBUG - 0
+2015-03-20 10:48:14,682 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:48:38,358 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:48:38,359 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:48:38,361 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:48:44,661 - __main__ - INFO - 127.0.0.1:54298 connected to the server
+2015-03-20 10:48:44,661 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:49:02,047 - __main__ - INFO - Received data from client SET [{"data": "awesome from batch", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:49:08,366 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:49:08,367 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:49:08,369 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:49:11,190 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:49:11,190 - __main__ - DEBUG - 0
+2015-03-20 10:49:11,190 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome from batch 
+2015-03-20 10:49:38,373 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:49:38,374 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:49:38,376 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:49:50,980 - __main__ - INFO - Received data from client SET [{"data": "awesome from batch", "key": "pk_movie", "expiry": "0"}, {"data": "to delete", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:49:56,469 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:49:56,470 - __main__ - DEBUG - 0
+2015-03-20 10:49:56,470 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome from batch 
+2015-03-20 10:50:08,380 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:50:08,380 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:50:08,383 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:50:15,268 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:50:15,268 - __main__ - DEBUG - 0
+2015-03-20 10:50:15,268 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : to delete 
+2015-03-20 10:50:34,362 - __main__ - INFO - 127.0.0.1:54675 connected to the server
+2015-03-20 10:50:34,362 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:50:34,362 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:50:34,363 - __main__ - DEBUG - 0
+2015-03-20 10:50:34,363 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome from batch 
+2015-03-20 10:50:34,363 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:50:34,364 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:50:34,364 - __main__ - DEBUG - 0
+2015-03-20 10:50:34,365 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:50:34,365 - __main__ - INFO - Received data from client SET [{"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:50:34,366 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:50:34,366 - __main__ - DEBUG - 0
+2015-03-20 10:50:34,366 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:50:34,366 - __main__ - INFO - Received data from client SET [{"data": null, "key": "pk_actor", "expiry": "0"}, {"data": null, "key": "pk_director", "expiry": "0"}, {"data": null, "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:50:34,367 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:50:34,368 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:50:34,368 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:50:34,368 - __main__ - DEBUG - 0
+2015-03-20 10:50:34,368 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 24 
+2015-03-20 10:50:34,369 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:50:34,369 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:50:34,369 - __main__ - DEBUG - 0
+2015-03-20 10:50:34,370 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 23 
+2015-03-20 10:50:34,370 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:50:34,370 - __main__ - DEBUG - 0
+2015-03-20 10:50:34,370 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 10:50:38,386 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:50:38,387 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:50:38,389 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:51:08,393 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:51:08,393 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:51:08,395 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:51:38,400 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:51:38,400 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:51:38,403 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:52:08,407 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:52:08,440 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:52:08,444 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:52:38,449 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:52:38,485 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:52:38,487 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:52:48,530 - __main__ - INFO - 127.0.0.1:55121 connected to the server
+2015-03-20 10:52:48,531 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:52:48,531 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:52:48,531 - __main__ - DEBUG - 0
+2015-03-20 10:52:48,532 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:52:48,532 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:52:48,542 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:52:48,542 - __main__ - DEBUG - 0
+2015-03-20 10:52:48,543 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:52:48,543 - __main__ - INFO - Received data from client SET [{"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:52:48,610 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:52:48,610 - __main__ - DEBUG - 0
+2015-03-20 10:52:48,611 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:52:48,611 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:52:48,612 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:52:48,613 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:52:48,613 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:52:48,614 - __main__ - DEBUG - 0
+2015-03-20 10:52:48,614 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 25 
+2015-03-20 10:52:48,614 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:52:48,615 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:52:48,615 - __main__ - DEBUG - 0
+2015-03-20 10:52:48,615 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 24 
+2015-03-20 10:52:48,615 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:52:48,616 - __main__ - DEBUG - 0
+2015-03-20 10:52:48,616 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:52:50,956 - __main__ - INFO - 127.0.0.1:55132 connected to the server
+2015-03-20 10:52:50,956 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:52:50,956 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:52:50,956 - __main__ - DEBUG - 0
+2015-03-20 10:52:50,956 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:52:50,957 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:52:50,958 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:52:50,958 - __main__ - DEBUG - 0
+2015-03-20 10:52:50,958 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:52:50,958 - __main__ - INFO - Received data from client SET [{"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:52:50,959 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:52:50,959 - __main__ - DEBUG - 0
+2015-03-20 10:52:50,959 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:52:50,959 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:52:50,960 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:52:50,969 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:52:50,970 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:52:50,970 - __main__ - DEBUG - 0
+2015-03-20 10:52:50,970 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 26 
+2015-03-20 10:52:50,971 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:52:50,971 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:52:50,971 - __main__ - DEBUG - 0
+2015-03-20 10:52:50,971 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 25 
+2015-03-20 10:52:50,972 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:52:50,972 - __main__ - DEBUG - 0
+2015-03-20 10:52:50,972 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:53:06,007 - __main__ - INFO - 127.0.0.1:55181 connected to the server
+2015-03-20 10:53:06,008 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:53:06,008 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:53:06,008 - __main__ - DEBUG - 0
+2015-03-20 10:53:06,008 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:53:06,008 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:53:06,009 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:53:06,009 - __main__ - DEBUG - 0
+2015-03-20 10:53:06,009 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:53:06,009 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:53:06,010 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:53:06,017 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:53:06,019 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:53:06,020 - __main__ - DEBUG - 0
+2015-03-20 10:53:06,020 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 27 
+2015-03-20 10:53:06,020 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:53:06,020 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:53:06,020 - __main__ - DEBUG - 0
+2015-03-20 10:53:06,021 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 26 
+2015-03-20 10:53:06,021 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:53:06,021 - __main__ - DEBUG - 0
+2015-03-20 10:53:06,021 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:53:06,021 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 10:53:06,022 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:53:06,034 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:53:08,489 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:53:08,489 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:53:08,492 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:53:38,497 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:53:38,498 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:53:38,500 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:53:58,084 - __main__ - INFO - 127.0.0.1:55351 connected to the server
+2015-03-20 10:53:58,084 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:53:58,084 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:53:58,084 - __main__ - DEBUG - 0
+2015-03-20 10:53:58,085 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:53:58,085 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:53:58,085 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:53:58,085 - __main__ - DEBUG - 0
+2015-03-20 10:53:58,086 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:53:58,086 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:53:58,086 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:53:58,097 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:53:58,098 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:53:58,098 - __main__ - DEBUG - 0
+2015-03-20 10:53:58,098 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 28 
+2015-03-20 10:53:58,098 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:53:58,099 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:53:58,099 - __main__ - DEBUG - 0
+2015-03-20 10:53:58,099 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 27 
+2015-03-20 10:53:58,099 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:53:58,100 - __main__ - DEBUG - 0
+2015-03-20 10:53:58,100 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:54:02,698 - __main__ - INFO - 127.0.0.1:55369 connected to the server
+2015-03-20 10:54:02,709 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:54:02,709 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:54:02,709 - __main__ - DEBUG - 0
+2015-03-20 10:54:02,710 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:54:02,710 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 10:54:02,721 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 10:54:02,722 - __main__ - DEBUG - 0
+2015-03-20 10:54:02,722 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 10:54:02,722 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 10:54:02,790 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:54:02,790 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:54:02,791 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:54:02,791 - __main__ - DEBUG - 0
+2015-03-20 10:54:02,792 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 29 
+2015-03-20 10:54:02,792 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 10:54:02,793 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 10:54:02,793 - __main__ - DEBUG - 0
+2015-03-20 10:54:02,793 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 28 
+2015-03-20 10:54:02,793 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:54:02,794 - __main__ - DEBUG - 0
+2015-03-20 10:54:02,794 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 10:54:02,794 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 10:54:08,500 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:54:08,500 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:54:08,502 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:54:22,554 - __main__ - INFO - 127.0.0.1:55435 connected to the server
+2015-03-20 10:54:22,554 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:54:22,555 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:54:22,555 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:54:38,508 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:54:38,508 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:54:38,510 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:55:02,755 - __main__ - INFO - 127.0.0.1:55569 connected to the server
+2015-03-20 10:55:02,755 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:55:02,755 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:55:02,756 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:55:08,512 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:55:08,512 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:55:08,514 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:55:38,377 - __main__ - INFO - 127.0.0.1:55690 connected to the server
+2015-03-20 10:55:38,377 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:55:38,377 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:55:38,377 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:55:38,515 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:55:38,516 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:55:38,518 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:56:08,524 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:56:08,524 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:56:08,526 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:56:38,527 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:56:38,527 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:56:38,529 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:57:08,534 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:57:08,534 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:57:08,536 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:57:12,454 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:57:12,454 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:57:22,452 - __main__ - INFO - 127.0.0.1:56029 connected to the server
+2015-03-20 10:57:22,452 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:57:24,510 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 10:57:24,510 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 10:57:38,537 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:57:38,538 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:57:38,545 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:58:08,550 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:58:08,550 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:58:08,553 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:58:38,553 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:58:38,553 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:58:38,555 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:59:02,299 - __main__ - INFO - Starting reservoir server...
+2015-03-20 10:59:02,299 - __main__ - INFO - creating TCP socket now
+2015-03-20 10:59:02,300 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 10:59:02,302 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 10:59:02,302 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 10:59:02,302 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 10:59:02,304 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:59:04,630 - __main__ - INFO - 127.0.0.1:56365 connected to the server
+2015-03-20 10:59:04,630 - __main__ - INFO - Waiting for client connections
+2015-03-20 10:59:07,952 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 10:59:13,002 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 10:59:32,305 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 10:59:32,306 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 10:59:32,308 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:00:02,311 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:00:02,312 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:00:02,319 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:00:26,042 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:00:32,320 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:00:32,321 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:00:32,329 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:00:33,978 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:00:39,761 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:00:39,762 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 11:00:48,698 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:00:48,698 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:00:48,699 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:00:48,701 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:00:48,701 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:00:48,702 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 11:00:48,703 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-20 11:00:48,703 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:00:55,893 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:00:55,893 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:00:55,893 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:00:55,895 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:00:55,895 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:00:55,895 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 11:00:55,897 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-20 11:00:55,897 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:04,854 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:01:04,854 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:01:04,854 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:01:04,857 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:01:04,857 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:01:04,857 - __main__ - INFO - binding the socket on localhost:31420
+2015-03-20 11:01:04,859 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:06,860 - __main__ - INFO - 127.0.0.1:56768 connected to the server
+2015-03-20 11:01:06,861 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:09,761 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:01:09,761 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'expiry'
+2015-03-20 11:01:34,858 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:01:34,858 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:01:34,860 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:01:42,298 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:01:42,298 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:01:42,298 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:01:42,300 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:01:42,301 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:01:42,301 - __main__ - INFO - binding the socket on localhost:31420
+2015-03-20 11:01:42,303 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-20 11:01:42,303 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:49,525 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:01:49,525 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:01:49,526 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:01:49,527 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:01:49,527 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:01:49,527 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 11:01:49,529 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:51,575 - __main__ - INFO - 127.0.0.1:56919 connected to the server
+2015-03-20 11:01:51,576 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:54,441 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:01:54,441 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:01:59,673 - __main__ - INFO - 127.0.0.1:56946 connected to the server
+2015-03-20 11:01:59,673 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:01:59,673 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:01:59,674 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:02:19,528 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:02:19,528 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:02:19,530 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:02:24,409 - __main__ - INFO - 127.0.0.1:57028 connected to the server
+2015-03-20 11:02:24,409 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:02:24,410 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:02:24,410 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:02:24,410 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:02:24,440 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:02:24,441 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:02:24,441 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:02:24,509 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:24,509 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:24,510 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:02:24,510 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 30 
+2015-03-20 11:02:24,511 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:24,511 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:02:24,511 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 29 
+2015-03-20 11:02:24,512 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:02:24,512 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:02:24,513 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:02:24,513 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:02:35,393 - __main__ - INFO - 127.0.0.1:57065 connected to the server
+2015-03-20 11:02:35,393 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:02:35,393 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:02:35,394 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:02:35,394 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:02:35,394 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:02:35,395 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:02:35,395 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:02:35,457 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:35,458 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:35,458 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:02:35,458 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 31 
+2015-03-20 11:02:35,459 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:35,459 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:02:35,459 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 30 
+2015-03-20 11:02:35,460 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:02:35,460 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:02:35,460 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:02:35,464 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:02:37,672 - __main__ - INFO - 127.0.0.1:57074 connected to the server
+2015-03-20 11:02:37,672 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:02:37,673 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:02:37,673 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:02:37,673 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:02:37,674 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:02:37,674 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:02:37,674 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:02:37,675 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:37,675 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:37,693 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:02:37,694 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 32 
+2015-03-20 11:02:37,694 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:02:37,695 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:02:37,695 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 31 
+2015-03-20 11:02:37,695 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:02:37,695 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:02:37,696 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:02:37,696 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:02:49,532 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:02:49,532 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:02:49,534 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:03:09,792 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:09,792 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:15,520 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:19,231 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:19,538 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:03:19,538 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:03:19,540 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:03:22,039 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:22,040 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:30,513 - __main__ - INFO - 127.0.0.1:57253 connected to the server
+2015-03-20 11:03:30,513 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:03:30,513 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:03:30,513 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:03:30,514 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:03:30,514 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:03:30,514 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:03:30,515 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:03:30,515 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:03:30,516 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:03:30,516 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:03:30,533 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 33 
+2015-03-20 11:03:30,534 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:03:30,534 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:03:30,535 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 32 
+2015-03-20 11:03:30,535 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:30,535 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:03:30,535 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:30,536 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:03:49,546 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:03:49,546 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:03:49,548 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:03:52,955 - __main__ - INFO - 127.0.0.1:57330 connected to the server
+2015-03-20 11:03:52,956 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:03:52,956 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:52,956 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:52,956 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:52,957 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:52,957 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:54,579 - __main__ - INFO - 127.0.0.1:57336 connected to the server
+2015-03-20 11:03:54,579 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:03:54,579 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:54,579 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:54,579 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:54,580 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:54,580 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:55,360 - __main__ - INFO - 127.0.0.1:57340 connected to the server
+2015-03-20 11:03:55,360 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:03:55,360 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:55,361 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:55,361 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:55,361 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:55,362 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:56,018 - __main__ - INFO - 127.0.0.1:57343 connected to the server
+2015-03-20 11:03:56,018 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:03:56,018 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:56,018 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:03:56,019 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:03:56,019 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:03:56,019 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:04:07,410 - __main__ - INFO - 127.0.0.1:57382 connected to the server
+2015-03-20 11:04:07,411 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:07,411 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:07,411 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:07,411 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:07,412 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:07,412 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:07,412 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:08,682 - __main__ - INFO - 127.0.0.1:57387 connected to the server
+2015-03-20 11:04:08,682 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:08,682 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:08,682 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:08,683 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:08,683 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:08,683 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:08,684 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:09,418 - __main__ - INFO - 127.0.0.1:57390 connected to the server
+2015-03-20 11:04:09,418 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:09,418 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:09,418 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:09,419 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:09,419 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:09,419 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:09,420 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:13,844 - __main__ - INFO - 127.0.0.1:57406 connected to the server
+2015-03-20 11:04:13,844 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:13,844 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:13,844 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:13,845 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:13,845 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:13,845 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:13,846 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:13,846 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:13,847 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:13,864 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:13,865 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 34 
+2015-03-20 11:04:13,865 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:13,866 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:13,866 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 33 
+2015-03-20 11:04:18,954 - __main__ - INFO - 127.0.0.1:57424 connected to the server
+2015-03-20 11:04:18,954 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:18,955 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:18,955 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:18,955 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:18,956 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:18,956 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:18,956 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:18,957 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:18,957 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:18,957 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:18,958 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 35 
+2015-03-20 11:04:18,958 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:18,968 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:18,968 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 34 
+2015-03-20 11:04:18,969 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:04:18,969 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:04:18,969 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:04:18,969 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:04:19,549 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:04:19,549 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:04:19,551 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:04:27,396 - __main__ - INFO - 127.0.0.1:57454 connected to the server
+2015-03-20 11:04:27,396 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:27,396 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:27,396 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:27,397 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:27,397 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:27,397 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:27,398 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:27,398 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:27,399 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:27,415 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:27,415 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 36 
+2015-03-20 11:04:27,416 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:27,416 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:27,416 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 35 
+2015-03-20 11:04:27,417 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:04:27,417 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:04:37,092 - __main__ - INFO - 127.0.0.1:57488 connected to the server
+2015-03-20 11:04:37,092 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:04:37,092 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:37,092 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:37,093 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:04:37,093 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:04:37,093 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:04:37,094 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:04:37,094 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:37,095 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:37,095 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:37,095 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 37 
+2015-03-20 11:04:37,095 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:04:37,097 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:04:37,097 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 36 
+2015-03-20 11:04:37,098 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:04:37,098 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:04:37,098 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:04:37,098 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:04:49,551 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:04:49,552 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:04:49,554 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:05:18,175 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:05:19,560 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:05:19,560 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:05:19,563 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:05:34,098 - __main__ - INFO - 127.0.0.1:57674 connected to the server
+2015-03-20 11:05:34,098 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:05:34,099 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:05:34,099 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:05:34,099 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:05:34,100 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:05:34,100 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:05:45,615 - __main__ - INFO - 127.0.0.1:57720 connected to the server
+2015-03-20 11:05:45,615 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:05:45,615 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:05:45,723 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:05:45,724 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:05:45,725 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:05:45,725 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 38 
+2015-03-20 11:05:45,725 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:05:45,726 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:05:45,726 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 37 
+2015-03-20 11:05:45,727 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:05:45,727 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:05:45,727 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:05:45,728 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:05:49,564 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:05:49,565 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:05:49,567 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:05:53,567 - __main__ - INFO - 127.0.0.1:57747 connected to the server
+2015-03-20 11:05:53,567 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:05:53,568 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}]
+2015-03-20 11:05:53,569 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:05:53,570 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:05:53,570 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:05:53,570 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 39 
+2015-03-20 11:05:53,570 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:05:53,571 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:05:53,571 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 38 
+2015-03-20 11:05:53,595 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:05:53,595 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:05:53,596 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:05:53,596 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:05:53,596 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:06:07,136 - __main__ - INFO - 127.0.0.1:57792 connected to the server
+2015-03-20 11:06:07,136 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:06:07,136 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:06:07,136 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:06:07,137 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:06:07,137 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:06:07,137 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:06:07,137 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:06:07,138 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:06:07,138 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:06:07,160 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:06:07,160 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 40 
+2015-03-20 11:06:07,161 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:06:07,161 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:06:07,162 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 39 
+2015-03-20 11:06:07,162 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:06:07,162 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:06:07,162 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:06:07,163 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:06:19,572 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:06:19,572 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:06:19,575 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:06:49,580 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:06:49,581 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:06:49,583 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:07:11,665 - __main__ - INFO - 127.0.0.1:58008 connected to the server
+2015-03-20 11:07:11,666 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:07:11,666 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:07:11,666 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:07:11,666 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:07:11,667 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:07:11,667 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:07:11,667 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:07:11,668 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:11,669 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:11,672 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:07:11,673 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 41 
+2015-03-20 11:07:11,673 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:11,674 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:07:11,674 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 40 
+2015-03-20 11:07:11,674 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:07:11,675 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:07:11,675 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:07:11,675 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:07:19,588 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:07:19,589 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:07:19,590 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:07:30,720 - __main__ - INFO - 127.0.0.1:58071 connected to the server
+2015-03-20 11:07:30,720 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:07:30,720 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:07:30,720 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:07:30,721 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:07:30,721 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:07:30,722 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:07:30,722 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:07:30,723 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:30,723 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:30,724 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:07:30,724 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 42 
+2015-03-20 11:07:30,724 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:30,725 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:07:30,725 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 41 
+2015-03-20 11:07:30,725 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:07:30,725 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:07:30,726 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:07:30,726 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:07:48,100 - __main__ - INFO - 127.0.0.1:58131 connected to the server
+2015-03-20 11:07:48,100 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:07:48,100 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:07:48,101 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:07:48,101 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:07:48,112 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:07:48,113 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:07:48,113 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:07:48,181 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:48,181 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:48,182 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:07:48,182 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 43 
+2015-03-20 11:07:48,183 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:07:48,183 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:07:48,184 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 42 
+2015-03-20 11:07:48,184 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:07:48,184 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:07:48,185 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:07:48,185 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:07:49,591 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:07:49,592 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:07:49,594 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:08:07,145 - __main__ - INFO - 127.0.0.1:58195 connected to the server
+2015-03-20 11:08:07,145 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:08:07,145 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:07,145 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:07,146 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:08:07,146 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:07,146 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:07,146 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:08:07,147 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:07,147 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:07,158 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:07,158 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 44 
+2015-03-20 11:08:07,158 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:07,159 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:07,159 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 43 
+2015-03-20 11:08:07,160 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:08:07,160 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:08:07,160 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:08:07,160 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:08:18,088 - __main__ - INFO - 127.0.0.1:58231 connected to the server
+2015-03-20 11:08:18,088 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:08:18,089 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:18,089 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:18,089 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:08:18,090 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:18,090 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:18,090 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:08:18,091 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:18,091 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:18,097 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:18,098 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 45 
+2015-03-20 11:08:18,098 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:18,099 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:18,099 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 44 
+2015-03-20 11:08:18,099 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:08:18,099 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:08:18,100 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:08:18,100 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:08:19,597 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:08:19,597 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:08:19,599 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:08:41,234 - __main__ - INFO - 127.0.0.1:58312 connected to the server
+2015-03-20 11:08:41,235 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:08:41,235 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:41,235 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:41,236 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:08:41,237 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:41,237 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:41,237 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:08:41,238 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:41,239 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:41,243 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:41,243 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 46 
+2015-03-20 11:08:41,243 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:41,244 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:41,244 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 45 
+2015-03-20 11:08:41,245 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:08:41,245 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:08:41,245 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:08:41,245 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:08:43,310 - __main__ - INFO - 127.0.0.1:58320 connected to the server
+2015-03-20 11:08:43,310 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:08:43,310 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:43,310 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:43,311 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:08:43,311 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:43,311 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:43,312 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:08:43,312 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:43,313 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:43,321 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:43,321 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 47 
+2015-03-20 11:08:43,322 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:43,322 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:43,323 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 46 
+2015-03-20 11:08:43,323 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:08:43,323 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:08:43,323 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:08:43,324 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:08:46,309 - __main__ - INFO - 127.0.0.1:58330 connected to the server
+2015-03-20 11:08:46,309 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:08:46,310 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:46,310 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:46,310 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:08:46,311 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:08:46,311 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:08:46,311 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:08:46,312 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:46,312 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:46,336 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:46,336 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 48 
+2015-03-20 11:08:46,337 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:08:46,337 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:08:46,337 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 47 
+2015-03-20 11:08:46,338 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:08:46,338 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:08:46,339 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:08:46,339 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:08:49,603 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:08:49,603 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:08:49,606 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:09:08,324 - __main__ - INFO - 127.0.0.1:58402 connected to the server
+2015-03-20 11:09:08,324 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:09:08,324 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:09:08,324 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:09:08,325 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:09:08,336 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:09:08,336 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:09:08,336 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:09:08,404 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:09:08,404 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:09:08,405 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:09:08,405 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 49 
+2015-03-20 11:09:08,405 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:09:08,406 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:09:08,406 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 48 
+2015-03-20 11:09:08,406 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:09:08,406 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:09:08,407 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:09:08,407 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:09:19,608 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:09:19,608 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:09:19,610 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:09:49,612 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:09:49,647 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:09:49,649 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:09:50,181 - __main__ - INFO - 127.0.0.1:58541 connected to the server
+2015-03-20 11:09:50,181 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:09:50,181 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:09:50,182 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:09:50,182 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:09:50,194 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:09:50,194 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:09:50,195 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:09:50,203 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:09:50,204 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:09:50,204 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:09:50,205 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 50 
+2015-03-20 11:09:50,205 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:09:50,206 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:09:50,206 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 49 
+2015-03-20 11:09:50,207 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:09:50,207 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:09:50,207 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:09:50,208 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:10:19,655 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:10:19,655 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:10:19,657 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:10:42,974 - __main__ - INFO - 127.0.0.1:58716 connected to the server
+2015-03-20 11:10:42,974 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:10:42,974 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:10:42,974 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:10:42,975 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:10:42,975 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:10:42,975 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:10:42,975 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:10:42,976 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:10:42,976 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:10:42,986 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:10:42,987 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 51 
+2015-03-20 11:10:42,987 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:10:42,987 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:10:42,987 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 50 
+2015-03-20 11:10:42,988 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:10:42,988 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:10:42,988 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:10:42,988 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:10:49,660 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:10:49,660 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:10:49,662 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:10:56,454 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:10:56,455 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:10:56,455 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:10:56,457 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:10:56,457 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:10:56,457 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 11:10:56,459 - __main__ - ERROR - [Errno 48] Address already in use
+2015-03-20 11:10:56,459 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:11:08,857 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:11:08,858 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:11:08,858 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:11:08,860 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:11:08,861 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:11:08,861 - __main__ - INFO - binding the socket on localhost:31420
+2015-03-20 11:11:08,862 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:11:32,958 - __main__ - INFO - Starting reservoir server...
+2015-03-20 11:11:32,958 - __main__ - INFO - creating TCP socket now
+2015-03-20 11:11:32,958 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-20 11:11:32,960 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:11:32,960 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-20 11:11:32,960 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-20 11:11:32,962 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:11:35,474 - __main__ - INFO - 127.0.0.1:58891 connected to the server
+2015-03-20 11:11:35,474 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:11:35,474 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:11:35,474 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:11:35,475 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:11:35,476 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:11:35,476 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:11:35,476 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:11:35,477 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:11:35,477 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:11:35,477 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:11:35,478 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 52 
+2015-03-20 11:11:35,496 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:11:35,497 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:11:35,497 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 51 
+2015-03-20 11:11:35,498 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:11:35,498 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : some crap 
+2015-03-20 11:11:35,498 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:11:35,498 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:11:54,236 - __main__ - INFO - 127.0.0.1:58957 connected to the server
+2015-03-20 11:11:54,236 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:11:54,236 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:11:54,237 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:11:54,237 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:11:54,238 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:11:54,238 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:11:54,238 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:11:54,245 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:11:54,246 - __main__ - INFO - Received data from client ICR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:11:54,251 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:11:54,252 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 53 
+2015-03-20 11:11:54,252 - __main__ - INFO - Received data from client DCR [{"key": "pk_movie_votes", "expiry": "0"}]
+2015-03-20 11:11:54,253 - __main__ - INFO - Received data from client GET [{"key": "pk_movie_votes"}]
+2015-03-20 11:11:54,253 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 52 
+2015-03-20 11:11:54,254 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:11:54,254 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:12:00,143 - __main__ - INFO - 127.0.0.1:58979 connected to the server
+2015-03-20 11:12:00,143 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:12:00,143 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:12:00,143 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:12:00,144 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:12:00,144 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:12:00,144 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:12:00,145 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:12:00,146 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:12:00,146 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:12:02,961 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:12:02,962 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:12:02,963 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:12:05,949 - __main__ - INFO - 127.0.0.1:58999 connected to the server
+2015-03-20 11:12:05,949 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:12:05,950 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:12:05,950 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:12:05,950 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:12:05,951 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:12:05,951 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:12:05,951 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:12:05,952 - __main__ - INFO - Received data from client GET [{"key": "pk_to_delete"}]
+2015-03-20 11:12:05,952 - __main__ - DEBUG - Fetching the cache item for : pk_to_delete ; the value is : None 
+2015-03-20 11:12:13,797 - __main__ - INFO - 127.0.0.1:59025 connected to the server
+2015-03-20 11:12:13,797 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:12:13,797 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:12:13,797 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:12:13,798 - __main__ - INFO - Received data from client SET [{"data": "awesome", "key": "pk_movie", "expiry": "0"}]
+2015-03-20 11:12:13,799 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-20 11:12:13,799 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-20 11:12:13,799 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:12:13,800 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:12:13,800 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:12:19,871 - __main__ - INFO - 127.0.0.1:59047 connected to the server
+2015-03-20 11:12:19,871 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:12:19,871 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:12:19,873 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:12:19,873 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:12:32,965 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:12:32,965 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:12:32,967 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:12:53,344 - __main__ - INFO - 127.0.0.1:59161 connected to the server
+2015-03-20 11:12:53,344 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:12:53,344 - __main__ - INFO - Received data from client SET [{"data": "aamir khan", "key": "pk_actor", "expiry": "0"}, {"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}, {"data": "some crap", "key": "pk_to_delete", "expiry": "0"}]
+2015-03-20 11:13:02,498 - __main__ - INFO - 127.0.0.1:59192 connected to the server
+2015-03-20 11:13:02,498 - __main__ - INFO - Waiting for client connections
+2015-03-20 11:13:02,972 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:13:02,972 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:13:02,975 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:13:04,336 - __main__ - INFO - Received data from client DEL [{"key": "pk_to_delete"}]
+2015-03-20 11:13:04,336 - __main__ - ERROR - Error occurred while starting TCP client thread : u'pk_to_delete'
+2015-03-20 11:13:32,978 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:13:32,979 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:13:32,981 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:14:02,986 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:14:02,987 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:14:02,989 - __main__ - INFO - Starting the persistance cycle at 30 seconds
+2015-03-20 11:14:32,990 - __main__ - INFO - Trying to save data for persistance
+2015-03-20 11:14:32,990 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-20 11:14:32,992 - __main__ - INFO - Starting the persistance cycle at 30 seconds

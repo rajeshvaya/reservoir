@@ -402,7 +402,7 @@ class Server:
     def delete(self, key):
         if self.reservoir.has_key(key):
             # dependants also include the key in question
-            dependants = set(self.get_dependants_tree(key, self.max_depandants_depth))
+            dependants = set(self.get_dependants_tree(key, self.max_depandants_depth))            
             for dependant in dependants:
                 if self.reservoir.has_key(dependant):
                     d = self.reservoir[dependant]
@@ -410,7 +410,7 @@ class Server:
                     # unset the drop for garbage collection
                     del self.reservoir[dependant]
                     # delete the reference
-                    self.reservoir.pop(dependant, None)
+                    self.reservoir.pop(dependant)
                     # delete the referece of bucket as well, if any
                     for bucket in buckets:
                         if not self.buckets.get(bucket, None):
