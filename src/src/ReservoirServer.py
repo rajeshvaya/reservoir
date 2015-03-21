@@ -410,7 +410,7 @@ class Server:
                     # unset the drop for garbage collection
                     del self.reservoir[dependant]
                     # delete the reference
-                    self.reservoir.pop(dependant)
+                    self.reservoir.pop(dependant, None)
                     # delete the referece of bucket as well, if any
                     for bucket in buckets:
                         if not self.buckets.get(bucket, None):
