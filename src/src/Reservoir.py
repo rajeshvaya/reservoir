@@ -5,6 +5,7 @@ This is the CLI file which will be command line based
 from ReservoirServer import Server
 from ReservoirClientServer import Client
 from ReservoirClientShell import Client as ClientShell
+from ReservoirConsole import ReservoirConsole
 import sys
 import os
 import argparse
@@ -87,6 +88,15 @@ def start_shell():
         protocol=config.get('client', 'protocol'),
     )
 
+def start_concole():
+    console = ReservoirConsole(
+        server_host=config.get('client', 'server_host'),
+        server_port=config.getint('client', 'server_port'),
+        protocol=config.get('client', 'protocol'),
+    )
+    console . cmdloop() 
+    
+
 if __name__ == '__main__':
     config = SafeConfigParser()
     config.read([
@@ -102,5 +112,7 @@ if __name__ == '__main__':
         start_client()
     if args.parent == 'shell':
         start_shell()
+    if args.parent == 'console':
+        start_console()
 
 
