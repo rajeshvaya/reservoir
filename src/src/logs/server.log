@@ -2409,3 +2409,114 @@
 2015-03-21 09:47:26,115 - __main__ - INFO - Received data from client GET [{"key": "coldplay_singer"}, {"key": "coldplay_guitar"}]
 2015-03-21 09:47:26,115 - __main__ - DEBUG - Fetching the cache item for : coldplay_singer ; the value is : None 
 2015-03-21 09:47:26,115 - __main__ - DEBUG - Fetching the cache item for : coldplay_guitar ; the value is : None 
+2015-03-24 09:14:19,709 - __main__ - INFO - Starting reservoir server...
+2015-03-24 09:14:19,710 - __main__ - INFO - creating TCP socket now
+2015-03-24 09:14:19,710 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-24 09:14:19,715 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:14:19,715 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-24 09:14:19,716 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-24 09:14:19,717 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:14:23,785 - __main__ - INFO - 127.0.0.1:52980 connected to the server
+2015-03-24 09:14:23,785 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:14:30,529 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:14:30,531 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:14:51,377 - __main__ - INFO - 127.0.0.1:52981 connected to the server
+2015-03-24 09:14:51,378 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:14:56,423 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:14:56,424 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:15:08,260 - __main__ - INFO - Received data from client GET [{"key": "coldplay"}]
+2015-03-24 09:15:08,261 - __main__ - DEBUG - Fetching the cache item for : coldplay ; the value is : None 
+2015-03-24 09:15:13,659 - __main__ - INFO - Received data from client GET [{"key": "pk_actor"}]
+2015-03-24 09:15:13,660 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-24 09:15:35,233 - __main__ - INFO - Received data from client GET [{"key": "pk_actor"}]
+2015-03-24 09:15:35,235 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-24 09:15:36,681 - __main__ - INFO - 127.0.0.1:52993 connected to the server
+2015-03-24 09:15:36,681 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:15:39,370 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:15:39,370 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:15:44,920 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:15:44,921 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:17:04,374 - __main__ - INFO - 127.0.0.1:53053 connected to the server
+2015-03-24 09:17:04,376 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:17:07,726 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:17:07,727 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:17:34,492 - __main__ - INFO - 127.0.0.1:53058 connected to the server
+2015-03-24 09:17:34,492 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:17:39,686 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:17:39,687 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:19:08,990 - __main__ - INFO - 127.0.0.1:53067 connected to the server
+2015-03-24 09:19:08,991 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:19:12,192 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:19:12,193 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:19:19,717 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:19:19,718 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:19:19,724 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:19:26,502 - __main__ - INFO - 127.0.0.1:53073 connected to the server
+2015-03-24 09:19:26,502 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:19:31,615 - __main__ - INFO - Received data from client GET [{"key": "pk_movie"}]
+2015-03-24 09:19:31,616 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-24 09:20:14,264 - __main__ - INFO - 127.0.0.1:53081 connected to the server
+2015-03-24 09:20:14,264 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:21:01,271 - __main__ - INFO - 127.0.0.1:53090 connected to the server
+2015-03-24 09:21:01,272 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:21:29,692 - __main__ - INFO - 127.0.0.1:53096 connected to the server
+2015-03-24 09:21:29,693 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:21:48,048 - __main__ - INFO - 127.0.0.1:53097 connected to the server
+2015-03-24 09:21:48,049 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:24:19,727 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:24:19,737 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:24:19,744 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:25:31,186 - __main__ - INFO - 127.0.0.1:53160 connected to the server
+2015-03-24 09:25:31,187 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:25:41,901 - __main__ - INFO - Received data from client GET [{"key": "\"here\",\"hi\",\"there\""}]
+2015-03-24 09:25:41,904 - __main__ - DEBUG - Fetching the cache item for : "here","hi","there" ; the value is : None 
+2015-03-24 09:25:47,999 - __main__ - INFO - Received data from client GET [{"key": "\"here\",\"hi\""}]
+2015-03-24 09:25:48,000 - __main__ - DEBUG - Fetching the cache item for : "here","hi" ; the value is : None 
+2015-03-24 09:25:50,562 - __main__ - INFO - Received data from client GET [{"key": "\"here\""}]
+2015-03-24 09:25:50,563 - __main__ - DEBUG - Fetching the cache item for : "here" ; the value is : None 
+2015-03-24 09:29:19,748 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:29:19,750 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:29:19,755 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:33:58,001 - __main__ - INFO - 127.0.0.1:53344 connected to the server
+2015-03-24 09:33:58,003 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:34:19,757 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:34:19,757 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:34:19,762 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:36:31,060 - __main__ - INFO - 127.0.0.1:53366 connected to the server
+2015-03-24 09:36:31,062 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:39:19,766 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:39:19,768 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:39:19,789 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:42:37,809 - __main__ - INFO - 127.0.0.1:53460 connected to the server
+2015-03-24 09:42:37,811 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:43:04,658 - __main__ - INFO - 127.0.0.1:53461 connected to the server
+2015-03-24 09:43:04,659 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:44:19,791 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:44:19,792 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:44:19,797 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:45:00,114 - __main__ - INFO - 127.0.0.1:53478 connected to the server
+2015-03-24 09:45:00,114 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:45:21,700 - __main__ - INFO - 127.0.0.1:53479 connected to the server
+2015-03-24 09:45:21,701 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:45:24,877 - __main__ - INFO - Received data from client SET [{"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}]
+2015-03-24 09:45:32,325 - __main__ - INFO - Received data from client GET [{"key": "pk_director"}]
+2015-03-24 09:45:32,327 - __main__ - DEBUG - Fetching the cache item for : pk_director ; the value is : raj kumar hirani 
+2015-03-24 09:45:39,848 - __main__ - INFO - Received data from client SET [{"data": "Mr. raj kumar hirani", "key": "pk_director", "expiry": "0"}]
+2015-03-24 09:45:41,287 - __main__ - INFO - Received data from client GET [{"key": "pk_director"}]
+2015-03-24 09:45:41,287 - __main__ - DEBUG - Fetching the cache item for : pk_director ; the value is : Mr. raj kumar hirani 
+2015-03-24 09:49:18,249 - __main__ - INFO - 127.0.0.1:53596 connected to the server
+2015-03-24 09:49:18,250 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:49:19,799 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:49:19,800 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:49:19,806 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-24 09:49:44,713 - __main__ - INFO - 127.0.0.1:53599 connected to the server
+2015-03-24 09:49:44,713 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:50:41,392 - __main__ - INFO - Received data from client SET [{"data": "raj kumar hirani", "key": "pk_director", "expiry": "0"}]
+2015-03-24 09:52:09,128 - __main__ - INFO - 127.0.0.1:53624 connected to the server
+2015-03-24 09:52:09,128 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:53:15,585 - __main__ - INFO - 127.0.0.1:53635 connected to the server
+2015-03-24 09:53:15,586 - __main__ - INFO - Waiting for client connections
+2015-03-24 09:53:22,303 - __main__ - INFO - Received data from client DEL [{"key": "pk_junk"}]
+2015-03-24 09:54:19,809 - __main__ - INFO - Trying to save data for persistance
+2015-03-24 09:54:19,811 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-24 09:54:19,818 - __main__ - INFO - Starting the persistance cycle at 300 seconds

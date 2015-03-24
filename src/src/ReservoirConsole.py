@@ -2,6 +2,8 @@
 import os
 import cmd
 import readline
+import json
+import socket
 
 class ReservoirConsole(cmd.Cmd):
 
@@ -42,8 +44,12 @@ class ReservoirConsole(cmd.Cmd):
     def send(self, data, expect_return=True):
         self.socket.send(data)
         if expect_return:
-            response = self.socket.recv(self.configs.get('read_buffer', 1024))
-            return response
+            response = self.socket.recv(1024)
+            if response:
+                response_json = json.loads(response)
+                return response_json.get('data', None)
+            else:
+                return {}
         else:
             return True
 
@@ -77,19 +83,52 @@ class ReservoirConsole(cmd.Cmd):
         """GET cache item value from the Reservoir cache
            FORMAT: GET <key>
         """
-        print key
+        batch = [{
+            'key': key
+        }]
+        data_string = json.dumps(batch)
+        data = "GET %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
 
-    def do_SET(self, key, value, expiry):
+    def do_SET(self, args):
         """SET cache item value from the Reservoir cache
-           FORMAT: GET <key> <value> <expiry>
+           FORMAT: SET {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}
         """
-        print key
+        try:
+            arguments = json.loads(args)
+        except ValueError as e:
+            print 'Invalid JSON Format. \n\tFORMAT: SET {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}'
+            return
+
+        if(len(arguments.values()) != 3):
+            print 'Invalid arguments. \n\tFORMAT: SET {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}'
+            return 
+
+        batch = [{
+            'key': arguments.get("key"),
+            'data': arguments.get("value"),
+            'expiry': str(arguments.get("expiry"))
+        }]
+        data_string = json.dumps(batch)
+        data = "SET %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
 
     def do_DEL(self, key):
         """REMOVE cache item value from the Reservoir cache
            FORMAT: DEL <key>
         """
-        print key
+        batch = [{
+            'key': key
+        }]
+        data_string = json.dumps(batch)
+        data = "DEL %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
 
     ## Override methods in Cmd object ##
     def preloop(self):
@@ -120,6 +159,7 @@ class ReservoirConsole(cmd.Cmd):
         """If you want to stop the console, return something that evaluates to true.
            If you want to do some post command processing, do it here.
         """
+        print "" # new line after every command
         return stop
 
     def emptyline(self):    
@@ -134,6 +174,10 @@ class ReservoirConsole(cmd.Cmd):
             exec(line) in self._locals, self._globals
         except Exception, e:
             print e.__class__, ":", e
+
+    def parse(arg):
+        'Convert a series of zero or more numbers to an argument tuple'
+        return tuple(map(int, arg.split()))
 
 if __name__ == '__main__':
         console = ReservoirConsole()
