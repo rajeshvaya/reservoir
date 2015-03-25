@@ -130,6 +130,86 @@ class ReservoirConsole(cmd.Cmd):
         result_json = json.loads(result)
         print result_json[0].get("data", None)
 
+    def do_ICR(self, args):
+        """INCREMENT a cache item value from the Reservoir cache. If the key does not exist it will initialize the key. 
+           During initializing you can set expiry of the item as well
+           FORMAT: ICR <key> [<expiry>]
+        """
+        arguments = args.split()
+        key = arguments[0]
+        if len(arguments > 1):
+            expiry = arguments[1]
+        else:
+            expiry = 0
+
+        batch = [{
+            'key': key,
+            'expiry': str(expiry)
+        }]
+        data_string = json.dumps(batch)
+        data = "ICR %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
+
+    def do_DCR(self, args):
+        """DECREMENT a cache item value from the Reservoir cache.
+           FORMAT: DCR <key> [<expiry>]
+        """
+        arguments = args.split()
+        key = arguments[0]
+        if len(arguments > 1):
+            expiry = arguments[1]
+        else:
+            expiry = 0
+
+        batch = [{
+            'key': key,
+            'expiry': str(expiry)
+        }]
+        data_string = json.dumps(batch)
+        data = "DCR %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
+
+    def do_OTA(self, args):
+        """Set cache item value from the Reservoir cache with ONE-TIME-ACCESS
+           FORMAT: OTA {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}
+        """
+        try:
+            arguments = json.loads(args)
+        except ValueError as e:
+            print 'Invalid JSON Format. \n\tFORMAT: OTA {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}'
+            return
+
+        if(len(arguments.values()) != 3):
+            print 'Invalid arguments. \n\tFORMAT: OTA {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}'
+            return 
+
+        batch = [{
+            'key': arguments.get("key"),
+            'data': arguments.get("value"),
+            'expiry': str(arguments.get("expiry"))
+        }]
+        data_string = json.dumps(batch)
+        data = "OTA %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
+
+    def do_TMR(self, key):
+        """ Get the timer of a cache item; how long the item has been cached for
+        """
+        batch = [{
+            'key': key,
+        }]
+        data_string = json.dumps(batch)
+        data = "TMR %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
+
     ## Override methods in Cmd object ##
     def preloop(self):
         """Initialization before prompting user for commands.
