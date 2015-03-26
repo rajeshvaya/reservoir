@@ -198,6 +198,31 @@ class ReservoirConsole(cmd.Cmd):
         result_json = json.loads(result)
         print result_json[0].get("data", None)
 
+    def do_TPL(self, args):
+        """Set cache item value from the Reservoir cache with READ-ONLY
+           FORMAT: TPL {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}
+        """
+        try:
+            arguments = json.loads(args)
+        except ValueError as e:
+            print 'Invalid JSON Format. \n\tFORMAT: TPL {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}'
+            return
+
+        if(len(arguments.values()) != 3):
+            print 'Invalid arguments. \n\tFORMAT: TPL {"key":"<key>", "value":"<value>", "expiry":"<expiry>"}'
+            return 
+
+        batch = [{
+            'key': arguments.get("key"),
+            'data': arguments.get("value"),
+            'expiry': str(arguments.get("expiry"))
+        }]
+        data_string = json.dumps(batch)
+        data = "TPL %s" % (data_string,)
+        result = self.send(data)
+        result_json = json.loads(result)
+        print result_json[0].get("data", None)
+
     def do_TMR(self, key):
         """ Get the timer of a cache item; how long the item has been cached for
         """
