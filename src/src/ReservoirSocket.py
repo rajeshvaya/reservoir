@@ -2,7 +2,9 @@
 This is the wrapper for socket class which will contain creation of TCP & UDP sockets and interactions wit the sockets.
 It should als maintain the threads for each client connections
 '''
- 
+
+import sys 
+import os
 import socket
 import threading
 import json
@@ -95,7 +97,10 @@ class ReservoirSocket:
             print e
             # TODO: handle the client data for out of memory issue
         except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
             self.reservoir.logger.error("Error occurred while starting TCP client thread : %s" % (str(e)))
+            self.reservoir.logger.error("Error details: %s %s %s " % (exc_type, fname, exc_tb.tb_lineno))
             connection.close()
 
     # UDP functions here

@@ -553,3 +553,40 @@ DEL {"dependants": [], "parent_key": "coldplay", "data": "guy berrymen", "bucket
 SET {"dependants": [], "parent_key": null, "data": "raj kumar hirani", "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
 SET {"dependants": [], "parent_key": null, "data": "Mr. raj kumar hirani", "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
 SET {"dependants": [], "parent_key": null, "data": "raj kumar hirani", "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": null, "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "aamir khan", "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "raj kumar hirani", "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "some crap", "buckets": [], "expiry": 0, "key": "pk_to_delete", "type": null}
+ICR {"dependants": [], "parent_key": null, "data": 54, "buckets": [], "expiry": 0, "key": "pk_movie_votes", "type": null}
+ICR {"dependants": [], "parent_key": null, "data": 55, "buckets": [], "expiry": 0, "key": "pk_movie_votes", "type": null}
+DCR {"dependants": [], "parent_key": null, "data": 54, "buckets": [], "expiry": 0, "key": "pk_movie_votes", "type": null}
+DEL {"dependants": [], "parent_key": null, "data": "some crap", "buckets": [], "expiry": 0, "key": "pk_to_delete", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "Best band ever", "buckets": [], "expiry": 0, "key": "coldplay", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "chris martin", "buckets": [], "expiry": 0, "key": "coldplay_singer", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "johny buckland", "buckets": [], "expiry": 0, "key": "coldplay_guitar", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "will champion", "buckets": [], "expiry": 0, "key": "coldplay_drums", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "guy berrymen", "buckets": [], "expiry": 0, "key": "coldplay_base", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "chris martin", "buckets": [], "expiry": 0, "key": "coldplay_singer", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "will champion", "buckets": [], "expiry": 0, "key": "coldplay_drums", "type": null}
+DEL {"dependants": ["coldplay_singer", "coldplay_guitar", "coldplay_drums", "coldplay_base"], "parent_key": null, "data": "Best band ever", "buckets": [], "expiry": 0, "key": "coldplay", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "johny buckland", "buckets": [], "expiry": 0, "key": "coldplay_guitar", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "guy berrymen", "buckets": [], "expiry": 0, "key": "coldplay_base", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "awesome", "buckets": [], "expiry": 0, "key": "pk_movie", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "aamir khan", "buckets": [], "expiry": 0, "key": "pk_actor", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "raj kumar hirani", "buckets": [], "expiry": 0, "key": "pk_director", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "some crap", "buckets": [], "expiry": 0, "key": "pk_to_delete", "type": null}
+ICR {"dependants": [], "parent_key": null, "data": 54, "buckets": [], "expiry": 0, "key": "pk_movie_votes", "type": null}
+ICR {"dependants": [], "parent_key": null, "data": 55, "buckets": [], "expiry": 0, "key": "pk_movie_votes", "type": null}
+DCR {"dependants": [], "parent_key": null, "data": 54, "buckets": [], "expiry": 0, "key": "pk_movie_votes", "type": null}
+DEL {"dependants": [], "parent_key": null, "data": "some crap", "buckets": [], "expiry": 0, "key": "pk_to_delete", "type": null}
+SET {"dependants": [], "parent_key": null, "data": "Best band ever", "buckets": [], "expiry": 0, "key": "coldplay", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "chris martin", "buckets": [], "expiry": 0, "key": "coldplay_singer", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "johny buckland", "buckets": [], "expiry": 0, "key": "coldplay_guitar", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "will champion", "buckets": [], "expiry": 0, "key": "coldplay_drums", "type": null}
+SET {"dependants": [], "parent_key": "coldplay", "data": "guy berrymen", "buckets": [], "expiry": 0, "key": "coldplay_base", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "chris martin", "buckets": [], "expiry": 0, "key": "coldplay_singer", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "will champion", "buckets": [], "expiry": 0, "key": "coldplay_drums", "type": null}
+DEL {"dependants": ["coldplay_singer", "coldplay_guitar", "coldplay_drums", "coldplay_base"], "parent_key": null, "data": "Best band ever", "buckets": [], "expiry": 0, "key": "coldplay", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "johny buckland", "buckets": [], "expiry": 0, "key": "coldplay_guitar", "type": null}
+DEL {"dependants": [], "parent_key": "coldplay", "data": "guy berrymen", "buckets": [], "expiry": 0, "key": "coldplay_base", "type": null}

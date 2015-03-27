@@ -88,7 +88,7 @@ def start_shell():
         protocol=config.get('client', 'protocol'),
     )
 
-def start_concole():
+def start_console():
     console = ReservoirConsole(
         server_host=config.get('client', 'server_host'),
         server_port=config.getint('client', 'server_port'),
