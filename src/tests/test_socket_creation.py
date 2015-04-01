@@ -1,0 +1,49 @@
+import sys
+import os
+here = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.normpath(os.path.join(here, '../src/')))
+
+import unittest
+from ConfigParser import SafeConfigParser
+import logging
+
+from ReservoirServer import Server as ReservoirServer
+from ReservoirConsole import ReservoirConsole
+from ReservoirClientShell import Client as ReservoirClientShell
+
+class test_socket_creation(unittest.TestCase):
+
+	def test_read_configs(self):
+		config = SafeConfigParser()
+		config.read([
+		    os.path.join('../src/conf/default.conf'),
+		])
+
+
+		self.assertIsNotNone(config.get('server', 'host'))
+		self.assertGreater(config.get("server", "port"), 1024) # valid port
+		self.assertTrue(config.get("server", "protocol") in ['TCP', 'UDP'], 1024)
+
+	def test_server_socket(self):
+		config = SafeConfigParser()
+		config.read([
+		    os.path.join('../src/conf/default.conf'),
+		])
+		logger = logging.getLogger(__name__)
+		s = ReservoirServer(
+	        host=config.get('server', 'host'),
+	        port=config.getint('server', 'port'),
+	        logger=logger,
+        )
+
+		self.assertEqual(s.host, config.get('server', 'host'))
+
+	def test_shell_socket(self):
+		pass
+
+	def test_console_socket(self):
+		pass
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

@@ -3016,3 +3016,688 @@
 2015-03-29 10:38:07,618 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
 2015-03-29 10:38:07,619 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
 2015-03-29 10:38:07,619 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:41:46,085 - __main__ - INFO - Starting reservoir server...
+2015-03-31 08:41:46,086 - __main__ - INFO - creating TCP socket now
+2015-03-31 08:41:46,086 - __main__ - INFO - Loading data from last persistance cycle
+2015-03-31 08:41:46,089 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 08:41:46,090 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-03-31 08:41:46,090 - __main__ - INFO - binding the socket on localhost:3142
+2015-03-31 08:41:46,092 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:41:53,297 - __main__ - INFO - 127.0.0.1:63175 connected to the server
+2015-03-31 08:41:53,297 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:41:53,304 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:41:53,305 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:42:07,245 - __main__ - INFO - 127.0.0.1:63181 connected to the server
+2015-03-31 08:42:07,246 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:42:07,251 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:42:07,251 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:42:07,252 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:42:07,252 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:42:07,253 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:42:07,257 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:07,257 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:42:07,258 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:07,259 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:07,259 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:42:07,259 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:07,260 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:07,260 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:42:44,908 - __main__ - INFO - 127.0.0.1:63188 connected to the server
+2015-03-31 08:42:44,909 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:42:44,913 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:42:44,913 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:42:44,915 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:42:44,915 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:42:44,915 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:42:44,916 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:44,916 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:42:44,916 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:44,917 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:44,917 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:42:44,917 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:44,918 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:42:44,918 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:43:28,991 - __main__ - INFO - 127.0.0.1:63191 connected to the server
+2015-03-31 08:43:28,991 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:43:28,997 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:43:28,997 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:43:28,998 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:43:28,998 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:43:28,999 - __main__ - INFO - Received data from client GET ["pk_actor","pk_movie"]
+2015-03-31 08:43:28,999 - __main__ - ERROR - Error occurred while starting TCP client thread : 'unicode' object has no attribute 'get'
+2015-03-31 08:43:28,999 - __main__ - ERROR - Error details: <type 'exceptions.AttributeError'> ReservoirSocket.py 93 
+2015-03-31 08:46:10,993 - __main__ - INFO - 127.0.0.1:63205 connected to the server
+2015-03-31 08:46:10,995 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:46:11,000 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:46:11,000 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:46:11,002 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:46:11,003 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:46:11,003 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:46:11,003 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:46:11,003 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:46:11,004 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:46:11,006 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:11,006 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:46:11,006 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:11,007 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:11,007 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:46:11,007 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:11,008 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:11,008 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:46:36,199 - __main__ - INFO - 127.0.0.1:63206 connected to the server
+2015-03-31 08:46:36,199 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:46:36,204 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:46:36,205 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:46:36,207 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:46:36,207 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:46:36,207 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:46:36,208 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:46:36,208 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:46:36,208 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:46:36,209 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:36,209 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:46:36,210 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:36,210 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:36,211 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:46:36,211 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:36,212 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:46:36,212 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:46:46,091 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 08:46:46,091 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 08:46:46,099 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 08:47:06,072 - __main__ - INFO - 127.0.0.1:63210 connected to the server
+2015-03-31 08:47:06,073 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:47:06,080 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:47:06,080 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:47:17,337 - __main__ - INFO - 127.0.0.1:63211 connected to the server
+2015-03-31 08:47:17,338 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:47:17,342 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:47:17,342 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:47:17,343 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:47:17,344 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:47:17,344 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:47:17,344 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:47:17,344 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:47:42,353 - __main__ - INFO - 127.0.0.1:63215 connected to the server
+2015-03-31 08:47:42,355 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:47:42,360 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:47:42,361 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:47:42,363 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:47:42,363 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:47:42,363 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:47:42,364 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:47:42,364 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:47:42,364 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:47:42,365 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:47:42,365 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:47:42,366 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:47:42,366 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:47:42,366 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:47:42,366 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:47:42,367 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:47:42,367 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:48:19,104 - __main__ - INFO - 127.0.0.1:63218 connected to the server
+2015-03-31 08:48:19,104 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:48:19,109 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:48:19,109 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:48:19,111 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:48:19,111 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:48:19,111 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:48:19,111 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:48:19,112 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:48:19,112 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:49:06,398 - __main__ - INFO - 127.0.0.1:63222 connected to the server
+2015-03-31 08:49:06,398 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:49:06,402 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:49:06,403 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:49:06,404 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:49:06,404 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:49:06,404 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:49:06,405 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:49:06,405 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:49:06,405 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:06,405 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:49:06,406 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:06,406 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:06,406 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:49:06,407 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:06,407 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:06,407 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:49:14,114 - __main__ - INFO - 127.0.0.1:63223 connected to the server
+2015-03-31 08:49:14,115 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:49:14,121 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:49:14,121 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:49:14,123 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:49:14,124 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:49:14,124 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:49:14,125 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:49:14,125 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:49:14,125 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:14,125 - __main__ - ERROR - Error occurred while starting TCP client thread : 'NoneType' object has no attribute 'isdigit'
+2015-03-31 08:49:14,126 - __main__ - ERROR - Error details: <type 'exceptions.AttributeError'> ReservoirSocket.py 93 
+2015-03-31 08:49:52,915 - __main__ - INFO - 127.0.0.1:63227 connected to the server
+2015-03-31 08:49:52,915 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:49:52,922 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:49:52,923 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:49:52,924 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:49:52,924 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:49:52,925 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:49:52,925 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:49:52,925 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:49:52,926 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:52,926 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:49:52,926 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 08:50:10,809 - __main__ - INFO - 127.0.0.1:63233 connected to the server
+2015-03-31 08:50:10,810 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:50:10,814 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:50:10,814 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:50:10,816 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:50:10,816 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:50:10,816 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:50:10,816 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:50:10,816 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:50:10,817 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 08:50:10,819 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:50:10,819 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 08:50:10,819 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 08:50:10,819 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 08:50:10,820 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 08:50:22,920 - __main__ - INFO - 127.0.0.1:63234 connected to the server
+2015-03-31 08:50:22,920 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:50:22,927 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:50:22,927 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:50:22,930 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:50:22,931 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:50:22,931 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:50:22,931 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:50:22,932 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:50:44,533 - __main__ - INFO - 127.0.0.1:63237 connected to the server
+2015-03-31 08:50:44,534 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:50:44,540 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:50:44,540 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:50:44,542 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:50:44,543 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:50:52,781 - __main__ - INFO - 127.0.0.1:63238 connected to the server
+2015-03-31 08:50:52,781 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:50:52,785 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:50:52,785 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:50:52,786 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:50:52,787 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:50:58,527 - __main__ - INFO - 127.0.0.1:63239 connected to the server
+2015-03-31 08:50:58,528 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:50:58,532 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:50:58,532 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:51:44,689 - __main__ - INFO - 127.0.0.1:63247 connected to the server
+2015-03-31 08:51:44,689 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:51:44,694 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:51:44,694 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:51:44,695 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:51:44,695 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:51:44,696 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:51:44,696 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:51:44,696 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:51:46,099 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 08:51:46,099 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 08:51:46,107 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 08:52:52,459 - __main__ - INFO - 127.0.0.1:63253 connected to the server
+2015-03-31 08:52:52,460 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:52:52,464 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:52:52,464 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:52:52,465 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:52:52,466 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:52:52,466 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:52:52,466 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:52:52,466 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:53:25,785 - __main__ - INFO - 127.0.0.1:63255 connected to the server
+2015-03-31 08:53:25,785 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:53:25,790 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:53:25,790 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:53:25,791 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:53:25,791 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:53:25,792 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:53:25,792 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:53:25,792 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:54:04,692 - __main__ - INFO - 127.0.0.1:63262 connected to the server
+2015-03-31 08:54:04,693 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:54:04,698 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:54:04,699 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:54:04,700 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:54:04,700 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:54:04,701 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:54:04,701 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:54:04,701 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:54:29,302 - __main__ - INFO - 127.0.0.1:63264 connected to the server
+2015-03-31 08:54:29,302 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:54:29,307 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 08:54:29,308 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:54:29,308 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:54:38,540 - __main__ - INFO - 127.0.0.1:63265 connected to the server
+2015-03-31 08:54:38,540 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:54:38,545 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:54:38,545 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:54:38,546 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:54:38,546 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:55:42,551 - __main__ - INFO - 127.0.0.1:63271 connected to the server
+2015-03-31 08:55:42,551 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:55:42,557 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:55:42,558 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:55:42,560 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:55:42,560 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:55:55,668 - __main__ - INFO - 127.0.0.1:63272 connected to the server
+2015-03-31 08:55:55,668 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:55:55,673 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:55:55,673 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:55:55,678 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:55:55,678 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:56:46,107 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 08:56:46,108 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 08:56:46,114 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 08:58:34,051 - __main__ - INFO - 127.0.0.1:63282 connected to the server
+2015-03-31 08:58:34,053 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:58:34,055 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:58:34,056 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:58:34,057 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:58:34,057 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:59:06,754 - __main__ - INFO - 127.0.0.1:63284 connected to the server
+2015-03-31 08:59:06,755 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:59:06,760 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:59:06,761 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:59:06,762 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:59:06,762 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 08:59:17,582 - __main__ - INFO - 127.0.0.1:63321 connected to the server
+2015-03-31 08:59:17,582 - __main__ - INFO - Waiting for client connections
+2015-03-31 08:59:17,586 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 08:59:17,586 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 08:59:17,587 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 08:59:17,588 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:00:06,050 - __main__ - INFO - 127.0.0.1:63326 connected to the server
+2015-03-31 09:00:06,050 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:00:06,055 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:00:06,055 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:00:06,058 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:00:06,058 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:00:43,546 - __main__ - INFO - 127.0.0.1:63332 connected to the server
+2015-03-31 09:00:43,547 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:00:43,553 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:00:43,553 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:00:43,554 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:00:43,554 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:00:52,120 - __main__ - INFO - 127.0.0.1:63333 connected to the server
+2015-03-31 09:00:52,121 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:00:52,125 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:00:52,125 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:00:52,127 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:00:52,127 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:01:20,668 - __main__ - INFO - 127.0.0.1:63336 connected to the server
+2015-03-31 09:01:20,668 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:01:20,672 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:01:20,672 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:01:20,675 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:01:20,675 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:01:41,081 - __main__ - INFO - 127.0.0.1:63338 connected to the server
+2015-03-31 09:01:41,081 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:01:41,087 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:01:41,087 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:01:41,089 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:01:41,089 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:01:46,115 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:01:46,115 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:01:46,119 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:01:51,182 - __main__ - INFO - 127.0.0.1:63339 connected to the server
+2015-03-31 09:01:51,182 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:01:51,186 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:01:51,187 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:01:51,189 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:01:51,189 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:01:58,693 - __main__ - INFO - 127.0.0.1:63343 connected to the server
+2015-03-31 09:01:58,693 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:01:58,699 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:01:58,699 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:01:58,700 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:01:58,700 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:02:08,913 - __main__ - INFO - 127.0.0.1:63344 connected to the server
+2015-03-31 09:02:08,913 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:02:08,918 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:02:08,919 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:02:08,922 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:02:08,922 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:02:22,413 - __main__ - INFO - 127.0.0.1:63346 connected to the server
+2015-03-31 09:02:22,413 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:02:22,417 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:02:22,418 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:02:22,419 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:02:22,420 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:02:29,979 - __main__ - INFO - 127.0.0.1:63347 connected to the server
+2015-03-31 09:02:29,979 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:02:29,984 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:02:29,984 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:02:29,987 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:02:29,988 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:03:10,710 - __main__ - INFO - 127.0.0.1:63349 connected to the server
+2015-03-31 09:03:10,711 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:03:10,716 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:03:10,716 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:03:10,719 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:03:10,719 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:03:30,983 - __main__ - INFO - 127.0.0.1:63350 connected to the server
+2015-03-31 09:03:30,983 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:03:30,988 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:03:30,988 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:03:30,991 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:03:30,991 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:04:28,795 - __main__ - INFO - 127.0.0.1:63355 connected to the server
+2015-03-31 09:04:28,796 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:04:28,802 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:04:28,803 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:04:28,804 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:04:28,804 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:04:33,165 - __main__ - INFO - 127.0.0.1:63357 connected to the server
+2015-03-31 09:04:33,166 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:04:33,170 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:04:33,170 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:04:33,171 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:04:33,172 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:04:37,428 - __main__ - INFO - 127.0.0.1:63358 connected to the server
+2015-03-31 09:04:37,428 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:04:37,433 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:04:37,433 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:04:37,434 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:04:37,434 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:05:08,193 - __main__ - INFO - 127.0.0.1:63359 connected to the server
+2015-03-31 09:05:08,194 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:05:08,198 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:05:08,198 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:05:08,199 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:05:08,199 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:05:35,889 - __main__ - INFO - 127.0.0.1:63361 connected to the server
+2015-03-31 09:05:35,890 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:05:35,894 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:05:35,895 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:05:35,898 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:05:35,898 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:06:09,610 - __main__ - INFO - 127.0.0.1:63370 connected to the server
+2015-03-31 09:06:09,610 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:06:09,615 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:06:09,615 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:06:09,616 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:06:09,617 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:06:30,907 - __main__ - INFO - 127.0.0.1:63375 connected to the server
+2015-03-31 09:06:30,907 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:06:30,912 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:06:30,913 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:06:30,914 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:06:30,914 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:06:46,121 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:06:46,123 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:06:46,126 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:06:53,920 - __main__ - INFO - 127.0.0.1:63441 connected to the server
+2015-03-31 09:06:53,921 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:06:53,928 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:06:53,929 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:06:53,932 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:06:53,932 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:08:10,589 - __main__ - INFO - 127.0.0.1:63444 connected to the server
+2015-03-31 09:08:10,589 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:08:10,593 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:08:10,594 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:08:10,595 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:08:10,595 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:08:17,637 - __main__ - INFO - 127.0.0.1:63445 connected to the server
+2015-03-31 09:08:17,637 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:08:21,987 - __main__ - INFO - 127.0.0.1:63446 connected to the server
+2015-03-31 09:08:21,987 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:08:21,992 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:08:21,992 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:08:21,993 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:08:21,993 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:09:00,293 - __main__ - INFO - 127.0.0.1:63450 connected to the server
+2015-03-31 09:09:00,294 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:09:00,298 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:09:00,299 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:09:00,300 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:09:00,300 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:09:23,437 - __main__ - INFO - 127.0.0.1:63453 connected to the server
+2015-03-31 09:09:23,437 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:09:23,441 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:09:23,442 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:09:23,443 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:09:23,443 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:09:41,433 - __main__ - INFO - 127.0.0.1:63454 connected to the server
+2015-03-31 09:09:41,433 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:09:41,437 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:09:41,438 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:09:41,439 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:09:41,439 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:10:11,392 - __main__ - INFO - 127.0.0.1:63457 connected to the server
+2015-03-31 09:10:11,393 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:10:11,398 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:10:11,398 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:10:11,399 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:10:11,399 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:10:32,793 - __main__ - INFO - 127.0.0.1:63461 connected to the server
+2015-03-31 09:10:32,793 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:10:32,797 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:10:32,798 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:10:32,799 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:10:32,799 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:10:41,489 - __main__ - INFO - 127.0.0.1:63462 connected to the server
+2015-03-31 09:10:41,490 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:10:41,494 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:10:41,494 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:10:41,496 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:10:41,496 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:10:44,125 - __main__ - INFO - 127.0.0.1:63463 connected to the server
+2015-03-31 09:10:44,125 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:10:44,130 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:10:44,130 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:10:44,131 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:10:44,131 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:01,194 - __main__ - INFO - 127.0.0.1:63464 connected to the server
+2015-03-31 09:11:01,195 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:11:01,199 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:11:01,199 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:01,201 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:11:01,201 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:14,561 - __main__ - INFO - 127.0.0.1:63465 connected to the server
+2015-03-31 09:11:14,561 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:11:14,566 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:11:14,566 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:14,568 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:11:14,568 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:27,347 - __main__ - INFO - 127.0.0.1:63466 connected to the server
+2015-03-31 09:11:27,348 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:11:27,353 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:11:27,354 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:27,355 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:11:27,355 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:27,356 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 09:11:27,356 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:27,356 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:37,373 - __main__ - INFO - 127.0.0.1:63469 connected to the server
+2015-03-31 09:11:37,373 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:11:37,377 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:11:37,377 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:37,379 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:11:37,379 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:37,379 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 09:11:37,380 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:37,380 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:37,382 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 09:11:46,127 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:11:46,129 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:11:46,131 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:11:46,521 - __main__ - INFO - 127.0.0.1:63472 connected to the server
+2015-03-31 09:11:46,521 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:11:46,526 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:11:46,526 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:46,527 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:11:46,527 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:46,528 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 09:11:46,528 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:46,528 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:46,530 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 09:11:46,531 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:46,532 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 09:11:46,532 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:46,532 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:46,533 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 09:11:54,697 - __main__ - INFO - 127.0.0.1:63473 connected to the server
+2015-03-31 09:11:54,697 - __main__ - INFO - Waiting for client connections
+2015-03-31 09:11:54,702 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-03-31 09:11:54,702 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:54,703 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-03-31 09:11:54,704 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:54,704 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-03-31 09:11:54,704 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-03-31 09:11:54,704 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-03-31 09:11:54,706 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-03-31 09:11:54,707 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:54,707 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-03-31 09:11:54,708 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:54,708 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:54,708 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-03-31 09:11:54,708 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:54,710 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-03-31 09:11:54,710 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-03-31 09:16:46,133 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:16:46,135 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:16:46,138 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:21:46,141 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:21:46,142 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:21:46,146 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:26:46,147 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:26:46,149 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:26:46,153 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:31:46,155 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:31:46,158 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:31:46,161 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:36:46,163 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:36:46,165 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:36:46,168 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:41:46,178 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:41:46,183 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:41:46,189 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:46:46,199 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:46:46,204 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:46:46,213 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:51:46,226 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:51:46,232 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:51:46,243 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 09:56:46,245 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 09:56:46,247 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 09:56:46,251 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:01:46,255 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:01:46,256 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:01:46,260 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:06:46,271 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:06:46,279 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:06:46,287 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:11:46,289 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:11:46,291 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:11:46,294 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:16:46,296 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:16:46,297 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:16:46,300 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:21:46,303 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:21:46,379 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:21:46,423 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:26:46,426 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:26:46,427 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:26:46,431 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:31:46,434 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:31:46,435 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:31:46,438 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:36:46,439 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:36:46,442 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:36:46,445 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:41:46,447 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:41:46,450 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:41:46,457 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:46:46,471 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:46:46,477 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:46:46,485 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:51:46,486 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:51:46,487 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:51:46,490 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 10:56:46,492 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 10:56:46,493 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 10:56:46,497 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:01:46,499 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:01:46,502 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:01:46,506 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:06:46,508 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:06:46,509 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:06:46,512 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:11:46,515 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:11:46,517 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:11:46,520 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:16:46,522 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:16:46,525 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:16:46,531 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:21:46,543 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:21:46,548 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:21:46,555 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:26:46,559 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:26:46,560 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:26:46,565 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:31:46,567 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:31:46,570 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:31:46,575 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:36:46,578 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:36:46,580 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:36:46,584 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:41:46,596 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:41:46,601 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:41:46,609 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:46:46,620 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:46:46,625 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:46:46,634 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:51:46,636 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:51:46,638 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:51:46,641 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 11:56:46,645 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 11:56:46,648 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 11:56:46,651 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 12:01:46,653 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 12:01:46,655 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 12:01:46,660 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 12:06:46,661 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 12:06:46,663 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 12:06:46,666 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 12:11:46,668 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 12:11:46,670 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 12:11:46,674 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 12:16:46,677 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 12:16:46,678 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 12:16:46,683 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-03-31 12:21:46,684 - __main__ - INFO - Trying to save data for persistance
+2015-03-31 12:21:46,686 - __main__ - INFO - Going to save data to the data.pickle file
+2015-03-31 12:21:46,690 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-04-01 11:18:57,876 - __main__ - INFO - Starting reservoir server...
+2015-04-01 11:18:57,877 - __main__ - INFO - creating TCP socket now
+2015-04-01 11:18:57,877 - __main__ - INFO - Loading data from last persistance cycle
+2015-04-01 11:18:57,880 - __main__ - INFO - Starting the persistance cycle at 300 seconds
+2015-04-01 11:18:57,880 - __main__ - INFO - Starting the syncing thread of replication replay logs
+2015-04-01 11:18:57,880 - __main__ - INFO - binding the socket on localhost:3142
+2015-04-01 11:18:57,881 - __main__ - INFO - Waiting for client connections
+2015-04-01 11:19:03,211 - __main__ - INFO - 127.0.0.1:64606 connected to the server
+2015-04-01 11:19:03,211 - __main__ - INFO - Waiting for client connections
+2015-04-01 11:19:03,218 - __main__ - INFO - Received data from client GET [{"key":"pk_movie"}]
+2015-04-01 11:19:03,219 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-04-01 11:19:03,222 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"}]
+2015-04-01 11:19:03,222 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-04-01 11:19:03,222 - __main__ - INFO - Received data from client GET [{"key":"pk_actor"},{"key":"pk_movie"}]
+2015-04-01 11:19:03,222 - __main__ - DEBUG - Fetching the cache item for : pk_actor ; the value is : aamir khan 
+2015-04-01 11:19:03,223 - __main__ - DEBUG - Fetching the cache item for : pk_movie ; the value is : awesome 
+2015-04-01 11:19:03,225 - __main__ - INFO - Received data from client SET [{"key":"pk_movie_votes","data":"1000","expiry":"0"}]
+2015-04-01 11:19:03,227 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-04-01 11:19:03,227 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1000 
+2015-04-01 11:19:03,227 - __main__ - INFO - Received data from client ICR [{"key":"pk_movie_votes"}]
+2015-04-01 11:19:03,228 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-04-01 11:19:03,228 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : 1001 
+2015-04-01 11:19:03,228 - __main__ - INFO - Received data from client DEL [{"key":"pk_movie_votes"}]
+2015-04-01 11:19:03,228 - __main__ - INFO - Received data from client GET [{"key":"pk_movie_votes"}]
+2015-04-01 11:19:03,229 - __main__ - DEBUG - Fetching the cache item for : pk_movie_votes ; the value is : None 
+2015-04-01 11:23:57,891 - __main__ - INFO - Trying to save data for persistance
+2015-04-01 11:23:57,896 - __main__ - INFO - Going to save data to the data.pickle file
+2015-04-01 11:23:57,906 - __main__ - INFO - Starting the persistance cycle at 300 seconds
