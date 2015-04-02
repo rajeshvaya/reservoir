@@ -87,9 +87,10 @@ class Server:
         self.sync_replication_replay_logs_cycle()
 
         # let there be socket connectivity
-        self.socket.bind()
-        self.socket.listen()
-        self.socket.open()
+        if configs.get('init_socket', True):
+            self.socket.bind()
+            self.socket.listen()
+            self.socket.open()
 
     def set_resource_utilization_limits(self):
         if not self.memory_limit or self.memory_limit == 0:
