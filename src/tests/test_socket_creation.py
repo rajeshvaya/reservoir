@@ -8,6 +8,7 @@ from ConfigParser import SafeConfigParser
 import logging
 
 from ReservoirServer import Server as ReservoirServer
+from ReservoirSocket import ReservoirSocket
 from ReservoirConsole import ReservoirConsole
 from ReservoirClientShell import Client as ReservoirClientShell
 
@@ -34,7 +35,10 @@ class test_socket_creation(unittest.TestCase):
 		self.assertEqual(str(s.port), config.get('server', 'port'))
 		self.assertIsNotNone(s.socket)
 		self.assertEqual(s.socket.protocol, config.get('server', 'protocol'))
-		
+		self.assertIsInstance(s.socket, ReservoirSocket)
+
+		self.assertIsInstance(s.reservoir, dict)
+
 	def test_shell_socket(self):
 		return
 		config = self.get_configs()
