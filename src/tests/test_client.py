@@ -33,16 +33,52 @@ class test_socket_creation(unittest.TestCase):
         )
 
     def test_set_cache_item(self):
-        result = self.client.set("pk_movie", "awesome movie", 0)
+        result = self.client.set("test_pk_movie", "awesome movie", 0)
         self.assertEqual(result, "200 OK")
 
     def test_get_cache_item(self):
-        v = self.client.get("pk_movie")
+        v = self.client.get("test_pk_movie")
         self.assertEqual(v, "awesome movie")
 
     def test_delete_cache_item(self):
-        result = self.client.delete("pk_movie")
+        result = self.client.delete("test_pk_movie")
         self.assertEqual(result, "200 OK")
+
+    def test_icr_cache_item(self):
+        result = self.client.set("test_pk_votes", "100", 0)
+        self.assertEqual(result, "200 OK")
+
+        result = self.client.icr("test_pk_votes")
+        self.assertEqual(result, "200 OK")
+
+        result = self.client.get("test_pk_votes")
+        self.assertEqual(result, "101")
+
+    def test_dcr_cache_item(self):
+        result = self.client.set("test_pk_votes", "500", 0)
+        self.assertEqual(result, "200 OK")
+
+        result = self.client.dcr("test_pk_votes")
+        self.assertEqual(result, "200 OK")
+
+        result = self.client.get("test_pk_votes")
+        self.assertEqual(result, "499")
+
+    def test_ota_cache_item(self):
+        result = self.client.set("test_ota_pk_movie", "awesome movie with ota", 0)
+        self.assertEqual(result, "200 OK")
+        result = self.client.get("test_ota_pk_movie")
+        self.assertEqual(result, "awesome movie with ota")
+        # getting the value again should give you 500 ERROR
+        result = self.client.get("test_ota_pk_movie")
+        self.assertEqual(result, "500 ERROR")
+
+    def test_tpl_cache_item(self):
+        result = self.client.set("test_tpl_pk_movie", "awesome movie with tpl", 0)
+        self.assertEqual(result, "200 OK")
+        # setting the value again should give you 500 ERROR
+        result = self.client.set("test_tpl_pk_movie", "awesome movie with tpl", 0)
+        self.assertEqual(result, "500 ERROR")
         
     def get_configs(self):
         config = SafeConfigParser()
